@@ -1,0 +1,232 @@
+\documentclass[11pt]{article}
+%DIF LATEXDIFF DIFFERENCE FILE
+%DIF DEL backup/ORIGINAL/suppl.tex   Fri Apr 18 13:07:46 2014
+%DIF ADD suppl.tex                   Wed May 21 13:35:52 2014
+
+\title{\DIFdelbegin \DIFdel{Supplementary Materials}\DIFdelend \DIFaddbegin \DIFadd{Expanded View}\DIFaddend }
+\author{
+        Aaron N Brooks\, \\
+            \and
+        David J Reiss
+}
+\date{\today}
+
+\usepackage{times}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{amsmath}
+%DIF 16c16
+%DIF < %\usepackage[final]{pdfpages}
+%DIF -------
+%\usepackage{pdfpages} %DIF > 
+%DIF -------
+\usepackage{epsfig,graphicx}
+%DIF 18c18
+%DIF < \graphicspath{{figures/}}
+%DIF -------
+%\graphicspath{{figures/}} %DIF > 
+%DIF -------
+\usepackage[font={small,it}]{caption}
+%DIF 20a20-21
+\usepackage{color} %DIF > 
+\usepackage[section]{placeins} %DIF > 
+%DIF -------
+
+%%%%%%%%%% This allows ``paragraph'' to be  like a subsubsubsection
+%%%%%%%%%% from here https://tex.stackexchange.com/questions/60209/how-to-add-an-extra-level-of-sections-with-headings-below-subsubsection
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
+            {1.25ex \@plus .25ex}%
+%DIF 27c29
+%DIF <             {\normalfont\normalsize\bfseries}}
+%DIF -------
+            {\normalfont\small\bfseries}} %DIF > 
+%DIF -------
+\makeatother
+\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+
+%DIF 32a34-37
+%%%%%%%%%% This adds 'E' to figure name for expanded view %DIF > 
+\makeatletter  %DIF > 
+\renewcommand{\thefigure}{E\@arabic\c@figure} %DIF > 
+\makeatother %DIF > 
+%DIF -------
+
+%%%%%%%%%% Start TeXmacs macros
+\newcommand{\email}[1]{{\textit{Email:} \texttt{#1}}}
+\newcommand{\tmem}[1]{{\em #1\/}}
+\newcommand{\tmhlink}[2]{{\color{blue} #1}}
+\newcommand{\tmmathbf}[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand{\tmname}[1]{\textsc{#1}}
+\newcommand{\tmop}[1]{\ensuremath{\operatorname{#1}}}
+\newcommand{\tmsamp}[1]{\textsf{#1}}
+\newcommand{\tmtextit}[1]{{\itshape{#1}}}
+\newenvironment{enumeratenumeric}{\begin{enumerate}[1.] }{\end{enumerate}}
+\newcommand{\tmfloatcontents}{}
+\newlength{\tmfloatwidth}
+\newcommand{\tmfloat}[5]{
+  \renewcommand{\tmfloatcontents}{#4}
+  \setlength{\tmfloatwidth}{\widthof{\tmfloatcontents}+1in}
+  \ifthenelse{\equal{#2}{small}}
+    {\ifthenelse{\lengthtest{\tmfloatwidth > \linewidth}}
+      {\setlength{\tmfloatwidth}{\linewidth}}{}}
+    {\setlength{\tmfloatwidth}{\linewidth}}
+  \begin{minipage}[#1]{\tmfloatwidth}
+    \begin{center}
+      \tmfloatcontents
+      \captionof{#3}{#5}
+    \end{center}
+  \end{minipage}}
+%%%%%%%%%% End TeXmacs macros
+
+\newcommand{\eg}{\tmtextit{e.g.}}
+\newcommand{\ie}{\tmtextit{i.e.}}
+\newcommand{\cm}{{\tmsamp{cMonkey}}}
+%DIF 63a69-70
+\newcommand{\nwinf}{{\tmsamp{Inferelator}}} %DIF > 
+\newcommand{\MEME}{{\tmsamp{MEME}}} %DIF > 
+%DIF -------
+\newcommand{\halo}{{\tmem{H. salinarium NRC-1}}}
+\newcommand{\eco}{{\tmem{E. coli K-12 MG1655}}}
+\newcommand{\tab}{{\hspace{5mm}}}
+\newcommand{\rdb}{{\tmsamp{RegulonDB}}}
+%DIF 67a75
+\newcommand{\egrine}{{\tmsamp{EGRIN 2.0}}} %DIF > 
+%DIF -------
+\newcommand{\simgt}{\,\hbox{\lower0.6ex\hbox{$\sim$}\llap{\raise0.6ex\hbox{$>$}}}\,}
+\newcommand{\simlt}{\,\hbox{\lower0.6ex\hbox{$\sim$}\llap{\raise0.6ex\hbox{$<$}}}\,}
+\newcommand{\citep}[1]{({\cite{#1}})}
+\newcounter{suppfigure}
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+\providecommand{\DIFaddtex}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+\providecommand{\DIFdeltex}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%DIF SAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+\providecommand{\DIFaddend}{} %DIF PREAMBLE
+\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%DIF HYPERREF PREAMBLE %DIF PREAMBLE
+\providecommand{\DIFadd}[1]{\texorpdfstring{\DIFaddtex{#1}}{#1}} %DIF PREAMBLE
+\providecommand{\DIFdel}[1]{\texorpdfstring{\DIFdeltex{#1}}{}} %DIF PREAMBLE
+%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
+
+\begin{document}
+\maketitle
+
+\tableofcontents
+\DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend \newpage
+\DIFaddbegin \listoffigures
+\newpage
+\listoftables 
+\newpage
+\DIFaddend 
+
+\begin{abstract}
+Microbes can tailor transcriptional responses to diverse environmental
+challenges despite having streamlined genomes and a limited number of
+regulators. Here, we present data-driven models that capture the
+dynamic interplay of the environment and genome-encoded regulatory
+programs of two types of prokaryotes: E. coli (a bacterium) and
+H. salinarum (an archaeon). The models reveal how the genome-wide
+distributions of cis-acting gene regulatory elements and the
+conditional influences of transcription factors at each of those
+elements encode programs for eliciting a wide array of
+environment-specific responses. We demonstrate how these programs
+partition transcriptional regulation of genes within regulons and
+operons to re-organize gene-gene functional associations in each
+environment. The models capture fitness-relevant co-regulation by
+different transcriptional control mechanisms acting across the entire
+genome, to define a generalized, system-level organizing principle for
+prokaryotic gene regulatory networks that goes well beyond existing
+paradigms of gene regulation.
+\end{abstract}
+
+\section{Online materials}
+Additional figures, tables, supporting data, and comprehensive model
+predictions are available at: \newline
+\url{http://egrin2.systemsbiology.net}.
+
+\section{\DIFdelbegin \DIFdel{Supplementary Figures}\DIFdelend \DIFaddbegin \DIFadd{Experimental data used for model construction}\DIFaddend }\DIFdelbegin %DIFDELCMD < \label{suppfigs}
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+%DIF < \input{supp_figures}  %% slows it down and makes it big! Let's include it later.
+%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\section{\DIFdel{Experimental data}}%DIFAUXCMD
+\addtocounter{section}{-1}%DIFAUXCMD
+\DIFdelend \label{data}
+
+\subsection{mRNA expression data}
+
+\input{experimental_data_mRNA}
+
+\subsection{\DIFdelbegin \DIFdel{Data }\DIFdelend \DIFaddbegin \DIFadd{Additional data integrated }\DIFaddend for model \DIFdelbegin \DIFdel{validation}\DIFdelend \DIFaddbegin \DIFadd{construction}\DIFaddend }
+
+\DIFaddbegin \input{experimental_data_other}
+
+\section{\DIFadd{Independent data used for model validation}}
+
+\DIFaddend \input{experimental_data_validation}
+
+\section{Computational methods}
+
+\input{cmonkey}
+
+\subsection{\DIFdelbegin \DIFdel{Inferelator}\DIFdelend \DIFaddbegin \nwinf\DIFaddend : inference of transcriptional regulatory influences}
+
+\input{inferelator}
+
+\subsection{\DIFdelbegin \DIFdel{EGRIN 2.0 }\DIFdelend \DIFaddbegin \egrine\DIFadd{~}\DIFaddend model construction}
+
+\input{egrin2_methods}
+
+\subsubsection{Identifying corems}
+
+\input{corem_detection}
+
+\input{other_computation}
+
+\section{Model \DIFdelbegin \DIFdel{evaluation and }\DIFdelend validation}\DIFaddbegin \label{sec:validation}
+\DIFaddend 
+
+\input{validation}
+
+\DIFaddbegin \section{\DIFadd{Model evaluation}}\label{sec:evaluation}
+
+\input{evaluation}
+
+\section{\DIFadd{Supplementary Figures}}
+
+\label{suppfigs}
+
+%DIF > \input{supp_figures}  %% slows it down and makes it big! Let's include it later.
+
+\clearpage %DIF >  force figures before bibliography
+\DIFaddend \bibliographystyle{abbrv}
+\DIFdelbegin %DIFDELCMD < \bibliography{main}
+%DIFDELCMD < %%%
+\DIFdelend \DIFaddbegin \bibliography{egrin2_paper}{}
+\DIFaddend 
+
+\end{document}
+This is never printed

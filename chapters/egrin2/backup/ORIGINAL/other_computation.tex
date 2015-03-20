@@ -1,0 +1,105 @@
+\subsection{Functional enrichment estimates for genes in corems}
+
+We computed functional enrichment for genes organized into corems
+using DAVID (Dennis et al., 2003) and the DAVIDQuery R-package (Day
+and Lisovich, 2010). Enrichments for each corem are available on the
+web site.
+
+\subsection{Conditional co-regulation of genes organized in corems}
+
+We defined the conditions in which genes in a corem were co-regulated
+as the set of experiments in which the genes of a corem are more
+tightly co-expressed than one would expect at chance. We statistically
+evaluated tight co-expression using relative standard deviation (RSD 
+$=|\sigma/\mu|$) and resampling. We chose RSD (rather than, for example,
+standard deviation, $\sigma$) to avoid over-weighting conditions in which the
+mean relative expression is close to zero. The significance of an RSD
+value for a given condition relative to each corem was estimated
+by resampling: for a corem with $k$ gene members, and for each
+condition, $c$, we computed at least 20,000 RSD values for $k$ randomly
+sampled expression measurements in $c$, to determine the likelihood that the
+observed co-expression has lower RSD than expected by chance ($p$-value
+$< 0.01$). The resampling procedure resulted in condition sets for
+corems that contained from 1.4\% to 85.5\% of the conditions in
+\halo\ and 7.9\% to 66.6\% conditions in \eco.
+
+\subsection{Conditionality of GRE influence}
+
+The upstream promoter regions of most genes contain multiple EGRIN
+2.0-predicted GREs (\eg, carA in Figure 2). A key insight of our
+model is that not all of these sites are equally important for
+controlling gene expression in all experimental conditions. We refer
+to changes in the relative influence of GREs across conditions as
+“conditional activity” of GRE elements. Although, to be clear, we do
+not imply that the transcriptional activity at a GRE is attributable
+to the DNA sequence itself, but rather the TF that binds to that
+sequence in particular environments. We leveraged the GREs discovered
+in genes grouped into corems and the conditional co-expression of
+those groups of genes to predict conditionally active GREs in EGRIN
+2.0.
+
+Specifically, to discover active GREs for each corem we combined
+predictions from (1) genome-wide motif scans (Section 5 above) that
+predict the GRE locations in an expanded region around each gene’s
+promoter in the corem using all of the ensemble predictions (1,000 nt
+window: -875 nt upstream to 125 nt downstream), and (2) the conditions
+discovered in biclusters that are most representative of the corem
+(\ie, containing the largest fraction of genes from the corem, top
+decile). GREs that occurred frequently in these biclusters were
+considered putatively responsible for co-regulating the set of genes
+in the condition-specific context of the corem (q-value ≤
+0.05). Finally, we computed the average distances of all GREs to the
+start codons of each gene in the list (collapsing sites if they
+occurred within 25 nt of one another). The precise locations of all
+GREs for the {\it H. salinarum} dpp operon-related corems (Figure 3) are
+listed in Table E8, while the locations for GREs involved in
+conditional modulation of the PurR regulon (Figure 4) are provided in
+Table E9.
+
+We represented the active GREs upstream of a gene or within a corem as
+a pie chart, showing the normalized frequency with which the GREs
+computed above occurred in biclusters containing that gene. For
+example, if GREs 1, 2, and 3 occurred in 25, 50, and 200 biclusters
+containing gene A, the pie chart for gene A would have sectors of area
+0.09, 0.18, and 0.73 respectively. For corems, we computed the
+normalized frequency of GREs for all genes of the corem. For example,
+if GREs 1, 2, and 3 occurred in promoters of 10, 10, and 20 of the
+genes of the corem, their areas would be 0.25, 0.25, and 0.5
+respectively.
+
+\subsection{Detection of conditional operons}
+
+Conditional-specific transcriptional isoforms of operons were
+predicted through corem membership. Specifically, if any of the genes
+in an operon were found in a corem that did not contain all the other
+genes of the operon, we predicted that the operon had conditional
+isoforms. Operon annotations for both {\it H. salinarum} and {\it E. coli} were
+derived from MicrobesOnline. All predicted conditional operons,
+including the specific break sites and transcriptional isoforms is
+available on the website. The full list of validated predictions is
+provided in Table E7.
+
+\subsection{Environmental ontology construction and usage}
+
+We recorded a rich meta-data set for all 1495 experiments conducted
+for {\it H. salinarum}. The meta-data includes a detailed description of
+each experiment, including, for example: media composition, genetic
+background, concentration of perturbant, internal reference batch id,
+person who conducted the experiment, etc. We used this
+meta-information to classify experiments in an ontological framework,
+where two experiments can share specific meta-descriptions (\eg, 1e-3
+mol/L EDTA), or inherit more general relationships from the
+ontological structure (\eg, chemical perturbation). We used OBO-edit
+to construct the ontology. The ontology contained 198 terms organized
+across three primary branches (environmental state, experimental
+state, and genetic state). The ontology flat file is available for
+download and meta-data annotations for every array in the dataset are
+available online.
+
+We used the ontology to classify enriched environmental features for
+GREs and corems (Figures 3-4). For corems, we used the set of
+conditions in which genes in the corem are significantly co-expressed
+(see 9 above) to compute term enrichment using the ontoCAT
+R-package. Term enrichment was assessed statistically and reported as
+q-values using the hypergeometric test with Benjamini-Hochberg
+correction for multiple hypothesis testing.

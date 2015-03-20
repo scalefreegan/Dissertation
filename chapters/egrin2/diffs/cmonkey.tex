@@ -1,0 +1,344 @@
+\subsection{\DIFdelbegin \DIFdel{cMonkey}\DIFdelend \DIFaddbegin \cm\DIFaddend : integrated biclustering algorithm, updated for ensemble analysis}
+
+\subsubsection{Introduction and summary}
+
+The \cm\ integrated biclustering algorithm was described and \DIFdelbegin \DIFdel{benchmarked in (Reiss et al. , 2006). }\DIFdelend \DIFaddbegin \DIFadd{fully
+benchmarked in \mbox{%DIFAUXCMD
+\cite{Reiss2006n}
+}%DIFAUXCMD
+. }\DIFaddend In short, the algorithm computes
+putatively co-regulated modules of genes over subsets of experimental
+conditions from gene expression data, constrained by information
+provided by genome sequence (\DIFdelbegin \DIFdel{in the form of de novo }\DIFdelend \DIFaddbegin \textit{\DIFadd{de novo}} \DIFaddend identification of
+conserved \DIFdelbegin \DIFdel{cis-regulatory motifs in the }\DIFdelend \DIFaddbegin \textit{\DIFadd{cis}}\DIFadd{-regulatory motifs in }\DIFaddend gene promoters), and functional
+association networks. Its defining characteristic is that it
+\DIFdelbegin \DIFdel{integrates }\DIFdelend \DIFaddbegin \DIFadd{combines }\DIFaddend all three types of data (expression, sequence and networks)
+together into an integrated model that \DIFdelbegin \DIFdel{is optimized via }\DIFdelend \DIFaddbegin \DIFadd{uses }\DIFaddend a stochastic
+optimization procedure to identify modules that best satisfy all three
+constraints, simultaneously.
+
+\DIFaddbegin \DIFadd{We refer the reader interested in details of the }\cm\ \DIFadd{data integration
+model and optimization procedure to \mbox{%DIFAUXCMD
+\cite{Reiss2006n}
+}%DIFAUXCMD
+. Here, we
+briefly summarize the procedure as it was utilized in the }\egrine\DIFadd{~
+model construction. The }\cm\ \DIFadd{integrated biclustering algorithm
+identifies groups of genes co-regulated under subsets of experimental
+conditions, by integrating various orthogonal pieces of information
+that support evidence for their co-regulation, and optimizing
+biclusters such that they are supported by one or more of those
+additional constraints. The three sources of evidence for
+co-regulation leveraged by cMonkey to score gene clusters are (1)
+tight co-expression in subsets of available gene expression
+measurements (similarity of expression profiles); (2) quality of
+}\textit{\DIFadd{de novo}} \DIFadd{detected }\textit{\DIFadd{cis}}\DIFadd{-regulatory motifs in gene
+promoters (putative co-binding of common regulators); and (3)
+significant connectivity in functional association or physical
+interaction networks (co-functionality). The algorithm served as the
+cornerstone for the construction of the first global, predictive
+Environmental Gene Regulatory Influence Network (EGRIN) model for
+}\halo \DIFadd{\mbox{%DIFAUXCMD
+\cite{Bonneau2007}
+}%DIFAUXCMD
+, and has now been applied to many additional
+organisms (}\eg\DIFadd{, \mbox{%DIFAUXCMD
+\cite{Yoon2013}
+}%DIFAUXCMD
+and unpublished).
+}
+
+\DIFadd{To run cMonkey as ensemble-based inference approach, we had to make
+significant updates to the }\cm\ \DIFadd{algorithm. These updates primarily
+addressed computational inefficiencies that led to long runtime. The
+primary algorithm modification in the new implementation is global
+optimization (rather than the local, individual cluster optimization
+utilized by the original procedure). Additional algorithm updates
+include changes to the individual scoring scheme for subnetwork
+clustering, as well as integration of the scores. All of these changes
+improved the procedure's runtime without significantly affecting the
+algorithm's performance.
+}
+
+\DIFaddend \subsubsection{Updates since original publication}
+
+For incorporation into the \DIFdelbegin \DIFdel{EGRIN 2.0 }\DIFdelend \DIFaddbegin \egrine\DIFadd{~}\DIFaddend ensemble analysis, the \cm\
+procedure and software was overhauled to improve \DIFdelbegin \DIFdel{run-time }\DIFdelend \DIFaddbegin \DIFadd{runtime }\DIFaddend performance
+and decrease memory usage. These modifications did not quantifiably
+affect overall bicluster quality. Changes to the algorithm (and
+parameters used for \DIFdelbegin \DIFdel{EGRIN 2.0 }\DIFdelend \DIFaddbegin \egrine\DIFadd{~}\DIFaddend construction) relative to the earlier
+version described in \DIFdelbegin \DIFdel{(Reiss et al., 2006) }\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{Reiss2006n}
+}%DIFAUXCMD
+}\DIFaddend are as follows:
+
+1. \DIFdelbegin \DIFdel{The use of iteratively }\DIFdelend \DIFaddbegin \DIFadd{Iteratively }\DIFaddend re-weighted constrained logistic regression
+to determine gene/condition probabilities for bicluster membership was
+replaced with a non-parametric cumulative distribution function on
+gene/condition scores. Since the non-parametric function does not need
+to be re-weighted, it is significantly faster to compute.
+
+2. Rather than constraining the number of bicluster assignments per
+gene/condition using a probability distribution, \cm\DIFaddbegin \ \DIFaddend now assigns a
+fixed number of biclusters to each gene/condition, per run (\DIFdelbegin \DIFdel{this is }\DIFdelend a
+user-defined parameter\DIFdelbegin \DIFdel{, and for this study }\DIFdelend \DIFaddbegin \DIFadd{). For this study the parameter }\DIFaddend was set to 2 for genes, and
+to $k/2$ for conditions, where $k$ is the total number of biclusters in
+the run, also a user-defined parameter\DIFdelbegin \DIFdel{)}\DIFdelend . This modification effectively
+alters the bicluster optimization from a local
+\DIFaddbegin \DIFadd{problem }\DIFaddend (single bicluster) \DIFdelbegin \DIFdel{problem }\DIFdelend with limited cross-bicluster constraints \DIFdelbegin \DIFdel{, }\DIFdelend to a global problem,
+similar in principle to the widely used k-means clustering algorithm.
+
+3. Since \cm\ uses the updated constraint \DIFdelbegin \DIFdel{of (see }\DIFdelend \DIFaddbegin \DIFadd{(of }\DIFaddend 2\DIFdelbegin \DIFdel{, }\DIFdelend \DIFaddbegin \DIFadd{; see }\DIFaddend above) to choose
+the two ``best'' biclusters for each gene (and \DIFaddbegin \DIFadd{likewise }\DIFaddend the best $k/2$
+biclusters for each condition), there is no sampling as in the prior
+version. Instead, stochasticity is added \DIFdelbegin \DIFdel{, }\DIFdelend to prevent the optimization
+from falling into \DIFdelbegin \DIFdel{a local minimum, by allowing }\DIFdelend \DIFaddbegin \DIFadd{local minima. The algorithm allows }\DIFaddend at most one
+change in bicluster assignment per gene/condition, per iteration\DIFdelbegin \DIFdel{, and }\DIFdelend \DIFaddbegin \DIFadd{. This
+is accomplished }\DIFaddend by adding a small amount of \DIFdelbegin \DIFdel{artificial }\DIFdelend noise to each
+gene/condition's bicluster membership weight. \DIFdelbegin \DIFdel{This }\DIFdelend \DIFaddbegin \DIFadd{The }\DIFaddend noise occasionally
+allows moves that decrease a bicluster's total score\DIFdelbegin \DIFdel{, and the noise
+decreases to near
+zero toward the end of the optimization}\DIFdelend \DIFaddbegin \DIFadd{. This noise
+decreases towards zero as the number of iterations increases}\DIFaddend .
+
+4. \DIFdelbegin \DIFdel{The motif search, }\DIFdelend \DIFaddbegin \DIFadd{Motif detection is }\DIFaddend the most computationally expensive part of the
+procedure\DIFdelbegin \DIFdel{, is limited to run }\DIFdelend \DIFaddbegin \DIFadd{. To circumvent significant computation time, we limit motif 
+detection to }\DIFaddend every 100 iterations (for a typical,
+2,000 iteration \cm\ run). During the 99 iterations between motif
+searches, the biclusters are optimized to contain instances of those
+detected motif(s). We found that this does not impair the ability of
+\cm\ to detect \DIFdelbegin \DIFdel{significant }\DIFdelend motifs.
+
+\DIFdelbegin \DIFdel{5. Finally, as part of the EGRIN 2.0 model construction, only the EMBL
+STRING (v9) (Szklarczyk et al., 2011) set of predicted gene functional
+associations, and predicted operons (Price et al., 2005) were
+integrated (although we note that the software allows other gene
+association networks to easily be added).
+}%DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend The overall effect of these changes (in addition to other minor
+modifications and improvements) resulted in an algorithm run-time
+reduction of about 4-fold. This, in turn, enabled \cm\ to be run
+numerous times on a modest 8-core compute node (\eg, a
+\DIFdelbegin \DIFdel{c1.xlarge
+}\DIFdelend \DIFaddbegin \tmsamp{c1.xlarge} \DIFaddend Amazon EC2 node) in under six hours per 
+\DIFdelbegin \DIFdel{complete run (versus the
+original }%DIFDELCMD < \cm\ %%%
+\DIFdel{requiring }\DIFdelend \DIFaddbegin \DIFadd{run (compared to }\DIFaddend several days to a week \DIFaddbegin \DIFadd{for the original }\cm\ \DIFaddend ). Practically, the effect of these modifications to the algorithm
+resulted in a single \cm\ run generating \DIFdelbegin \DIFdel{, on average, }\DIFdelend fewer duplicate
+biclusters, primarily because each gene is allowed to be a member of
+only two biclusters. We found that \DIFdelbegin \DIFdel{, in general, }\DIFdelend this increased the
+overall diversity of regulation \DIFdelbegin \DIFdel{(conditional clusterings and
+corresponding cis-GREs)discovered, per }\DIFdelend \DIFaddbegin \DIFadd{discovered by each }\DIFaddend \cm\ \DIFdelbegin \DIFdel{run}\DIFdelend \DIFaddbegin \DIFadd{run (condition-specific gene clusters and
+corresponding }\textit{\DIFadd{cis}}\DIFadd{-GREs)}\DIFaddend .
+
+\DIFdelbegin \subsubsection{\DIFdel{Detailed algorithm description}}
+%DIFAUXCMD
+\addtocounter{subsubsection}{-1}%DIFAUXCMD
+\DIFdelend \DIFaddbegin \subsubsection{\DIFadd{Detailed }\cm\ \DIFadd{algorithm description}}
+\DIFaddend 
+
+\DIFaddbegin \DIFadd{The }\cm\ \DIFadd{algorithm initiates by seeding $k$ biclusters, typically using
+the simple, widely-used and effective $k$-means clustering on the
+input expression data set. }\cm\ \DIFadd{itself performs a global optimization,
+in many ways similar to the $k$-means clustering algorithm, which we
+used as a model. After beginning with an initial assignment of each
+gene into $k$ clusters and a chosen distance metric, the basic
+$k$-means algorithm iterates between two steps until convergence: (1)
+(re-)assign each gene to the cluster with the closest centroid and (2)
+update the centroids of each modified cluster. The updated }\cm\ 
+\DIFadd{algorithm performs an analogous set of moves with four primary
+distinctions: (1) the distance of each gene to the ``centroid'' of
+each cluster is computed using a measure that combines
+condition-specific expression profile similarity, $cis$-regulatory
+motif similarity, and connectedness in one or more gene association
+networks; (2) each gene can be (re-)assigned to more than one cluster
+(default 2); (3) at each step, conditions (in addition to genes) are
+moved among biclusters to improve their cohesiveness; and (4) at each
+step, genes and conditions are not always assigned to the most
+appropriate clusters. We now elaborate upon these four details.
+}
+
+\cm\ \DIFadd{begins each iteration with a set of bicluster memberships
+$\{m_i\}$ for each element (gene or condition) $i$, where by default
+$\|m_i\| = 2$ for genes and $\|m_i\| = N_c/2$ for conditions ($N_c$ is
+the number of conditions, or measurements, in the expression data set;
+note that for standard $k$-means clustering, $\|m_i\| = 1$ for genes
+and $\|m_i\| = N_c$ for conditions). }\cm\ \DIFadd{then computes score matrices
+(log-likelihoods, in practice) $\mathbf{R}_{ij}$, $\mathbf{S}_{ij}$,
+and $\mathbf{T}_{ij}$, for membership of each element $i$ in each
+bicluster $j$, based upon, respectively, co-expression with the
+current gene members ($\mathbf{R}$), similarity of motifs in gene
+promoters ($\mathbf{S}$), and connectivity of genes in networks
+($\mathbf{T}$). For the network scores ($\mathbf{T}$), the originally
+published procedure \mbox{%DIFAUXCMD
+\cite{Reiss2006n}
+}%DIFAUXCMD
+computed a $p$-value for
+enrichment of network edges among genes in each bicluster using the
+cumulative hypergeometric distribution. This computation was
+inefficient, and moreover could not account for weighted edges in the
+input networks, so we replaced it with a more standard weighted
+network clustering coefficient \mbox{%DIFAUXCMD
+\cite{Watts1998}
+}%DIFAUXCMD
+, evaluated only over
+the genes within each bicluster.
+}
+
+\DIFadd{Following computation of the individual component scores,
+}\cm\ \DIFadd{computes a score matrix $\mathbf{M}_{ij}$ containing the
+integrated score (a weighted sum of log-likelihoods) supporting the
+inclusion of gene $i$ in bicluster $j$. At this stage the updated
+version of }\cm\ \DIFadd{then computes a cumulative density distribution from
+each bicluster's $\mathbf{M}_{\cdot j}$ to obtain a posterior
+probability distribution $p_{ij}$, that each element $i$ should be in
+each cluster $j$, which is used to classify cluster members based upon
+these scores. The width of the density distribution kernel is set
+dynamically to be larger for smaller (fewer gene) biclusters, so as to
+increase the tendency to add genes to small biclusters, rather than to
+remove them. In the updated procedure, we then add a small amount of
+normally-distributed random ``noise:'' to the scores
+$\mathbf{M}_{ij}$, in order to achieve a similar type of stochasticity
+to the original version of the algorithm (which was originally
+obtained using sampling, and which helps prevent the algorithm from
+falling into local minima; this noise decreases during the run to zero
+at the final iteration). The result of this noise is that at the
+beginning of a }\cm\ \DIFadd{run, biclusters are rather poorly defined
+(co-expression, for example, is weak), but during the course of a full
+set of 2,000 iterations, as this noise is decreased, the biclusters
+settle into minima.
+}
+
+\DIFadd{Finally, at the end of each iteration, }\cm\ \DIFadd{chooses a random subset of
+elements (genes or conditions) $i$, and moves $i$ into bicluster $j$
+if, for any biclusters $j'$ which it is already a member, $p_{ij} >
+p_{ij'}, \forall j'$, and out of the corresponding worse bicluster
+$j'$ for which $p_{ij} > p_{ij'}$. Thus, as with the $k$-means
+clustering algorithm, the updated }\cm\ \DIFadd{performs a global optimization
+of all biclusters by moving elements among biclusters to improve each
+element's membership scores.
+}
+
+\DIFaddend \subsubsection{Parameter ranges used for \DIFdelbegin \DIFdel{EGRIN 2.0}\DIFdelend \DIFaddbegin \egrine\DIFaddend }
+
+The \DIFaddbegin \DIFadd{default values for all }\DIFaddend additional parameters used for \cm, and for
+\DIFdelbegin \DIFdel{MEME }\DIFdelend \DIFaddbegin \MEME\ \DIFaddend (which is used by \cm\DIFaddbegin \ \DIFaddend for motif detection\DIFaddbegin \DIFadd{; \mbox{%DIFAUXCMD
+\cite{Bailey1998}
+}%DIFAUXCMD
+}\DIFaddend ),
+are the same as those itemized in \DIFdelbegin \DIFdel{(Reiss et al. , 2006) }\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{Reiss2006n}
+}%DIFAUXCMD
+. These defaults
+were used exclusively for all }\halo\DIFadd{~ }\cm\DIFadd{~ runs. These default
+parameters are itemized in Table~\ref{tab:cmparams:halo}. The only
+parameter that varied from run-to-run for the }\halo\DIFadd{~ }\cm\DIFadd{~ runs was the
+number of conditions (columns in the expression matrix) included. As
+}\cm\DIFadd{~development was occurring in parallel to development of the
+}\egrine\DIFadd{~modeling approach (primarily involving bug fixes), we also
+list the official }\cm\DIFadd{~version number(s) used}\DIFaddend .
+
+\DIFaddbegin \vspace{.2cm}
+\begin{table}[h!]
+\begin{tabular}{|l|l|l|r|} 
+\hline
+\DIFaddFL{Parameter              }& \DIFaddFL{Value              }& \DIFaddFL{Note }\\ \hline
+\DIFaddFL{Version               }& \DIFaddFL{4.5.4(174), 4.6(191), 4.6.2(109)        }& \cm\DIFaddFL{~package versions (and number of runs) used }\\
+\DIFaddFL{$N_{\mathrm{conds}}$    }& \DIFaddFL{242:300          }& \DIFaddFL{Number of conditions included (range) }\\
+\DIFaddFL{$k$                   }& \DIFaddFL{250              }& \DIFaddFL{Number of biclusters }\\
+\DIFaddFL{$N_{\mathrm{gene}}$    }& \DIFaddFL{2          }& \DIFaddFL{Number of biclusters per gene }\\
+\DIFaddFL{$N_{\mathrm{iter}}$     }& \DIFaddFL{2000               }& \DIFaddFL{Number of iterations }\\
+\DIFaddFL{$w_{\mathrm{max}}$     }& \DIFaddFL{24               }& \DIFaddFL{Maximum }\MEME\DIFaddFL{~motif width }\\
+\DIFaddFL{$w_{\mathrm{min}}$     }& \DIFaddFL{6               }& \DIFaddFL{Minimum }\MEME\DIFaddFL{~motif width }\\
+\DIFaddFL{$l_{\mathrm{search}}$     }& \DIFaddFL{-150 -- +20       }& \MEME\DIFaddFL{~search distance from gene start }\\
+\DIFaddFL{$l_{\mathrm{scan}}$     }& \DIFaddFL{-250 -- +30       }& \MEME\DIFaddFL{~scan distance from gene start }\\
+\DIFaddFL{$n_{\mathrm{motif}}$     }& \DIFaddFL{2       }& \DIFaddFL{Number of }\MEME\DIFaddFL{~motifs searched per bicluster }\\
+\DIFaddFL{$s_{\mathrm{r}}$     }& \DIFaddFL{1       }& \DIFaddFL{Scaling factor for expression scores }\\
+\DIFaddFL{$s_{\mathrm{m}}$     }& \DIFaddFL{1       }& \DIFaddFL{Scaling factor for motif scores }\\
+\DIFaddFL{$s_{\mathrm{n}}$     }& \DIFaddFL{0.5       }& \DIFaddFL{Scaling factor for network scores }\\
+\DIFaddFL{$w_{\mathrm{op}}$     }& \DIFaddFL{0.5       }& \DIFaddFL{Relative weight for operon network }\\
+\DIFaddFL{$w_{\mathrm{string}}$     }& \DIFaddFL{0.5       }& \DIFaddFL{Relative weight for STRING network }\\
+\hline
+\end{tabular}
+\caption{\cm\DIFaddFL{~parameters used for the }\halo\DIFaddFL{~ensemble.}}
+\label{tab:cmparams:halo}
+\end{table}
+\vspace{.2cm}
+
+\noindent 
+\DIFadd{In contrast to the }\halo\DIFadd{~ runs, for the }\eco\DIFadd{~ runs, we varied 
+several parameters randomly between the ranges itemized in Table~\ref{tab:cmparams:eco}.
+}
+
+\vspace{.2cm}
+\begin{table}[h!]
+\begin{tabular}{|l|l|l|r|} 
+\hline
+\DIFaddFL{Parameter              }& \DIFaddFL{Value              }& \DIFaddFL{Note }\\ \hline
+\DIFaddFL{Version               }& \DIFaddFL{4.9.0(106)        }& \cm\DIFaddFL{~package versions (and number of runs) used }\\
+\DIFaddFL{$N_{\mathrm{conds}}$    }& \DIFaddFL{181:279          }& \DIFaddFL{Number of conditions included (range) }\\
+\DIFaddFL{$k$                   }& \DIFaddFL{352:547              }& \DIFaddFL{Number of biclusters }\\
+\DIFaddFL{$N_{\mathrm{gene}}$    }& \DIFaddFL{2          }& \DIFaddFL{Number of biclusters per gene }\\
+\DIFaddFL{$N_{\mathrm{iter}}$     }& \DIFaddFL{2000               }& \DIFaddFL{Number of iterations }\\
+\DIFaddFL{$w_{\mathrm{max}}$     }& \DIFaddFL{12:30               }& \DIFaddFL{Maximum }\MEME\DIFaddFL{~motif width }\\
+\DIFaddFL{$w_{\mathrm{min}}$     }& \DIFaddFL{6               }& \DIFaddFL{Minimum }\MEME\DIFaddFL{~motif width }\\
+\DIFaddFL{$l_{\mathrm{search}}$     }& \DIFaddFL{-(100:200) -- +(0:20)       }& \MEME\DIFaddFL{~search distance from gene start }\\
+\DIFaddFL{$l_{\mathrm{scan}}$     }& \DIFaddFL{-(-150:250) -- +(0:50)       }& \MEME\DIFaddFL{~scan distance from gene start }\\
+\DIFaddFL{$n_{\mathrm{motif}}$     }& \DIFaddFL{1:3       }& \DIFaddFL{Number of }\MEME\DIFaddFL{~motifs searched per bicluster }\\
+\DIFaddFL{$s_{\mathrm{r}}$     }& \DIFaddFL{2:4       }& \DIFaddFL{Scaling factor for expression scores }\\
+\DIFaddFL{$s_{\mathrm{m}}$     }& \DIFaddFL{0.5       }& \DIFaddFL{Scaling factor for motif scores }\\
+\DIFaddFL{$s_{\mathrm{n}}$     }& \DIFaddFL{0.5       }& \DIFaddFL{Scaling factor for network scores }\\
+\DIFaddFL{$w_{\mathrm{op}}$     }& \DIFaddFL{0:1       }& \DIFaddFL{Relative weight for operon network }\\
+\DIFaddFL{$w_{\mathrm{string}}$     }& \DIFaddFL{0:1       }& \DIFaddFL{Relative weight for STRING network }\\
+\hline
+\end{tabular}
+\caption{{\cm}\DIFaddFL{~parameters used for the }\eco\DIFaddFL{~ensemble.}}
+\label{tab:cmparams:eco}
+\end{table}
+\vspace{.2cm}
+
+\subsubsection{\cm\ \DIFadd{software availability}}
+
+\DIFaddend The \cm\ software is available as an open-source \DIFdelbegin \DIFdel{R package
+(Ihaka
+and Gentleman, 1996).  Using this package , }\DIFdelend \DIFaddbegin \tmsamp{R} \DIFadd{package
+\mbox{%DIFAUXCMD
+\cite{Ihaka1996}
+}%DIFAUXCMD
+.  With this package }\DIFaddend the algorithm can be easily
+applied to nearly any sequenced microbial species (given user-supplied
+expression data). The package automatically downloads and integrates
+genome and annotation data from various external sources, including
+\DIFdelbegin \DIFdel{RSAtools (van Helden, 2003); MicrobesOnline (Dehal et al., 2010); EMBL
+STRING (Szklarczyk et al., 2011), NCBI (Edgar et al., 2002), and KEGG
+(Ogata et al. , 1999). }\DIFdelend \DIFaddbegin \tmsamp{RSA-tools} \DIFadd{\mbox{%DIFAUXCMD
+\cite{vanHelden2000}
+}%DIFAUXCMD
+; }\tmsamp{Microbes Online}
+\DIFadd{\mbox{%DIFAUXCMD
+\cite{Alm2005}
+}%DIFAUXCMD
+; and }\tmsamp{EMBL STRING}
+\DIFadd{\mbox{%DIFAUXCMD
+\cite{Szklarczyk2011}
+}%DIFAUXCMD
+. }\DIFaddend Additionally, the package can generate
+interactive web-based and \DIFdelbegin \DIFdel{Cytoscape output
+(Shannon et al., 2003),
+}\DIFdelend \DIFaddbegin \tmsamp{Cytoscape} \DIFadd{output
+\mbox{%DIFAUXCMD
+\cite{Shannon2003}
+}%DIFAUXCMD
+, }\DIFaddend allowing users to explore the resulting modules
+and motifs in the context of external data, software, and databases
+via the \DIFdelbegin \DIFdel{Gaggle
+(Shannon et al. , 2006). }\DIFdelend \DIFaddbegin \tmsamp{Gaggle} \DIFadd{\mbox{%DIFAUXCMD
+\cite{Shannon2006}
+}%DIFAUXCMD
+. }\DIFaddend Examples of automatically
+generated output are available at the \cm\ web site. Supplementary \DIFdelbegin \DIFdel{R }\DIFdelend \DIFaddbegin \DIFadd{$R$
+}\DIFaddend packages with example expression data for organisms including
+\halo\ and \eco\ are also available from the \cm\ website.
+

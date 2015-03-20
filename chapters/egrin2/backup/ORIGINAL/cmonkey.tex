@@ -1,0 +1,102 @@
+\subsection{cMonkey: integrated biclustering algorithm, updated for ensemble analysis}
+
+\subsubsection{Introduction and summary}
+
+The \cm\ integrated biclustering algorithm was described and
+benchmarked in (Reiss et al., 2006). In short, the algorithm computes
+putatively co-regulated modules of genes over subsets of experimental
+conditions from gene expression data, constrained by information
+provided by genome sequence (in the form of de novo identification of
+conserved cis-regulatory motifs in the gene promoters), and functional
+association networks. Its defining characteristic is that it
+integrates all three types of data (expression, sequence and networks)
+together into an integrated model that is optimized via a stochastic
+optimization procedure to identify modules that best satisfy all three
+constraints, simultaneously.
+
+\subsubsection{Updates since original publication}
+
+For incorporation into the EGRIN 2.0 ensemble analysis, the \cm\
+procedure and software was overhauled to improve run-time performance
+and decrease memory usage. These modifications did not quantifiably
+affect overall bicluster quality. Changes to the algorithm (and
+parameters used for EGRIN 2.0 construction) relative to the earlier
+version described in (Reiss et al., 2006) are as follows:
+
+1. The use of iteratively re-weighted constrained logistic regression
+to determine gene/condition probabilities for bicluster membership was
+replaced with a non-parametric cumulative distribution function on
+gene/condition scores. Since the non-parametric function does not need
+to be re-weighted, it is significantly faster to compute.
+
+2. Rather than constraining the number of bicluster assignments per
+gene/condition using a probability distribution, \cm now assigns a
+fixed number of biclusters to each gene/condition, per run (this is a
+user-defined parameter, and for this study was set to 2 for genes, and
+to $k/2$ for conditions, where $k$ is the total number of biclusters in
+the run, also a user-defined parameter). This modification effectively
+alters the bicluster optimization from a local (single bicluster)
+problem with limited cross-bicluster constraints, to a global problem,
+similar in principle to the widely used k-means clustering algorithm.
+
+3. Since \cm\ uses the updated constraint of (see 2, above) to
+choose the two ``best'' biclusters for each gene (and the best $k/2$
+biclusters for each condition), there is no sampling as in the prior
+version. Instead, stochasticity is added, to prevent the optimization
+from falling into a local minimum, by allowing at most one change in
+bicluster assignment per gene/condition, per iteration, and by adding
+a small amount of artificial noise to each gene/condition's
+bicluster membership weight. This noise occasionally allows moves that
+decrease a bicluster's total score, and the noise decreases to near
+zero toward the end of the optimization.
+
+4. The motif search, the most computationally expensive part of the
+procedure, is limited to run every 100 iterations (for a typical,
+2,000 iteration \cm\ run). During the 99 iterations between motif
+searches, the biclusters are optimized to contain instances of those
+detected motif(s). We found that this does not impair the ability of
+\cm\ to detect significant motifs.
+
+5. Finally, as part of the EGRIN 2.0 model construction, only the EMBL
+STRING (v9) (Szklarczyk et al., 2011) set of predicted gene functional
+associations, and predicted operons (Price et al., 2005) were
+integrated (although we note that the software allows other gene
+association networks to easily be added).
+
+The overall effect of these changes (in addition to other minor
+modifications and improvements) resulted in an algorithm run-time
+reduction of about 4-fold. This, in turn, enabled \cm\ to be run
+numerous times on a modest 8-core compute node (\eg, a c1.xlarge
+Amazon EC2 node) in under six hours per complete run (versus the
+original \cm\ requiring several days to a week). Practically, the
+effect of these modifications to the algorithm resulted in a single
+\cm\ run generating, on average, fewer duplicate biclusters,
+primarily because each gene is allowed to be a member of only two
+biclusters. We found that, in general, this increased the overall
+diversity of regulation (conditional clusterings and corresponding
+cis-GREs) discovered, per \cm\ run.
+
+\subsubsection{Detailed algorithm description}
+
+\subsubsection{Parameter ranges used for EGRIN 2.0}
+
+The additional parameters used for \cm, and for MEME (which is
+used by \cm for motif detection), are the same as those itemized
+in (Reiss et al., 2006).
+
+The \cm\ software is available as an open-source R package (Ihaka
+and Gentleman, 1996). Using this package, the algorithm can be easily
+applied to nearly any sequenced microbial species (given user-supplied
+expression data). The package automatically downloads and integrates
+genome and annotation data from various external sources, including
+RSAtools (van Helden, 2003); MicrobesOnline (Dehal et al., 2010); EMBL
+STRING (Szklarczyk et al., 2011), NCBI (Edgar et al., 2002), and KEGG
+(Ogata et al., 1999). Additionally, the package can generate
+interactive web-based and Cytoscape output (Shannon et al., 2003),
+allowing users to explore the resulting modules and motifs in the
+context of external data, software, and databases via the Gaggle
+(Shannon et al., 2006). Examples of automatically generated output are
+available at the \cm\ web site. Supplementary R packages with
+example expression data for organisms including \halo\ and
+\eco\ are also available from the \cm\ website.
+

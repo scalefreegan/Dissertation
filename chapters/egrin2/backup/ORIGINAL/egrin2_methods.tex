@@ -1,0 +1,136 @@
+\subsubsection{Introduction and summary}
+
+Procedures to infer a single Environment and Gene Regulatory Influence
+Network (EGRIN) model from global data using cMonkey and Inferelator
+were described previously (Bonneau et al., 2007; Bonneau et al., 2006;
+Reiss et al., 2006). The EGRIN 2.0 modeling procedure updates this
+process by applying modified cMonkey and Inferelator algorithms
+(described above) repeatedly to subsets of the available expression
+data. The subsets were selected semi-randomly, with available
+biological information constraining the selection procedure by
+including whole groups of related experiments when one was randomly
+selected. For {\it H. salinarum}, we used manually curated metadata about
+each experiment to group related experiments. For {\it E. coli} data set, we
+did not have readily available metadata, so we instead grouped the
+conditions based upon individual experiments (\eg, time series).
+EGRIN 2.0 inference methodology is an ensemble learning approach, more
+specifically a form of bootstrap aggregation (Breiman, 1996), or
+sub-bagging.
+
+Advantages of sub-bagging include its simplicity (basic model
+averaging), its capability to reduce variance of the overall model
+compared to individual runs (Bühlmann and Yu, 2002), and to avoid
+overfitting (Krogh and Sollich, 1997). The power of an ensemble
+learning approach results from its ability to “average out” errors in
+the individual models. In the case of GRN inference, this feature
+helps to overcome artifacts due to both experimental and algorithmic
+noise. An incorrect classification from a single model instance is
+identifiable because it re-occurs infrequently in subsequent runs
+(assuming it is not the result of a systematic error in the algorithm
+itself).
+
+Sub-bagging of experimental conditions allows the model to up-weight a
+restricted set of conditions for each individual EGRIN model in the
+ensemble. This forces each EGRIN to model regulatory behaviors present
+within a more narrow range of conditions. As a result, individual
+EGRIN models have the opportunity to discover features (\eg,
+conditions, genes, GREs) that may distinguish highly related responses
+or occur in a very limited number of conditions in the data set. To
+test this assumption, we performed a separate ensemble analysis of 30
+EGRIN models that were generated using the entire {\it H. salinarum} data
+set of 1,495 conditions. Across these 30 models, we expected to detect
+$~20$ instances of the Bat GRE based on its occurrence in EGRIN 2.0
+(\ie, motifs similar to GRE \#22; Figure~E\ref{fig:motclust}; (Baliga et al.,
+2001)). Surprisingly, we did not detect a single GRE that matched the
+Bat GRE (data not shown) when all conditions were included in each run
+of the model. This is likely because the anoxic conditions under which
+the TF that binds this GRE (Bat) is active represent only a small
+portion of the entire data set.
+
+Ensemble-based approaches are being used more frequently in biological
+data analyses, including random forests (\ie, bags of decision trees)
+for classifying genetic precursors to cancer (Breiman, 2001) and the
+recently-published DREAM5 community ensemble of regulatory network
+predictions (Marbach et al., 2012), which we used as a benchmark in
+this manuscript to evaluate EGRIN 2.0 predictions. In principle, our
+approach is similar to the stochastic LeMoNe algorithm (Joshi et al.,
+2009), which uses Gibbs sampling to learn ensembles of regulatory
+modules from gene expression data. EGRIN 2.0 is distinguished from
+LeMoNe and similar algorithms by its ability to predict
+transcriptional control mechanisms (\ie, GREs) and the conditions in
+which they operate, both globally and within individual gene
+promoters.
+
+To construct and mine the EGRIN 2.0 ensemble we utilized additional
+model aggregation and compilation procedures, including (1) motif
+clustering (van Dongen and Abreu-Goodger, 2012) and scanning (Bailey
+and Gribskov, 1998); (2) association network construction and backbone
+extraction (Serrano et al., 2009); and (3) network community detection
+(Ahn et al., 2010). These methods were used to identify GREs and their
+genome-wide locations, gene-gene co-regulatory associations, and
+corems, respectively. Each of these procedures is described in detail
+below.
+
+\subsubsection{``Ensemble of EGRINs'': generation and storage}
+
+\subsubsection{Clustering of cis-regulatory motifs to identify GREs}
+
+Each cMonkey bicluster contains at least one MEME-detected (Bailey
+and Gribskov, 1998) de novo cis-regulatory motif. These motifs are
+used by cMonkey to guide bicluster optimization (in addition to other
+scoring metrics). There were 86,167 and 269,770 motifs detected across
+the entire ensemble for {\it E. coli} and {\it H. salinarum}, respectively. Each
+motif was represented in the model as a position-specific scoring
+matrix (PSSM). To determine which of these motifs represented bona
+fide GREs (as opposed to false positives), we computed pairwise
+similarities between all motifs using Tomtom (Gupta et al., 2007)
+(Euclidean distance metric; $q$-value threshold of 0.01 and overlap of 6
+nt) and clustered the most highly similar PSSM pairs using mcl (Van
+Dongen, 2008). The Tomtom motif similarity $p$-value threshold and the
+mcl inflation parameter ($I$) were selected to (1) maximize the density
+of edges between PSSMs inside clusters relative to the edges between
+clusters, and (2) ensure that the mcl “jury pruning synopsis” was at
+least 80 (out of 100). Criterion (1) aims to find a clustering that is
+as inclusive as possible, while minimizing over-clustering, while (2)
+is a built-in mcl metric that evaluates the quality of the clusters
+resulting from the user-selected pruning strategy (I). The final
+parameters were $p$-value cutoff = $10^{-6}$ and mcl $I = 4.5$ for {\it H. salinarum}
+ensemble and $p$-value cutoff = $10^{-5}$ and mcl $I = 1.5$ for the {\it E. coli}
+ensemble. We did not filter the motifs by $E$-value or other intrinsic
+motif quality metrics; rather we enforced a cluster size threshold to
+ensure that GREs were detected consistently. Clusters containing at
+least 10 PSSMs were considered GREs (representing individual bicluster
+detection instances). This resulted in 135 GREs for {\it H. salinarum}
+(representing 27,991 motif instances, Table E2) and 337 for {\it E. coli}
+(representing 12,773 motif instances, Table E3). Finally, we computed
+a ``combined PSSM'' for each cluster as the unweighted mean of aligned
+PSSMs within each cluster (Figure~2E; Figure~E\ref{fig:motclust}).
+
+\subsubsection{Genome-wide scanning of motifs to obtain GRE locations}
+
+We used scanning to discover GRE locations that were missed by the
+rigid definition of a promoter in cMonkey (-250 to +50 nucleotides
+surrounding the translation start site). This procedure was critical
+for discovering GREs in non-canonical locations, such as internal to
+operons.. To discover likely GRE locations throughout the genome, we
+computed how well each GRE matched every position in the genome using
+MAST (Bailey and Gribskov, 1998). Specifically, we recorded
+significant matches for every PSSM in each GRE at each genomic
+location subject to a position $p$-value threshold of $10^{-5}$. This
+$p$-value cutoff corresponds to an expectation of discovering $~20$ sites
+at random across the genome. For each GRE, we summed the number of
+significant matches to each of the GRE’s PSSMs at each genomic
+position. These counts were used to represent GRE composition in
+promoters (Figures~2-3, Figures~S3-S5). In addition, we used these
+scanned locations to identify GREs predominately located inside coding
+regions. Since these GREs may be spurious (\eg, protein sequence
+motifs) they were flagged, although they were not removed from our
+global analysis.
+
+\subsubsection{Statistical mining of the relationships in the ensemble}
+
+Statistical associations between any entity in the EGRIN 2.0 ensemble
+(\ie, genes, GREs, conditions, TFs; see Figure~1) can be evaluated
+using the hypergeometric test for statistical enrichment. We use this
+basic procedure to identify conditions associated with GRE influence,
+and GREs associated with gene co-regulation, as we describe below.

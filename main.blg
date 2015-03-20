@@ -1,0 +1,68 @@
+This is BibTeX, Version 0.99d (TeX Live 2012)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+A level-1 auxiliary file: chapters/prelim.aux
+A level-1 auxiliary file: chapters/chap1.aux
+A level-1 auxiliary file: chapters/chap2.aux
+A level-1 auxiliary file: chapters/chap3.aux
+A level-1 auxiliary file: chapters/chap4.aux
+A level-1 auxiliary file: chapters/chap5.aux
+The style file: plain.bst
+A level-1 auxiliary file: appxa.aux
+A level-1 auxiliary file: appxb.aux
+A level-1 auxiliary file: vita.aux
+Reallocated field_info (elt_size=4) to 13993 items from 5000.
+Database file #1: refs.bib
+Reallocated str_pool (elt_size=1) to 130000 items from 65000.
+Warning--I didn't find a database entry for "Clark"
+Warning--I didn't find a database entry for "2010b"
+Warning--there's a number but no volume in bhlmann_analyzing_2002
+Warning--empty year in friedman_greedy_????
+Warning--empty journal in h._v._westerhoff_understanding_2014
+Warning--empty publisher in kassen_toward_2009
+Warning--empty booktitle in manin_computable_????
+Warning--there's a month but no year in manin_computable_????
+Warning--empty journal in stephan_varieties_1999
+Warning--empty publisher in veening_bistability_2008-1
+You've used 389 entries,
+            2118 wiz_defined-function locations,
+            2634 strings with 88701 characters,
+and the built_in function-call counts, 165847 in all, are:
+= -- 15340
+> -- 10581
+< -- 19
++ -- 4245
+- -- 3787
+* -- 15117
+:= -- 28357
+add.period$ -- 1295
+call.type$ -- 389
+change.case$ -- 3046
+chr.to.int$ -- 0
+cite$ -- 397
+duplicate$ -- 4540
+empty$ -- 10881
+format.name$ -- 3787
+if$ -- 32712
+int.to.chr$ -- 0
+int.to.str$ -- 389
+missing$ -- 404
+newline$ -- 2068
+num.names$ -- 790
+pop$ -- 2323
+preamble$ -- 1
+purify$ -- 2666
+quote$ -- 0
+skip$ -- 3075
+stack$ -- 0
+substring$ -- 11319
+swap$ -- 608
+text.length$ -- 19
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 1524
+warning$ -- 8
+while$ -- 1242
+width$ -- 392
+write$ -- 4526
+(There were 10 warnings)

@@ -1,0 +1,3007 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012) (format=pdflatex 2012.6.30)  6 AUG 2014 15:54
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**main.tex
+(./main.tex
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, dumylang, nohyphenation, ge
+rman-x-2012-05-30, ngerman-x-2012-05-30, afrikaans, ancientgreek, ibycus, arabi
+c, armenian, basque, bulgarian, catalan, pinyin, coptic, croatian, czech, danis
+h, dutch, ukenglish, usenglishmax, esperanto, estonian, ethiopic, farsi, finnis
+h, french, friulan, galician, german, ngerman, swissgerman, monogreek, greek, h
+ungarian, icelandic, assamese, bengali, gujarati, hindi, kannada, malayalam, ma
+rathi, oriya, panjabi, tamil, telugu, indonesian, interlingua, irish, italian, 
+kurmanji, latin, latvian, lithuanian, mongolian, mongolianlmc, bokmal, nynorsk,
+ polish, portuguese, romanian, romansh, russian, sanskrit, serbian, serbianc, s
+lovak, slovenian, spanish, swedish, turkish, turkmen, ukrainian, uppersorbian, 
+welsh, loaded.
+(./uwthesis.cls
+Document Class: uwthesis 2012/06/19
+\tf@not=\write3
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2007/10/19 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/bk11.clo
+File: bk11.clo 2007/10/19 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@chapter=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+\botmargin=\dimen103
+\@@wholepage=\box26
+
+Formatting for twoside printing.
+\@Chair=\count88
+\@Sign=\count89
+\abs@savebox=\box27
+) (/usr/local/texlive/2012/texmf-dist/tex/latex/booktabs/booktabs.sty
+Package: booktabs 2005/04/14 v1.61803 publication quality tables
+\heavyrulewidth=\dimen104
+\lightrulewidth=\dimen105
+\cmidrulewidth=\dimen106
+\belowrulesep=\dimen107
+\belowbottomsep=\dimen108
+\aboverulesep=\dimen109
+\abovetopsep=\dimen110
+\cmidrulesep=\dimen111
+\cmidrulekern=\dimen112
+\defaultaddspace=\dimen113
+\@cmidla=\count90
+\@cmidlb=\count91
+\@aboverulesep=\dimen114
+\@belowrulesep=\dimen115
+\@thisruleclass=\count92
+\@lastruleclass=\count93
+\@thisrulewidth=\dimen116
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/caption/caption.sty
+Package: caption 2012/02/19 v3.2f Customizing captions (AR)
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/caption/caption3.sty
+Package: caption3 2012/01/12 v1.4b caption3 kernel (AR)
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+\captionmargin=\dimen117
+\captionmargin@=\dimen118
+\captionwidth=\dimen119
+\caption@indent=\dimen120
+\caption@parindent=\dimen121
+\caption@hangindent=\dimen122
+)
+\c@ContinuedFloat=\count94
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/hyperref.sty
+Package: hyperref 2012/05/13 v6.82q Hypertext links for LaTeX
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+Package: hobsub-hyperref 2012/05/28 v1.13 Bundle oberdiek, subset hyperref (HO)
+
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty
+Package: hobsub-generic 2012/05/28 v1.13 Bundle oberdiek, subset generic (HO)
+Package: hobsub 2012/05/28 v1.13 Construct package bundles (HO)
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+Package: ifluatex 2010/03/01 v1.3 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+Package: ifvtex 2010/03/01 v1.5 Detect VTeX and its facilities (HO)
+Package ifvtex Info: VTeX not detected.
+Package: intcalc 2007/09/27 v1.1 Expandable calculations with integers (HO)
+Package: ifpdf 2011/01/30 v2.3 Provides the ifpdf switch (HO)
+Package ifpdf Info: pdfTeX in PDF mode is detected.
+Package: etexcmds 2011/02/16 v1.5 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+Package: kvsetkeys 2012/04/25 v1.16 Key value parser (HO)
+Package: kvdefinekeys 2011/04/07 v1.3 Define keys (HO)
+Package: pdftexcmds 2011/11/29 v0.20 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+Package: pdfescape 2011/11/25 v1.13 Implements pdfTeX's escape features (HO)
+Package: bigintcalc 2012/04/08 v1.3 Expandable calculations on big integers (HO
+)
+Package: bitset 2011/01/30 v1.1 Handle bit-vector datatype (HO)
+Package: uniquecounter 2011/01/30 v1.2 Provide unlimited unique counter (HO)
+)
+Package hobsub Info: Skipping package `hobsub' (already loaded).
+Package: letltxmacro 2010/09/02 v1.4 Let assignment for LaTeX macros (HO)
+Package: hopatch 2012/05/28 v1.2 Wrapper for package hooks (HO)
+Package: xcolor-patch 2011/01/30 xcolor patch
+Package: atveryend 2011/06/30 v1.8 Hooks at the very end of document (HO)
+Package atveryend Info: \enddocument detected (standard20110627).
+Package: atbegshi 2011/10/05 v1.16 At begin shipout hook (HO)
+Package: refcount 2011/10/16 v3.4 Data extraction from label references (HO)
+Package: hycolor 2011/01/30 v1.7 Color options for hyperref/bookmark (HO)
+)
+(/usr/local/texlive/2012/texmf-dist/tex/generic/ifxetex/ifxetex.sty
+Package: ifxetex 2010/09/12 v0.6 Provides ifxetex conditional
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2011/06/30 v3.11 Key value format for package options (HO)
+)
+\@linkdim=\dimen123
+\Hy@linkcounter=\count95
+\Hy@pagecounter=\count96
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/pd1enc.def
+File: pd1enc.def 2012/05/13 v6.82q Hyperref: PDFDocEncoding definition (HO)
+)
+\Hy@SavedSpaceFactor=\count97
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/hyperref.cfg
+File: hyperref.cfg 2002/06/06 v1.2 hyperref configuration of TeXLive
+)
+Package hyperref Info: Hyper figures OFF on input line 4062.
+Package hyperref Info: Link nesting OFF on input line 4067.
+Package hyperref Info: Hyper index ON on input line 4070.
+Package hyperref Info: Plain pages OFF on input line 4077.
+Package hyperref Info: Backreferencing OFF on input line 4082.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4300.
+\c@Hy@tempcnt=\count98
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/url/url.sty
+\Urlmuskip=\muskip10
+Package: url 2006/04/12  ver 3.3  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4653.
+\Fld@menulength=\count99
+\Field@Width=\dimen124
+\Fld@charsize=\dimen125
+Package hyperref Info: Hyper figures OFF on input line 5773.
+Package hyperref Info: Link nesting OFF on input line 5778.
+Package hyperref Info: Hyper index ON on input line 5781.
+Package hyperref Info: backreferencing OFF on input line 5788.
+Package hyperref Info: Link coloring OFF on input line 5793.
+Package hyperref Info: Link coloring with OCG OFF on input line 5798.
+Package hyperref Info: PDF/A mode OFF on input line 5803.
+LaTeX Info: Redefining \ref on input line 5843.
+LaTeX Info: Redefining \pageref on input line 5847.
+\Hy@abspage=\count100
+\c@Item=\count101
+\c@Hfootnote=\count102
+)
+
+Package hyperref Message: Driver (autodetected): hpdftex.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/hpdftex.def
+File: hpdftex.def 2012/05/13 v6.82q Hyperref driver for pdfTeX
+\Fld@listcount=\count103
+\c@bookmark@seq@number=\count104
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty
+Package: rerunfilecheck 2011/04/15 v1.7 Rerun checks for auxiliary files (HO)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+82.
+)
+\Hy@SectionHShift=\skip43
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/color.sty
+Package: color 2005/11/14 v1.0j Standard LaTeX Color (DPC)
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/color.cfg
+File: color.cfg 2007/01/18 v1.5 color configuration of teTeX/TeXLive
+)
+Package color Info: Driver file: pdftex.def on input line 130.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/pdftex-def/pdftex.def
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+\Gread@gobject=\count105
+))
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsmath.sty
+Package: amsmath 2000/07/18 v2.13 AMS math features
+\@mathmargin=\skip44
+
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amstext.sty
+Package: amstext 2000/06/29 v2.01
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsgen.sty
+File: amsgen.sty 1999/11/30 v2.0
+\@emptytoks=\toks15
+\ex@=\dimen126
+))
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsbsy.sty
+Package: amsbsy 1999/11/29 v1.2d
+\pmbraise@=\dimen127
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/amsmath/amsopn.sty
+Package: amsopn 1999/12/14 v2.01 operator names
+)
+\inf@bad=\count106
+LaTeX Info: Redefining \frac on input line 211.
+\uproot@=\count107
+\leftroot@=\count108
+LaTeX Info: Redefining \overline on input line 307.
+\classnum@=\count109
+\DOTSCASE@=\count110
+LaTeX Info: Redefining \ldots on input line 379.
+LaTeX Info: Redefining \dots on input line 382.
+LaTeX Info: Redefining \cdots on input line 467.
+\Mathstrutbox@=\box28
+\strutbox@=\box29
+\big@size=\dimen128
+LaTeX Font Info:    Redeclaring font encoding OML on input line 567.
+LaTeX Font Info:    Redeclaring font encoding OMS on input line 568.
+\macc@depth=\count111
+\c@MaxMatrixCols=\count112
+\dotsspace@=\muskip11
+\c@parentequation=\count113
+\dspbrk@lvl=\count114
+\tag@help=\toks16
+\row@=\count115
+\column@=\count116
+\maxfields@=\count117
+\andhelp@=\toks17
+\eqnshift@=\dimen129
+\alignsep@=\dimen130
+\tagshift@=\dimen131
+\tagwidth@=\dimen132
+\totwidth@=\dimen133
+\lineht@=\dimen134
+\@envbody=\toks18
+\multlinegap=\skip45
+\multlinetaggap=\skip46
+\mathdisplay@stack=\toks19
+LaTeX Info: Redefining \[ on input line 2666.
+LaTeX Info: Redefining \] on input line 2667.
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/graphics.cfg
+File: graphics.cfg 2010/04/23 v1.9 graphics configuration of TeX Live
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+)
+\Gin@req@height=\dimen135
+\Gin@req@width=\dimen136
+)
+(/usr/local/texlive/2012/texmf-dist/tex/latex/subfigure/subfigure.sty
+Package: subfigure 2002/03/15 v2.1.5 subfigure package
+\subfigtopskip=\skip47
+\subfigcapskip=\skip48
+\subfigcaptopadj=\dimen137
+\subfigbottomskip=\skip49
+\subfigcapmargin=\dimen138
+\subfiglabelskip=\skip50
+\c@subfigure=\count118
+\c@lofdepth=\count119
+\c@subtable=\count120
+\c@lotdepth=\count121
+
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2012/texmf-dist/tex/latex/subfigure/subfigure.cfg)
+\subfig@top=\skip51
+\subfig@bottom=\skip52
+)
+(./main.aux (./chapters/prelim.aux) (./chapters/chap1.aux)
+(./chapters/chap2.aux
+
+LaTeX Warning: Label `halodata' multiply defined.
+
+
+LaTeX Warning: Label `ecodata' multiply defined.
+
+) (./chapters/chap3.aux) (./chapters/chap4.aux) (./chapters/chap5.aux)
+(./appxa.aux) (./appxb.aux) (./vita.aux))
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 30.
+LaTeX Font Info:    ... okay on input line 30.
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: hyperref package is loaded.
+Package caption Info: subfigure package is loaded.
+Package caption Info: End \AtBeginDocument code.
+\AtBeginShipoutBox=\box30
+Package hyperref Info: Link coloring OFF on input line 30.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/hyperref/nameref.sty
+Package: nameref 2010/04/30 v2.40 Cross-referencing by name of section
+
+(/usr/local/texlive/2012/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
+Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
+)
+\c@section@level=\count122
+)
+LaTeX Info: Redefining \ref on input line 30.
+LaTeX Info: Redefining \pageref on input line 30.
+LaTeX Info: Redefining \nameref on input line 30.
+
+(./main.out) (./main.out)
+\@outlinefile=\write4
+\openout4 = `main.out'.
+
+
+(/usr/local/texlive/2012/texmf-dist/tex/context/base/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count123
+\scratchdimen=\dimen139
+\scratchbox=\box31
+\nofMPsegments=\count124
+\nofMParguments=\count125
+\everyMPshowfont=\toks20
+\MPscratchCnt=\count126
+\MPscratchDim=\dimen140
+\MPnumerator=\count127
+\makeMPintoPDFobject=\count128
+\everyMPtoPDFconversion=\toks21
+) (/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2010/08/19 v1.1 Manage graphics extensions (HO)
+)
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 452.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+\openout2 = `chapters/prelim.aux'.
+
+
+(./chapters/prelim.tex
+LaTeX Font Info:    Try loading font information for OMS+cmr on input line 20.
+
+(/usr/local/texlive/2012/texmf-dist/tex/latex/base/omscmr.fd
+File: omscmr.fd 1999/05/25 v2.5h Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <10.95> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 20.
+ [1
+
+
+{/usr/local/texlive/2012/texmf-var/fonts/map/pdftex/updmap/pdftex.map}] [2
+
+] [-1]pdfTeX warning (ext4): destination with the same identifier (name{page.})
+ has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.42 }
+       [0
+
+]pdfTeX warning (ext4): destination with the same identifier (name{page.i}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.42 }
+       [1]pdfTeX warning (ext4): destination with the same identifier (name{pag
+e.ii}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.42 }
+       [2] (./main.tocpdfTeX warning (ext4): destination with the same identifi
+er (name{page.i}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.49 ...ease model variance}{35}{subsection.2.2.3}
+                                                   [1
+
+
+
+]
+Overfull \hbox (2.99089pt too wide) in paragraph at lines 111--111
+ [][] [][]\OT1/cmr/m/n/10.95 Conditionally ac-tive GREs within each pro-moter r
+e-or-ga-nize gene mem- 
+ []
+
+pdfTeX warning (ext4): destination with the same identifier (name{page.ii}) has
+ been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.112 ...ranscript isoforms}{90}{subsection.3.3.6}
+                                                   [2]
+Overfull \hbox (13.69783pt too wide) in paragraph at lines 115--115
+ [][] [][]\OT1/cmr/m/n/10.95 EVOLUTION OF GENE REG-U-LA-TORY NET-WORKS IN PROKA
+RY- 
+ []
+
+[3])
+\tf@toc=\write5
+\openout5 = `main.toc'.
+
+ [4] (./main.lof [5
+
+]
+Overfull \hbox (5.95653pt too wide) in paragraph at lines 39--39
+ [][] [][]\OT1/cmr/m/n/10.95 Transcriptional ev-i-dence for mul-ti-ple tran-scr
+ipt iso-forms from the same operon: 
+ []
+
+
+Overfull \hbox (5.95653pt too wide) in paragraph at lines 40--40
+ [][] [][]\OT1/cmr/m/n/10.95 Transcriptional ev-i-dence for mul-ti-ple tran-scr
+ipt iso-forms from the same operon: 
+ []
+
+
+Overfull \hbox (5.95653pt too wide) in paragraph at lines 41--41
+ [][] [][]\OT1/cmr/m/n/10.95 Transcriptional ev-i-dence for mul-ti-ple tran-scr
+ipt iso-forms from the same operon: 
+ []
+
+
+Overfull \hbox (5.95653pt too wide) in paragraph at lines 42--42
+ [][] [][]\OT1/cmr/m/n/10.95 Transcriptional ev-i-dence for mul-ti-ple tran-scr
+ipt iso-forms from the same operon, 
+ []
+
+
+Overfull \hbox (1.51566pt too wide) in paragraph at lines 43--43
+ [][] [][]\OT1/cmr/m/n/10.95 Functional con-se-quences of mul-ti-ple tran-scrip
+t iso-forms from the same operon, 
+ []
+
+[6])
+\tf@lof=\write6
+\openout6 = `main.lof'.
+
+ [7] (./main.lot)
+\tf@lot=\write7
+\openout7 = `main.lot'.
+
+ [8
+
+] [9
+
+] [10]
+Underfull \hbox (badness 10000) in paragraph at lines 91--91
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--91
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--91
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--91
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--91
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 91--91
+
+ []
+
+[11
+
+] [12]) [13
+
+] [14
+
+
+
+]
+\openout2 = `chapters/chap1.aux'.
+
+ (./chapters/chap1.tex
+<<1>>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\uppercase' on input line 3.
+
+[1
+
+
+] [2] [3]
+<figures/cell_env_signal_external.pdf, id=812, 430.27449pt x 396.14699pt>
+File: figures/cell_env_signal_external.pdf Graphic file (type pdf)
+
+<use figures/cell_env_signal_external.pdf>
+Package pdftex.def Info: figures/cell_env_signal_external.pdf used on input lin
+e 38.
+(pdftex.def)             Requested size: 260.57964pt x 239.92052pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/cell_env_internall.pdf, id=815, 479.7925pt x 280.04625pt>
+File: figures/cell_env_internall.pdf Graphic file (type pdf)
+
+<use figures/cell_env_internall.pdf>
+Package pdftex.def Info: figures/cell_env_internall.pdf used on input line 47.
+(pdftex.def)             Requested size: 260.57964pt x 152.09871pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[4] [5 <./figures/cell_env_signal_external.pdf>] [6 <./figures/cell_env_interna
+ll.pdf>] [7] [8] <figures/pssm.pdf, id=2167, 479.7925pt x 159.09438pt>
+File: figures/pssm.pdf Graphic file (type pdf)
+
+<use figures/pssm.pdf>
+Package pdftex.def Info: figures/pssm.pdf used on input line 82.
+(pdftex.def)             Requested size: 390.86284pt x 129.60855pt.
+ [9] [10 <./figures/pssm.pdf>]
+Overfull \hbox (0.54219pt too wide) in paragraph at lines 97--98
+[]\OT1/cmr/m/n/10.95 Understanding bi-o-log-i-cal sys-tems at a genome-scale re
+-quires new tools, con-cep-tual frame-
+ []
+
+[11] <figures/operon.pdf, id=2263, 470.26692pt x 166.86542pt>
+File: figures/operon.pdf Graphic file (type pdf)
+
+<use figures/operon.pdf>
+Package pdftex.def Info: figures/operon.pdf used on input line 107.
+(pdftex.def)             Requested size: 390.86284pt x 138.69429pt.
+ [12 <./figures/operon.pdf>]
+<figures/regulon.pdf, id=2337, 563.25029pt x 251.89609pt>
+File: figures/regulon.pdf Graphic file (type pdf)
+
+<use figures/regulon.pdf>
+Package pdftex.def Info: figures/regulon.pdf used on input line 121.
+(pdftex.def)             Requested size: 390.86284pt x 174.80782pt.
+ [13 <./figures/regulon.pdf>]
+<figures/corem.pdf, id=2459, 336.66678pt x 277.39034pt>
+File: figures/corem.pdf Graphic file (type pdf)
+
+<use figures/corem.pdf>
+Package pdftex.def Info: figures/corem.pdf used on input line 142.
+(pdftex.def)             Requested size: 260.57964pt x 214.70439pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[14] [15 <./figures/corem.pdf>]
+<figures/review_figure1.pdf, id=2514, 872.25874pt x 585.18625pt>
+File: figures/review_figure1.pdf Graphic file (type pdf)
+
+<use figures/review_figure1.pdf>
+Package pdftex.def Info: figures/review_figure1.pdf used on input line 157.
+(pdftex.def)             Requested size: 390.86284pt x 262.22415pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[16] [17 <./figures/review_figure1.pdf>] [18] [19] [20]
+<figures/ffl.pdf, id=2602, 373.11095pt x 255.49954pt>
+File: figures/ffl.pdf Graphic file (type pdf)
+ <use figures/ffl.pdf>
+Package pdftex.def Info: figures/ffl.pdf used on input line 204.
+(pdftex.def)             Requested size: 304.00517pt x 208.18544pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[21] [22 <./figures/ffl.pdf>]
+<figures/regLogic.pdf, id=2646, 578.51534pt x 317.84747pt>
+File: figures/regLogic.pdf Graphic file (type pdf)
+
+<use figures/regLogic.pdf>
+Package pdftex.def Info: figures/regLogic.pdf used on input line 219.
+(pdftex.def)             Requested size: 390.86284pt x 214.75117pt.
+ [23 <./figures/regLogic.pdf>]) [24]
+\openout2 = `chapters/chap2.aux'.
+
+
+(./chapters/chap2.tex
+<<2>>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\uppercase' on input line 3.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+[25
+
+
+
+] [26] [27]
+Underfull \hbox (badness 10000) in paragraph at lines 47--48
+
+ []
+
+[28]
+
+LaTeX Font Warning: Font shape `OT1/cmss/m/it' in size <10.95> not available
+(Font)              Font shape `OT1/cmss/m/sl' tried instead on input line 51.
+
+[29] <figures/bicluster.pdf, id=2757, 518.93875pt x 416.55624pt>
+File: figures/bicluster.pdf Graphic file (type pdf)
+
+<use figures/bicluster.pdf>
+Package pdftex.def Info: figures/bicluster.pdf used on input line 65.
+(pdftex.def)             Requested size: 390.86284pt x 313.7639pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[30] [31 <./figures/bicluster.pdf>] [32] [33] [34] [35]
+
+LaTeX Font Warning: Font shape `OT1/cmss/bx/sl' undefined
+(Font)              using `OT1/cmss/bx/n' instead on input line 157.
+
+[36] [37] [38] <figures/workflow.pdf, id=2930, 732.7375pt x 406.51875pt>
+File: figures/workflow.pdf Graphic file (type pdf)
+
+<use figures/workflow.pdf>
+Package pdftex.def Info: figures/workflow.pdf used on input line 177.
+(pdftex.def)             Requested size: 434.295pt x 240.9481pt.
+
+Overfull \hbox (43.85455pt too wide) in paragraph at lines 185--218
+[][]  
+ []
+
+
+LaTeX Warning: Float too large for page by 17.02983pt on input line 220.
+
+[39 <./figures/workflow.pdf>] [40] [41] [42] [43] [44]
+Underfull \hbox (badness 10000) in paragraph at lines 279--280
+
+ []
+
+[45]
+Underfull \hbox (badness 10000) in paragraph at lines 281--293
+
+ []
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+[46] [47] <figures/gre_clustering.pdf, id=3103, 320.94505pt x 319.95937pt>
+File: figures/gre_clustering.pdf Graphic file (type pdf)
+
+<use figures/gre_clustering.pdf>
+Package pdftex.def Info: figures/gre_clustering.pdf used on input line 327.
+(pdftex.def)             Requested size: 260.57964pt x 259.7808pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+[48] <figures/gre_global_locs_hal.pdf, id=3114, 650.20013pt x 219.92966pt>
+File: figures/gre_global_locs_hal.pdf Graphic file (type pdf)
+
+<use figures/gre_global_locs_hal.pdf>
+Package pdftex.def Info: figures/gre_global_locs_hal.pdf used on input line 345
+.
+(pdftex.def)             Requested size: 412.57892pt x 139.55644pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[49 <./figures/gre_clustering.pdf>]
+Missing character: There is no ¬ in font cmr10!
+Missing character: There is no ≠ in font cmr10!
+ [50 <./figures/gre_global_locs_hal.pdf>]
+[51] <figures/corem_density.pdf, id=3881, 419.11981pt x 220.22375pt>
+File: figures/corem_density.pdf Graphic file (type pdf)
+
+<use figures/corem_density.pdf>
+Package pdftex.def Info: figures/corem_density.pdf used on input line 399.
+(pdftex.def)             Requested size: 390.86284pt x 205.3873pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[52] <figures/corem_stats.pdf, id=3890, 513.77345pt x 318.0422pt>
+File: figures/corem_stats.pdf Graphic file (type pdf)
+
+<use figures/corem_stats.pdf>
+Package pdftex.def Info: figures/corem_stats.pdf used on input line 408.
+(pdftex.def)             Requested size: 390.86284pt x 241.96692pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[53 <./figures/corem_density.pdf>] [54 <./figures/corem_stats.pdf>]
+<figures/ensemble_comparison_regDB.pdf, id=3961, 308.79666pt x 127.22632pt>
+File: figures/ensemble_comparison_regDB.pdf Graphic file (type pdf)
+
+<use figures/ensemble_comparison_regDB.pdf>
+Package pdftex.def Info: figures/ensemble_comparison_regDB.pdf used on input li
+ne 426.
+(pdftex.def)             Requested size: 260.57964pt x 107.3644pt.
+ [55 <./figures/ensemble_comparison_regDB.pdf>]
+<figures/gBg_network_converge.pdf, id=3993, 502.51439pt x 281.30595pt>
+File: figures/gBg_network_converge.pdf Graphic file (type pdf)
+
+<use figures/gBg_network_converge.pdf>
+Package pdftex.def Info: figures/gBg_network_converge.pdf used on input line 43
+7.
+(pdftex.def)             Requested size: 325.72124pt x 182.3402pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[56] <figures/corem_conds_distiller_dream5.pdf, id=4002, 794.97pt x 614.295pt>
+File: figures/corem_conds_distiller_dream5.pdf Graphic file (type pdf)
+
+<use figures/corem_conds_distiller_dream5.pdf>
+Package pdftex.def Info: figures/corem_conds_distiller_dream5.pdf used on input
+ line 448.
+(pdftex.def)             Requested size: 260.57964pt x 201.35883pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[57 <./figures/gBg_network_converge.pdf>]
+Overfull \hbox (10.04283pt too wide) in paragraph at lines 465--466
+ []\OT1/cmr/bx/n/10.95 ChIP-chip tran-scrip-tion fac-tor bind-ing mea-sure-ment
+s for global reg-u-la-tors[] \OT1/cmr/m/n/10.95 Global
+ []
+
+[58 <./figures/corem_conds_distiller_dream5.pdf>] [59]
+Missing character: There is no ‚ in font cmr8!
+Missing character: There is no Ä in font cmr8!
+Missing character: There is no ì in font cmr8!
+ [60] [61]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [62]
+<figures/corem_gres.pdf, id=4146, 285.065pt x 350.30875pt>
+File: figures/corem_gres.pdf Graphic file (type pdf)
+
+<use figures/corem_gres.pdf>
+Package pdftex.def Info: figures/corem_gres.pdf used on input line 521.
+(pdftex.def)             Requested size: 304.00517pt x 373.5812pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[63]
+
+LaTeX Warning: Text page 64 contains only floats.
+
+
+Overfull \vbox (1.61122pt too high) has occurred while \output is active []
+
+
+[64 <./figures/corem_gres.pdf>]
+<figures/eo.pdf, id=4413, 725.64203pt x 136.17776pt>
+File: figures/eo.pdf Graphic file (type pdf)
+ <use figures/eo.pdf>
+Package pdftex.def Info: figures/eo.pdf used on input line 535.
+(pdftex.def)             Requested size: 412.57892pt x 77.42679pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ò in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ò in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ò in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ò in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ¬ in font cmr10!
+Missing character: There is no † in font cmr10!
+Missing character: There is no ¬ in font cmr10!
+Missing character: There is no † in font cmr10!
+
+[65 <./figures/eo.pdf>] [66] [67] [68]
+<figures/aupr.pdf, id=4499, 510.90875pt x 764.8575pt>
+File: figures/aupr.pdf Graphic file (type pdf)
+ <use figures/aupr.pdf>
+Package pdftex.def Info: figures/aupr.pdf used on input line 587.
+(pdftex.def)             Requested size: 217.14749pt x 325.07764pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[69] [70 <./figures/aupr.pdf>]
+<figures/nwInf_cumulative_forPaper.pdf, id=4555, 472.76625pt x 466.74374pt>
+File: figures/nwInf_cumulative_forPaper.pdf Graphic file (type pdf)
+
+<use figures/nwInf_cumulative_forPaper.pdf>
+Package pdftex.def Info: figures/nwInf_cumulative_forPaper.pdf used on input li
+ne 599.
+(pdftex.def)             Requested size: 173.71535pt x 171.50311pt.
+
+<figures/motif_cumulative_forPaper.pdf, id=4556, 472.76625pt x 466.74374pt>
+File: figures/motif_cumulative_forPaper.pdf Graphic file (type pdf)
+
+<use figures/motif_cumulative_forPaper.pdf>
+Package pdftex.def Info: figures/motif_cumulative_forPaper.pdf used on input li
+ne 599.
+(pdftex.def)             Requested size: 173.71535pt x 171.50311pt.
+ [71 <./figures/nwInf_cumulative_forPaper.pdf> <./figures/motif_cumulative_forP
+aper.pdf>]
+<figures/argR_purR_networks.pdf, id=4588, 246.9225pt x 199.74625pt>
+File: figures/argR_purR_networks.pdf Graphic file (type pdf)
+
+<use figures/argR_purR_networks.pdf>
+Package pdftex.def Info: figures/argR_purR_networks.pdf used on input line 608.
+
+(pdftex.def)             Requested size: 217.14749pt x 175.65837pt.
+ [72 <./figures/argR_purR_networks.pdf>]
+<figures/dpp_ecoli_expression.pdf, id=4765, 310.15875pt x 170.6375pt>
+File: figures/dpp_ecoli_expression.pdf Graphic file (type pdf)
+
+<use figures/dpp_ecoli_expression.pdf>
+Package pdftex.def Info: figures/dpp_ecoli_expression.pdf used on input line 62
+1.
+(pdftex.def)             Requested size: 304.00517pt x 167.25223pt.
+
+<figures/galE.pdf, id=4766, 256.5635pt x 209.70044pt>
+File: figures/galE.pdf Graphic file (type pdf)
+ <use figures/galE.pdf>
+Package pdftex.def Info: figures/galE.pdf used on input line 628.
+(pdftex.def)             Requested size: 304.00517pt x 248.47469pt.
+
+<figures/ptsh.pdf, id=4769, 256.5635pt x 209.70044pt>
+File: figures/ptsh.pdf Graphic file (type pdf)
+ <use figures/ptsh.pdf>
+Package pdftex.def Info: figures/ptsh.pdf used on input line 639.
+(pdftex.def)             Requested size: 304.00517pt x 248.47469pt.
+
+[73 <./figures/dpp_ecoli_expression.pdf>] [74 <./figures/galE.pdf>] [75 <./figu
+res/ptsh.pdf>]
+<figures/fitness_wo_operons.pdf, id=5184, 201.75375pt x 125.46875pt>
+File: figures/fitness_wo_operons.pdf Graphic file (type pdf)
+
+<use figures/fitness_wo_operons.pdf>
+Package pdftex.def Info: figures/fitness_wo_operons.pdf used on input line 660.
+
+(pdftex.def)             Requested size: 260.57964pt x 162.05444pt.
+) [76] [77 <./figures/fitness_wo_operons.pdf>]
+\openout2 = `chapters/chap3.aux'.
+
+ (./chapters/chap3.tex
+<<3>>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\uppercase' on input line 3.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+
+ []
+
+[78
+
+
+
+] [79]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ò in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [80]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [81] <figures/egrin2_fig1.pdf, id=5258, 544.0325pt x 252.945pt>
+File: figures/egrin2_fig1.pdf Graphic file (type pdf)
+
+<use figures/egrin2_fig1.pdf>
+Package pdftex.def Info: figures/egrin2_fig1.pdf used on input line 57.
+(pdftex.def)             Requested size: 390.86284pt x 181.73816pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[82] [83 <./figures/egrin2_fig1.pdf>]
+<figures/egrin2_AUPR.pdf, id=5309, 234.99294pt x 185.06139pt>
+File: figures/egrin2_AUPR.pdf Graphic file (type pdf)
+
+<use figures/egrin2_AUPR.pdf>
+Package pdftex.def Info: figures/egrin2_AUPR.pdf used on input line 68.
+(pdftex.def)             Requested size: 325.72124pt x 256.53706pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+ [84 <./figures/egrin2_AUPR.pdf>]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no • in font cmr10!
+
+<figures/egrin2_corem_fitness.pdf, id=5392, 249.05748pt x 161.75029pt>
+File: figures/egrin2_corem_fitness.pdf Graphic file (type pdf)
+
+<use figures/egrin2_corem_fitness.pdf>
+Package pdftex.def Info: figures/egrin2_corem_fitness.pdf used on input line 82
+.
+(pdftex.def)             Requested size: 325.72124pt x 211.56123pt.
+ [85]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [86 <./figures/egrin2_corem_fitness.pdf>]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+ <figures/egrin2_kdpvalidaton.pdf, id=5430, 249.05748pt x 221.84782pt>
+File: figures/egrin2_kdpvalidaton.pdf Graphic file (type pdf)
+
+<use figures/egrin2_kdpvalidaton.pdf>
+Package pdftex.def Info: figures/egrin2_kdpvalidaton.pdf used on input line 96.
+
+(pdftex.def)             Requested size: 325.72124pt x 290.16577pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+[87] [88 <./figures/egrin2_kdpvalidaton.pdf>]
+<figures/egrin2_carA.pdf, id=5664, 668.101pt x 295.79308pt>
+File: figures/egrin2_carA.pdf Graphic file (type pdf)
+
+<use figures/egrin2_carA.pdf>
+Package pdftex.def Info: figures/egrin2_carA.pdf used on input line 110.
+(pdftex.def)             Requested size: 434.295pt x 192.27675pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/pyrL.pdf, id=5667, 668.101pt x 295.79308pt>
+File: figures/pyrL.pdf Graphic file (type pdf)
+ <use figures/pyrL.pdf>
+Package pdftex.def Info: figures/pyrL.pdf used on input line 119.
+(pdftex.def)             Requested size: 434.295pt x 192.27675pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[89] [90 <./figures/egrin2_carA.pdf>] [91 <./figures/pyrL.pdf>]
+<figures/nirH.pdf, id=6022, 293.45232pt x 194.21156pt>
+File: figures/nirH.pdf Graphic file (type pdf)
+ <use figures/nirH.pdf>
+Package pdftex.def Info: figures/nirH.pdf used on input line 133.
+(pdftex.def)             Requested size: 325.72124pt x 215.57738pt.
+
+<figures/sdh.pdf, id=6027, 242.94563pt x 194.21156pt>
+File: figures/sdh.pdf Graphic file (type pdf)
+ <use figures/sdh.pdf>
+Package pdftex.def Info: figures/sdh.pdf used on input line 141.
+(pdftex.def)             Requested size: 325.72124pt x 260.39032pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/vng2211h.pdf, id=6030, 292.79388pt x 194.21156pt>
+File: figures/vng2211h.pdf Graphic file (type pdf)
+
+<use figures/vng2211h.pdf>
+Package pdftex.def Info: figures/vng2211h.pdf used on input line 148.
+(pdftex.def)             Requested size: 325.72124pt x 216.06042pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/egrin2_dpp_1.pdf, id=6033, 313.27237pt x 263.08487pt>
+File: figures/egrin2_dpp_1.pdf Graphic file (type pdf)
+
+<use figures/egrin2_dpp_1.pdf>
+Package pdftex.def Info: figures/egrin2_dpp_1.pdf used on input line 155.
+(pdftex.def)             Requested size: 347.43732pt x 291.79483pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ò in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+[92 <./figures/nirH.pdf>] [93 <./figures/sdh.pdf>]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ò in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [94 <./figures/vng2211h.pdf>]
+
+LaTeX Warning: Text page 95 contains only floats.
+
+[95 <./figures/egrin2_dpp_1.pdf>]
+<figures/egrin2_dpp_2.pdf, id=7689, 313.27237pt x 263.08487pt>
+File: figures/egrin2_dpp_2.pdf Graphic file (type pdf)
+
+<use figures/egrin2_dpp_2.pdf>
+Package pdftex.def Info: figures/egrin2_dpp_2.pdf used on input line 167.
+(pdftex.def)             Requested size: 282.2891pt x 237.07928pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+
+<figures/dpp_heatmaps.pdf, id=7694, 536.39998pt x 187.32384pt>
+File: figures/dpp_heatmaps.pdf Graphic file (type pdf)
+
+<use figures/dpp_heatmaps.pdf>
+Package pdftex.def Info: figures/dpp_heatmaps.pdf used on input line 175.
+(pdftex.def)             Requested size: 434.295pt x 151.67143pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/dpp_networks.pdf, id=7699, 272.35553pt x 351.63168pt>
+File: figures/dpp_networks.pdf Graphic file (type pdf)
+
+<use figures/dpp_networks.pdf>
+Package pdftex.def Info: figures/dpp_networks.pdf used on input line 183.
+(pdftex.def)             Requested size: 325.72124pt x 420.54478pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/dpp_ecoli.pdf, id=7702, 353.54987pt x 160.47252pt>
+File: figures/dpp_ecoli.pdf Graphic file (type pdf)
+
+<use figures/dpp_ecoli.pdf>
+Package pdftex.def Info: figures/dpp_ecoli.pdf used on input line 191.
+(pdftex.def)             Requested size: 325.72124pt x 147.84708pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[96 <./figures/egrin2_dpp_2.pdf>] [97 <./figures/dpp_heatmaps.pdf>]
+
+LaTeX Warning: Text page 98 contains only floats.
+
+[98 <./figures/dpp_networks.pdf>]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+ [99 <./figures/dpp_ecoli.pdf>]
+<figures/purR_heatmap.pdf, id=13161, 347.79637pt x 184.76729pt>
+File: figures/purR_heatmap.pdf Graphic file (type pdf)
+
+<use figures/purR_heatmap.pdf>
+Package pdftex.def Info: figures/purR_heatmap.pdf used on input line 205.
+(pdftex.def)             Requested size: 434.295pt x 230.72734pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/purR_network.pdf, id=13162, 333.73082pt x 340.12471pt>
+File: figures/purR_network.pdf Graphic file (type pdf)
+
+<use figures/purR_network.pdf>
+Package pdftex.def Info: figures/purR_network.pdf used on input line 213.
+(pdftex.def)             Requested size: 325.72124pt x 331.97057pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/egrin2_ecoli_1.pdf, id=13167, 324.14098pt x 267.56061pt>
+File: figures/egrin2_ecoli_1.pdf Graphic file (type pdf)
+
+<use figures/egrin2_ecoli_1.pdf>
+Package pdftex.def Info: figures/egrin2_ecoli_1.pdf used on input line 221.
+(pdftex.def)             Requested size: 282.2891pt x 233.02487pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/egrin2_ecoli_2.pdf, id=13176, 286.42108pt x 141.29286pt>
+File: figures/egrin2_ecoli_2.pdf Graphic file (type pdf)
+
+<use figures/egrin2_ecoli_2.pdf>
+Package pdftex.def Info: figures/egrin2_ecoli_2.pdf used on input line 229.
+(pdftex.def)             Requested size: 347.43732pt x 171.40038pt.
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/egrin2_ecoli_3.pdf, id=13179, 251.89708pt x 269.15858pt>
+File: figures/egrin2_ecoli_3.pdf Graphic file (type pdf)
+
+<use figures/egrin2_ecoli_3.pdf>
+Package pdftex.def Info: figures/egrin2_ecoli_3.pdf used on input line 237.
+(pdftex.def)             Requested size: 260.57964pt x 278.45622pt.
+Missing character: There is no œ in font cmr10!
+Missing character: There is no É in font cmr10!
+Missing character: There is no Œ in font cmr10!
+Missing character: There is no º in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no § in font cmr10!
+Missing character: There is no œ in font cmr10!
+Missing character: There is no É in font cmr10!
+Missing character: There is no Œ in font cmr10!
+Missing character: There is no º in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no â in font cmr10!
+Missing character: There is no § in font cmr10!
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/egrin2_ecoli_4.pdf, id=13182, 255.09302pt x 171.98051pt>
+File: figures/egrin2_ecoli_4.pdf Graphic file (type pdf)
+
+<use figures/egrin2_ecoli_4.pdf>
+Package pdftex.def Info: figures/egrin2_ecoli_4.pdf used on input line 245.
+(pdftex.def)             Requested size: 347.43732pt x 234.26302pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/purR_corem_fitness.pdf, id=13185, 246.78198pt x 97.81755pt>
+File: figures/purR_corem_fitness.pdf Graphic file (type pdf)
+
+<use figures/purR_corem_fitness.pdf>
+Package pdftex.def Info: figures/purR_corem_fitness.pdf used on input line 253.
+
+(pdftex.def)             Requested size: 347.43732pt x 137.71378pt.
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ó in font cmr10!
+Missing character: There is no ‚ in font cmr7!
+Missing character: There is no à in font cmr7!
+Missing character: There is no í in font cmr7!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ó in font cmr10!
+Missing character: There is no ‚ in font cmr7!
+Missing character: There is no à in font cmr7!
+Missing character: There is no í in font cmr7!
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/purR_corem_fitness_specific.pdf, id=13186, 441.77847pt x 211.6186pt>
+File: figures/purR_corem_fitness_specific.pdf Graphic file (type pdf)
+
+<use figures/purR_corem_fitness_specific.pdf>
+Package pdftex.def Info: figures/purR_corem_fitness_specific.pdf used on input 
+line 261.
+(pdftex.def)             Requested size: 347.43732pt x 166.4374pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[100] <figures/purR_effector.pdf, id=13196, 340.76308pt x 184.12689pt>
+File: figures/purR_effector.pdf Graphic file (type pdf)
+
+<use figures/purR_effector.pdf>
+Package pdftex.def Info: figures/purR_effector.pdf used on input line 271.
+(pdftex.def)             Requested size: 347.43732pt x 187.73949pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+(./tables/highfit_regprecise_sub.tex) [101 <./figures/purR_heatmap.pdf>]
+[102 <./figures/purR_network.pdf>] [103 <./figures/egrin2_ecoli_1.pdf>]
+<figures/egrin2_ecoli_expression_cor.pdf, id=20789, 216.7337pt x 116.99811pt>
+File: figures/egrin2_ecoli_expression_cor.pdf Graphic file (type pdf)
+
+<use figures/egrin2_ecoli_expression_cor.pdf>
+Package pdftex.def Info: figures/egrin2_ecoli_expression_cor.pdf used on input 
+line 284.
+(pdftex.def)             Requested size: 347.43732pt x 187.56674pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/egrin2_ecoli_ko_expression.pdf, id=20790, 274.91306pt x 171.98051pt>
+File: figures/egrin2_ecoli_ko_expression.pdf Graphic file (type pdf)
+
+<use figures/egrin2_ecoli_ko_expression.pdf>
+Package pdftex.def Info: figures/egrin2_ecoli_ko_expression.pdf used on input l
+ine 292.
+(pdftex.def)             Requested size: 347.43732pt x 217.35262pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+<figures/egrin2_ecoli_purR_predictive.pdf, id=20793, 274.91306pt x 193.07733pt>
+File: figures/egrin2_ecoli_purR_predictive.pdf Graphic file (type pdf)
+<use figures/egrin2_ecoli_purR_predictive.pdf>
+Package pdftex.def Info: figures/egrin2_ecoli_purR_predictive.pdf used on input
+ line 300.
+(pdftex.def)             Requested size: 347.43732pt x 244.01524pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[104 <./figures/egrin2_ecoli_2.pdf>] [105 <./figures/egrin2_ecoli_3.pdf>])
+[106 <./figures/egrin2_ecoli_4.pdf>]
+
+LaTeX Warning: Text page 107 contains only floats.
+
+
+Overfull \vbox (2.18118pt too high) has occurred while \output is active []
+
+
+[107 <./figures/purR_corem_fitness.pdf> <./figures/purR_corem_fitness_specific.
+pdf>] [108 <./figures/purR_effector.pdf>]
+
+LaTeX Warning: Text page 109 contains only floats.
+
+
+Overfull \vbox (2.92851pt too high) has occurred while \output is active []
+
+
+[109 <./figures/egrin2_ecoli_expression_cor.pdf>] [110 <./figures/egrin2_ecoli_
+ko_expression.pdf>] [111 <./figures/egrin2_ecoli_purR_predictive.pdf>]
+\openout2 = `chapters/chap4.aux'.
+
+
+(./chapters/chap4.tex
+<<4>>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\uppercase' on input line 3.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 6--7
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+ []
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+[112
+
+
+
+] [113] [114]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ò in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [115] [116] [117] [118] [119] [120]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ò in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [121] [122]
+<figures/review_figure2.pdf, id=22370, 756.8275pt x 344.28625pt>
+File: figures/review_figure2.pdf Graphic file (type pdf)
+
+<use figures/review_figure2.pdf>
+Package pdftex.def Info: figures/review_figure2.pdf used on input line 73.
+(pdftex.def)             Requested size: 304.00517pt x 138.29518pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[123] [124 <./figures/review_figure2.pdf>]
+Overfull \hbox (4.85123pt too wide) in paragraph at lines 88--89
+\OT1/cmr/m/n/10.95 been ac-quired lat-er-ally from dif-fer-ent mi-cro-bial spec
+ies [[]] or even viruses [[]]. Eukaryotic-
+ []
+
+) [125]
+\openout2 = `chapters/chap5.aux'.
+
+ (./chapters/chap5.tex
+<<5>>
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `\uppercase' on input line 3.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 8--9
+
+ []
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 10--11
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+
+ []
+
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≠ in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+
+ []
+
+[126
+
+
+
+] <figures/review_figure3.pdf, id=22443, 605.26125pt x 660.4675pt>
+File: figures/review_figure3.pdf Graphic file (type pdf)
+
+<use figures/review_figure3.pdf>
+Package pdftex.def Info: figures/review_figure3.pdf used on input line 38.
+(pdftex.def)             Requested size: 282.2891pt x 308.04138pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[127]
+
+LaTeX Warning: Text page 128 contains only floats.
+
+[128 <./figures/review_figure3.pdf>] [129] [130]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [131]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [132]
+Missing character: There is no Œ in font cmr10!
+Missing character: There is no º in font cmr10!
+Missing character: There is no Œ in font cmr10!
+Missing character: There is no º in font cmr10!
+Missing character: There is no ¬ in font cmr10!
+Missing character: There is no ∫ in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ¬ in font cmr10!
+Missing character: There is no ∫ in font cmr10!
+ [133] [134]
+[135]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [136] [137] [138]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [139] [140] [141] [142] [143]
+<figures/combinatorial_reg.pdf, id=22700, 546.62819pt x 276.83023pt>
+File: figures/combinatorial_reg.pdf Graphic file (type pdf)
+
+<use figures/combinatorial_reg.pdf>
+Package pdftex.def Info: figures/combinatorial_reg.pdf used on input line 116.
+(pdftex.def)             Requested size: 390.86284pt x 197.94478pt.
+ [144 <./figures/combinatorial_reg.pdf>]
+<figures/equif_iso.pdf, id=22889, 552.38168pt x 178.3734pt>
+File: figures/equif_iso.pdf Graphic file (type pdf)
+
+<use figures/equif_iso.pdf>
+Package pdftex.def Info: figures/equif_iso.pdf used on input line 126.
+(pdftex.def)             Requested size: 390.86284pt x 126.21596pt.
+
+<figures/iso.pdf, id=22890, 552.38168pt x 178.3734pt>
+File: figures/iso.pdf Graphic file (type pdf)
+ <use figures/iso.pdf>
+Package pdftex.def Info: figures/iso.pdf used on input line 134.
+(pdftex.def)             Requested size: 390.86284pt x 126.21596pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<figures/equif.pdf, id=22891, 569.00482pt x 205.22472pt>
+File: figures/equif.pdf Graphic file (type pdf)
+
+<use figures/equif.pdf>
+Package pdftex.def Info: figures/equif.pdf used on input line 142.
+(pdftex.def)             Requested size: 390.86284pt x 140.97263pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[145 <./figures/equif_iso.pdf>] [146 <./figures/iso.pdf> <./figures/equif.pdf
+
+pdfTeX warning: /usr/texbin/pdflatex (file ./figures/equif.pdf): PDF inclusion:
+ multiple pdfs with page group included in a single page
+>]) [147] (./main.bbl
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [148
+
+
+]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no º in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [149]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+Underfull \hbox (badness 1688) in paragraph at lines 175--179
+[]\OT1/cmr/m/n/10.95 Mukesh Bansal, Vin-cenzo Bel-cas-tro, Al-berto Ambesi-Impi
+ombato, and Diego
+ []
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+[150]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [151]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [152]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≠ in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ê in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ê in font cmr10!
+ [153]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no Ô in font cmr10!
+Missing character: There is no ø in font cmr10!
+Missing character: There is no Ω in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [154]
+Missing character: There is no Ô in font cmr10!
+Missing character: There is no ø in font cmr10!
+Missing character: There is no Ω in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ò in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [155]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [156]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no © in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no º in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [157]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+Underfull \hbox (badness 1931) in paragraph at lines 715--721
+[]\OT1/cmr/m/n/10.95 Jeremiah J. Faith, Boris Hayete, Joshua T. Thaden, Ilaria 
+Mogno, Jamey
+ []
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+[158]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+Underfull \hbox (badness 1082) in paragraph at lines 779--790
+\OT1/cmr/m/n/10.95 CJ Bult, JF Tomb, BA Dougherty, JM Mer-rick, K. McKen-ney, G
+. Sut-ton,
+ []
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ° in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ∂ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ò in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+[159]
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ± in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≥ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≠ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≥ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≥ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ° in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≠ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ° in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≠ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no © in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≠ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≠ in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+Underfull \hbox (badness 2326) in paragraph at lines 830--843
+[]\OT1/cmr/m/n/10.95 Socorro Gama-Castro, Hela-dia Sal-gado, Mar-tin Peralta-Gi
+l, Al-berto Santos-
+ []
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+[160]
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≠ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ° in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ± in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≠ in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no © in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+Underfull \hbox (badness 7944) in paragraph at lines 940--944
+[]\OT1/cmr/m/n/10.95 Shobhit Gupta, John A. Stam-a-toy-annopou-los, Tim-o-thy L
+. Bai-ley, and
+ []
+
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≥ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≠ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≠ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≠ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ° in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≥ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no © in font cmr10!
+[161]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [162]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+Underfull \hbox (badness 1248) in paragraph at lines 1079--1084
+\OT1/cmr/m/n/10.95 sig-nal-ing path-way in es-cherichia coli.  \OT1/cmr/m/it/10
+.95 Sci-ence\OT1/cmr/m/n/10.95 , 265(5171):537539, July 1994.
+ []
+
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ¢ in font cmr10!
+[163]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+Underfull \hbox (badness 2698) in paragraph at lines 1137--1142
+[]\OT1/cmr/m/n/10.95 R. Jaenicke.  Pro-tein sta-bil-ity and molec-u-lar adap-ta
+-tion to ex-treme con-
+ []
+
+
+Underfull \hbox (badness 1496) in paragraph at lines 1137--1142
+\OT1/cmr/m/n/10.95 di-tions.  \OT1/cmr/m/it/10.95 Eu-ro-pean Jour-nal of Bio-ch
+em-istry\OT1/cmr/m/n/10.95 , 202(3):715--728, De-cem-ber 1991.
+ []
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+[164]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ∂ in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no º in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [165]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+Underfull \hbox (badness 1838) in paragraph at lines 1233--1238
+[]\OT1/cmr/m/n/10.95 K. J. Kauff-man, P. Prakash, and J. S. Ed-wards.  Ad-vance
+s in flux bal-
+ []
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no Ô in font cmr10!
+Missing character: There is no ø in font cmr10!
+Missing character: There is no Ω in font cmr10!
+Missing character: There is no Ô in font cmr10!
+Missing character: There is no ø in font cmr10!
+Missing character: There is no Ω in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+[166]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+Underfull \hbox (badness 1496) in paragraph at lines 1340--1344
+[]\OT1/cmr/m/n/10.95 E. V. Koonin, Y. I. Wolf, and G. P. Karev.  The struc-ture
+ of the pro-
+ []
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+[167]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [168]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+Underfull \hbox (badness 1769) in paragraph at lines 1494--1499
+\OT1/cmr/m/n/10.95 of strep-to-coc-cus pneu-mo-niae.  \OT1/cmr/m/it/10.95 Cur-r
+ent Bi-ol-ogy\OT1/cmr/m/n/10.95 , 20(13):12221226, July 2010.
+ []
+
+Missing character: There is no √ in font cmr10!
+Missing character: There is no © in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no © in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no © in font cmr10!
+[169]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [170]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no º in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [171]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≥ in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [172]
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≥ in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [173]
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ß in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ƒ in font cmti10!
+Missing character: There is no ≠ in font cmti10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no © in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [174]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no © in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no Ô in font cmr10!
+Missing character: There is no ø in font cmr10!
+Missing character: There is no Ω in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [175]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [176]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+Underfull \hbox (badness 1112) in paragraph at lines 1971--1976
+[]\OT1/cmr/m/n/10.95 S. L. Ruther-ford.  From geno-type to phe-no-type: buffer-
+ing mech-a-nisms and
+ []
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+[177]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no Ô in font cmr10!
+Missing character: There is no ø in font cmr10!
+Missing character: There is no Ω in font cmr10!
+Missing character: There is no Ô in font cmr10!
+Missing character: There is no ø in font cmr10!
+Missing character: There is no Ω in font cmr10!
+Missing character: There is no Ô in font cmr10!
+Missing character: There is no ø in font cmr10!
+Missing character: There is no Ω in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [178]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [179]
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ß in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ò in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+Underfull \hbox (badness 1331) in paragraph at lines 2215--2219
+[]\OT1/cmr/m/n/10.95 Ilias Tagkopou-los, Yir-Chung Liu, and Saeed Tava-zoie.  P
+re-dic-tive be-hav-ior
+ []
+
+
+Underfull \hbox (badness 1552) in paragraph at lines 2215--2219
+\OT1/cmr/m/n/10.95 within mi-cro-bial ge-netic net-works.  \OT1/cmr/m/it/10.95 
+Sci-ence\OT1/cmr/m/n/10.95 , 320(5881):13131317, June 2008.
+ []
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+[180]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ê in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no © in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ° in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ± in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [181]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no © in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [182]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no © in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [183]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [184]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [185]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+) [186]
+\openout2 = `appxa.aux'.
+
+ (./appxa.tex
+<<A>>
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+Missing character: There is no √ in font cmr10!
+Missing character: There is no ≠ in font cmr10!
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+[187
+
+
+] [188]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+ [189]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no √ in font cmr10!
+Missing character: There is no † in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [190]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [191] [192]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [193]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [194] [195]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+ [196] [197] [198]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+
+[199]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [200] [201]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+ [202]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ú in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ù in font cmr10!
+ [203] [204]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [205]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [206] [207] [208]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+
+
+LaTeX Warning: Citation `Clark' on page 209 undefined on input line 110.
+
+
+LaTeX Warning: Citation `2010b' on page 209 undefined on input line 110.
+
+[209] [210] [211] [212] [213]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ì in font cmr10!
+ [214] [215]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+ [216] [217]) [218] [219]
+\openout2 = `appxb.aux'.
+
+ (./appxb.tex
+<<B>>
+
+Underfull \hbox (badness 10000) in paragraph at lines 7--8
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--10
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+
+ []
+
+[220
+
+
+
+] [221] [222]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+Missing character: There is no Œ in font cmr10!
+Missing character: There is no î in font cmr10!
+ [223] [224]
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ò in font cmr10!
+Missing character: There is no ‚ in font cmr10!
+Missing character: There is no Ä in font cmr10!
+Missing character: There is no ô in font cmr10!
+) [225]
+\openout2 = `vita.aux'.
+
+ (./vita.tex
+Underfull \hbox (badness 10000) in paragraph at lines 9--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--9
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 9--9
+
+ []
+
+) [226
+
+
+
+]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 62.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 62.
+ (./main.aux (./chapters/prelim.aux) (./chapters/chap1.aux)
+(./chapters/chap2.aux) (./chapters/chap3.aux) (./chapters/chap4.aux)
+(./chapters/chap5.aux) (./appxa.aux) (./appxb.aux) (./vita.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 62.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 62.
+Package rerunfilecheck Info: File `main.out' has not changed.
+(rerunfilecheck)             Checksum: AB649488267C35CD7C6EF91262E7BE68;8988.
+
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 62.
+ ) 
+Here is how much of TeX's memory you used:
+ 8878 strings out of 493488
+ 141491 string characters out of 3141326
+ 232797 words of memory out of 3000000
+ 11078 multiletter control sequences out of 15000+200000
+ 18097 words of font info for 62 fonts, out of 3000000 for 9000
+ 957 hyphenation exceptions out of 8191
+ 36i,10n,41p,4224b,441s stack positions out of 5000i,500n,10000p,200000b,50000s
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
+></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb>
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxsl10.pfb
+></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmbxti10.pf
+b></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+></usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb></
+usr/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></us
+r/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb></us
+r/local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/
+local/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/lo
+cal/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></usr/local
+/texlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/te
+xlive/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/local/texli
+ve/2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/local/texlive/
+2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2
+012/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb></usr/local/texlive/
+2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/
+2012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2
+012/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb></usr/local/texlive/201
+2/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb></usr/local/texlive/2012/
+texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb></usr/local/texlive/2012/te
+xmf-dist/fonts/type1/public/amsfonts/cm/cmti10.pfb></usr/local/texlive/2012/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb>
+Output written on main.pdf (246 pages, 38049246 bytes).
+PDF statistics:
+ 24304 PDF objects out of 26593 (max. 8388607)
+ 5880 compressed objects within 59 object streams
+ 895 named destinations out of 1000 (max. 500000)
+ 1125 words of extra memory for PDF output out of 10000 (max. 10000000)
+

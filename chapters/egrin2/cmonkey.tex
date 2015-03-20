@@ -1,0 +1,270 @@
+\subsection{\cm: integrated biclustering algorithm, updated for ensemble analysis}
+
+\subsubsection{Introduction and summary}
+
+The \cm\ integrated biclustering algorithm was described and fully
+benchmarked in \cite{Reiss2006n}. In short, the algorithm computes
+putatively co-regulated modules of genes over subsets of experimental
+conditions from gene expression data, constrained by information
+provided by genome sequence (\textit{de novo} identification of
+conserved \textit{cis}-regulatory motifs in gene promoters), and functional
+association networks. Its defining characteristic is that it
+combines all three types of data (expression, sequence and networks)
+together into an integrated model that uses a stochastic
+optimization procedure to identify modules that best satisfy all three
+constraints, simultaneously.
+
+We refer the reader interested in details of the \cm\ data integration
+model and optimization procedure to \cite{Reiss2006n}. Here, we
+briefly summarize the procedure as it was utilized in the \egrine~
+model construction. The \cm\ integrated biclustering algorithm
+identifies groups of genes co-regulated under subsets of experimental
+conditions, by integrating various orthogonal pieces of information
+that support evidence for their co-regulation, and optimizing
+biclusters such that they are supported by one or more of those
+additional constraints. The three sources of evidence for
+co-regulation leveraged by \cm\ to score gene clusters are (1)
+tight co-expression in subsets of available gene expression
+measurements (similarity of expression profiles); (2) quality of
+\textit{de novo} detected \textit{cis}-regulatory motifs in gene
+promoters (putative co-binding of common regulators); and (3)
+significant connectivity in functional association or physical
+interaction networks (co-functionality). The algorithm served as the
+cornerstone for the construction of the first global, predictive
+Environmental Gene Regulatory Influence Network (EGRIN) model for
+\halo \cite{Bonneau2007}, and has now been applied to many additional
+organisms (\eg, \cite{Yoon2013} and unpublished).
+
+To run \cm\ as part of an ensemble-based inference approach required
+significant updates to the \cm\ algorithm. These updates primarily
+addressed computational inefficiencies that led to long runtime. The
+primary algorithm modification in the new implementation is global
+optimization (rather than the local, individual cluster optimization
+utilized by the original procedure). Additional algorithm updates
+include changes to the individual scoring scheme for subnetwork
+clustering, as well as integration of the scores. All of these changes
+improved the procedure's runtime without significantly affecting the
+algorithm's performance.
+
+\subsubsection{Updates since original publication}
+
+For incorporation into the \egrine~ensemble analysis, the \cm\
+procedure and software was overhauled to improve runtime performance
+and decrease memory usage. These modifications did not quantifiably
+affect overall bicluster quality. Changes to the algorithm (and
+parameters used for \egrine~construction) relative to the earlier
+version described in \cite{Reiss2006n} are as follows:
+
+1. Iteratively re-weighted constrained logistic regression
+to determine gene/condition probabilities for bicluster membership was
+replaced with a non-parametric cumulative distribution function on
+gene/condition scores. Since the non-parametric function does not need
+to be re-weighted, it is significantly faster to compute.
+
+2. Rather than constraining the number of bicluster assignments per
+gene/condition using a probability distribution, \cm\ now assigns a
+fixed number of biclusters to each gene/condition, per run (a
+user-defined parameter). For this study the parameter was set to 2 for
+genes, and to $k/2$ for conditions, where $k$ is the total number of
+biclusters in the run, also a user-defined parameter. This
+modification effectively altered the bicluster optimization from a
+local problem (single bicluster) with limited cross-bicluster
+constraints to a global problem, similar in principle to the widely
+used $k$-means clustering algorithm.
+
+3. Since \cm\ uses the updated constraint (of 2; see above) to choose
+the two ``best'' biclusters for each gene (and likewise the best $k/2$
+biclusters for each condition), there is no sampling as in the prior
+version. Instead, stochasticity is added to prevent the optimization
+from falling into local minima. The algorithm allows at most one
+change in bicluster assignment per gene/condition, per iteration. This
+is accomplished by adding a small amount of noise to each
+gene/condition's bicluster membership weight. The noise occasionally
+allows moves that decrease a bicluster's total score. This noise
+decreases towards zero as the number of iterations increases.
+
+4. Motif detection is the most computationally expensive part of the
+procedure. To circumvent significant computation time, we limit motif 
+detection to every 100 iterations (for a typical,
+2,000 iteration \cm\ run). During the 99 iterations between motif
+searches, the biclusters are optimized to contain instances of those
+detected motif(s). We found that this does not impair the ability of
+\cm\ to detect motifs.
+
+The overall effect of these changes (in addition to other minor
+modifications and improvements) resulted in an algorithm run-time
+reduction of about 4-fold. This, in turn, enabled \cm\ to be run
+numerous times on a modest 8-core compute node (\eg, a
+\tmsamp{c1.xlarge} Amazon EC2 node) in under six hours per run
+(compared to several days to a week for the original
+\cm). Practically, the effect of these modifications to the
+algorithm resulted in a single \cm\ run generating fewer duplicate
+biclusters, primarily because each gene is allowed to be a member of
+only two biclusters. We found that this increased the overall
+diversity of regulation discovered by each \cm\ run
+(condition-specific gene clusters and corresponding
+\textit{cis}-GREs).
+
+\subsubsection{Detailed \cm\ algorithm description}
+
+The \cm\ algorithm initiates by seeding $k$ biclusters, typically using
+the simple, widely-used and effective $k$-means clustering on the
+input expression data set. \cm\ itself performs a global optimization,
+in many ways similar to the $k$-means clustering algorithm, which we
+used as a model. After beginning with an initial assignment of each
+gene into $k$ clusters and a chosen distance metric, the basic
+$k$-means algorithm iterates between two steps until convergence: (1)
+(re-)assign each gene to the cluster with the closest centroid and (2)
+update the centroids of each modified cluster. The updated \cm\ 
+algorithm performs an analogous set of moves with four primary
+distinctions: (1) the distance of each gene to the ``centroid'' of
+each cluster is computed using a measure that combines
+condition-specific expression profile similarity, $cis$-regulatory
+motif similarity, and connectedness in one or more gene association
+networks; (2) each gene can be (re-)assigned to more than one cluster
+(default 2); (3) at each step, conditions (in addition to genes) are
+moved among biclusters to improve their cohesiveness; and (4) at each
+step, genes and conditions are not always assigned to the most
+appropriate clusters. We now elaborate upon these four details.
+
+\cm\ begins each iteration with a set of bicluster memberships
+$\{m_i\}$ for each element (gene or condition) $i$, where by default
+$\|m_i\| = 2$ for genes and $\|m_i\| = N_c/2$ for conditions ($N_c$ is
+the number of conditions, or measurements, in the expression data set;
+note that for standard $k$-means clustering, $\|m_i\| = 1$ for genes
+and $\|m_i\| = N_c$ for conditions). \cm\ then computes score matrices
+(log-likelihoods, in practice) $\mathbf{R}_{ij}$, $\mathbf{S}_{ij}$,
+and $\mathbf{T}_{ij}$, for membership of each element $i$ in each
+bicluster $j$, based upon, respectively, co-expression with the
+current gene members ($\mathbf{R}$), similarity of motifs in gene
+promoters ($\mathbf{S}$), and connectivity of genes in networks
+($\mathbf{T}$). For the network scores ($\mathbf{T}$), the originally
+published procedure \cite{Reiss2006n} computed a $p$-value for
+enrichment of network edges among genes in each bicluster using the
+cumulative hypergeometric distribution. This computation was
+inefficient, and moreover could not account for weighted edges in the
+input networks, so we replaced it with a more standard weighted
+network clustering coefficient \cite{Watts1998}, evaluated only over
+the genes within each bicluster.
+
+Following computation of the individual component scores,
+\cm\ computes a score matrix $\mathbf{M}_{ij}$ containing the
+integrated score (a weighted sum of log-likelihoods) supporting the
+inclusion of gene $i$ in bicluster $j$. At this stage the updated
+version of \cm\ then computes a cumulative density distribution from
+each bicluster's $\mathbf{M}_{\cdot j}$ to obtain a posterior
+probability distribution $p_{ij}$, that each element $i$ should be in
+each cluster $j$, which is used to classify cluster members based upon
+these scores. The width of the density distribution kernel is set
+dynamically to be larger for smaller (fewer gene) biclusters, so as to
+increase the tendency to add genes to small biclusters, rather than to
+remove them. In the updated procedure, we then add a small amount of
+normally-distributed random ``noise:'' to the scores
+$\mathbf{M}_{ij}$, in order to achieve a similar type of stochasticity
+to the original version of the algorithm (which was originally
+obtained using sampling, and which helps prevent the algorithm from
+falling into local minima; this noise decreases during the run to zero
+at the final iteration). The result of this noise is that at the
+beginning of a \cm\ run, biclusters are rather poorly defined
+(co-expression, for example, is weak), but during the course of a full
+set of 2,000 iterations, as this noise is decreased, the biclusters
+settle into minima.
+
+Finally, at the end of each iteration, \cm\ chooses a random subset of
+elements (genes or conditions) $i$, and moves $i$ into bicluster $j$
+if, for any biclusters $j'$ which it is already a member, $p_{ij} >
+p_{ij'}, \forall j'$, and out of the corresponding worse bicluster
+$j'$ for which $p_{ij} > p_{ij'}$. Thus, as with the $k$-means
+clustering algorithm, the updated \cm\ performs a global optimization
+of all biclusters by moving elements among biclusters to improve each
+element's membership scores.
+
+\subsubsection{Parameter ranges used for \egrine}
+
+The default values for all additional parameters used for \cm, and for
+\MEME\ (which is used by \cm\ for motif detection; \cite{Bailey1998}),
+are the same as those itemized in \cite{Reiss2006n}. These defaults
+were used exclusively for all \halo~ \cm~ runs. These default
+parameters are itemized in Table~\ref{tab:cmparams:halo}. The only
+parameter that varied from run-to-run for the \halo~ \cm~ runs was the
+number of conditions (columns in the expression matrix) included. As
+\cm~development was occurring in parallel to development of the
+\egrine~modeling approach (primarily involving bug fixes), we also
+list the official \cm~version number(s) used.
+
+\vspace{.2cm}
+\begin{table}[h!]
+\begin{tabular}{|l|l|l|r|} 
+\hline
+Parameter              & Value              & Note \\ \hline
+Version               & 4.5.4(174), 4.6(191), 4.6.2(109)        & \cm~package versions (and number of runs) used \\
+$N_{\mathrm{conds}}$    & 242:300          & Number of conditions included (range) \\
+$k$                   & 250              & Number of biclusters \\
+$N_{\mathrm{gene}}$    & 2          & Number of biclusters per gene \\
+$N_{\mathrm{iter}}$     & 2000               & Number of iterations \\
+$w_{\mathrm{max}}$     & 24               & Maximum \MEME~motif width \\
+$w_{\mathrm{min}}$     & 6               & Minimum \MEME~motif width \\
+$l_{\mathrm{search}}$     & -150 -- +20       & \MEME~search distance from gene start \\
+$l_{\mathrm{scan}}$     & -250 -- +30       & \MEME~scan distance from gene start \\
+$n_{\mathrm{motif}}$     & 2       & Number of \MEME~motifs searched per bicluster \\
+$s_{\mathrm{r}}$     & 1       & Scaling factor for expression scores \\
+$s_{\mathrm{m}}$     & 1       & Scaling factor for motif scores \\
+$s_{\mathrm{n}}$     & 0.5       & Scaling factor for network scores \\
+$w_{\mathrm{op}}$     & 0.5       & Relative weight for operon network \\
+$w_{\mathrm{string}}$     & 0.5       & Relative weight for STRING network \\
+\hline
+\end{tabular}
+\caption{\cm~parameters used for the \halo~ensemble.}
+\label{tab:cmparams:halo}
+\end{table}
+\vspace{.2cm}
+
+\noindent 
+In contrast to the \halo~ runs, for the \eco~ runs, we varied 
+several parameters randomly between the ranges itemized in Table~\ref{tab:cmparams:eco}.
+
+\vspace{.2cm}
+\begin{table}[h!]
+\begin{tabular}{|l|l|l|r|} 
+\hline
+Parameter              & Value              & Note \\ \hline
+Version               & 4.9.0(106)        & \cm~package versions (and number of runs) used \\
+$N_{\mathrm{conds}}$    & 181:279          & Number of conditions included (range) \\
+$k$                   & 352:547              & Number of biclusters \\
+$N_{\mathrm{gene}}$    & 2          & Number of biclusters per gene \\
+$N_{\mathrm{iter}}$     & 2000               & Number of iterations \\
+$w_{\mathrm{max}}$     & 12:30               & Maximum \MEME~motif width \\
+$w_{\mathrm{min}}$     & 6               & Minimum \MEME~motif width \\
+$l_{\mathrm{search}}$     & -(100:200) -- +(0:20)       & \MEME~search distance from gene start \\
+$l_{\mathrm{scan}}$     & -(-150:250) -- +(0:50)       & \MEME~scan distance from gene start \\
+$n_{\mathrm{motif}}$     & 1:3       & Number of \MEME~motifs searched per bicluster \\
+$s_{\mathrm{r}}$     & 2:4       & Scaling factor for expression scores \\
+$s_{\mathrm{m}}$     & 0.5       & Scaling factor for motif scores \\
+$s_{\mathrm{n}}$     & 0.5       & Scaling factor for network scores \\
+$w_{\mathrm{op}}$     & 0:1       & Relative weight for operon network \\
+$w_{\mathrm{string}}$     & 0:1       & Relative weight for STRING network \\
+\hline
+\end{tabular}
+\caption{{\cm}~parameters used for the \eco~ensemble.}
+\label{tab:cmparams:eco}
+\end{table}
+\vspace{.2cm}
+
+\subsubsection{\cm\ software availability}
+
+The \cm\ software is available as an open-source \tmsamp{R} package
+\cite{Ihaka1996}.  With this package the algorithm can be easily
+applied to nearly any sequenced microbial species (given user-supplied
+expression data). The package automatically downloads and integrates
+genome and annotation data from various external sources, including
+\tmsamp{RSA-tools} \cite{vanHelden2000}; \tmsamp{Microbes Online}
+\cite{Alm2005}; and \tmsamp{EMBL STRING}
+\cite{Szklarczyk2011}. Additionally, the package can generate
+interactive web-based and \tmsamp{Cytoscape} output
+\cite{Shannon2003}, allowing users to explore the resulting modules
+and motifs in the context of external data, software, and databases
+via the \tmsamp{Gaggle} \cite{Shannon2006}. Examples of automatically
+generated output are available at the \cm\ web site. Supplementary $R$
+packages with example expression data for organisms including
+\halo\ and \eco\ are also available from the \cm\ website.
+

@@ -1,0 +1,46 @@
+\subsubsection{Introduction and summary}
+
+\subsubsection{Input list of regulatory factors}
+
+\subsubsection{Updates since original publication}
+
+While Inferelator (Bonneau et al., 2006) and its more recent
+derivatives (Madar et al., 2009) have been successful at accurately
+inferring causal regulatory influences using gene expression data, and
+predicting global regulatory dynamics in new experiments, the
+algorithm as originally published (Bonneau et al., 2006) required
+refactoring, and additionally had some notable drawbacks, which were
+remedied in a new implementation. Modifications included:
+
+1. Removal of ``pre-grouping'' highly correlated regulators into ``TF
+groups'' was removed by replacing the $L_1$ (LASSO) constraint with the
+elastic-net linear regression constraint. It has been shown that the
+elastic-net constraint results in highly correlated predictors being
+grouped as part of the optimization – in this case, using only
+conditions relevant for each bicluster – negating the necessity of
+pre-grouping the predictors (Zou and Hastie, 2005). We note that in
+all Inferelator runs the elastic net parameter value was 0.8 (\ie,
+close to the original LASSO $L_1$ constraint (=1), but with a “small
+amount” of $L_2$).
+
+2. Elimination of ``pre-filtering'' of regulators for each bicluster based
+upon high correlation. The procedure now allows the elastic-net to
+choose among all potential regulators (excluding TF members of the
+bicluster, which are automatically considered possible regulators,
+and are removed from the list of candidate predictors prior to
+applying the elastic net).
+
+3. Capability to up-weight measurements. This was utilized in the
+EGRIN 2.0 model to up-weight measurements with lower variance (\ie,
+more tightly co-expressed) among the genes in a bicluster (\ie,
+standard weighted linear least-squares, $w_i=1/\sigma_i^2$).
+
+Additional features, such as the ability to up-weight potential
+regulators to increase their likelihood of being selected and
+bootstrapping to more robustly select regulator weights are included
+in the implementation, but were not specifically utilized as part of
+the currently described EGRIN 2.0 models. The current implementation of
+Inferelator, which utilizes the elastic net by default is available as
+an open-source R package.
+
+\subsubsection{Detailed algorithm description}

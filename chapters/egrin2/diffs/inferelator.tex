@@ -1,0 +1,190 @@
+\subsubsection{Introduction and summary}
+
+\DIFdelbegin \subsubsection{\DIFdel{Input list of regulatory factors}}
+%DIFAUXCMD
+\addtocounter{subsubsection}{-1}%DIFAUXCMD
+\DIFdelend \DIFaddbegin \DIFadd{The }\nwinf\ \DIFadd{algorithm is a method for deriving
+genome-wide transcriptional regulatory interactions from mRNA
+expression levels \mbox{%DIFAUXCMD
+\cite{Bonneau2006}
+}%DIFAUXCMD
+. }\nwinf\ \DIFadd{is a direct inference
+procedure \mbox{%DIFAUXCMD
+\cite{Michoel2009}
+}%DIFAUXCMD
+. It models transcriptional regulation
+as a kinetic process, incorporating time information, when available,
+and a user-defined time constant. }\nwinf\ \DIFadd{uses standard regression and
+variable selection to identify transcriptional influences on genes or
+biclusters based on their mean expression levels. These influences include expression
+levels of TFs, environmental factors, and interactions between the two. The procedure
+simultaneously models equilibrium and time course expression levels. Thus both kinetic and equilibrium expression levels may be
+predicted by the resulting models. Through  explicit inclusion of
+time and gene knockout information, the method is capable of learning
+causal relationships. The inferred network is a predictive model
+comprised of linear combinations of expression profiles of various
+transcriptional regulators, that can predict global expression under
+novel perturbations with predictive power similar to that seen over
+training data \mbox{%DIFAUXCMD
+\cite{Bonneau2006}
+}%DIFAUXCMD
+.
+}\DIFaddend 
+
+\subsubsection{Updates since original publication}
+
+\DIFdelbegin \DIFdel{While Inferelator (Bonneau et al. , 2006) and its more recent
+derivatives (Madar et al. , 2009) have been successful at accurately
+inferring causal regulatory influences using gene expression data, and
+predicting global regulatory dynamics in new experiments, the
+algorithm as originally published (Bonneau et al. , 2006) required
+refactoring, and additionally had some notable drawbacks, which were
+remedied in a new implementation.
+Modifications included:
+}\DIFdelend \DIFaddbegin \DIFadd{Several modifications have been made to improve the originally published }\nwinf\ \DIFadd{algorithm \mbox{%DIFAUXCMD
+\cite{Bonneau2006}
+}%DIFAUXCMD
+. 
+}\DIFaddend 
+
+1. \DIFdelbegin \DIFdel{Removal of ``}\DIFdelend \DIFaddbegin \DIFadd{Elimination of }\DIFaddend pre-grouping \DIFdelbegin \DIFdel{'' }\DIFdelend highly correlated regulators
+into ``TF groups''\DIFdelbegin \DIFdel{was removed }\DIFdelend \DIFaddbegin \DIFadd{. This step became obsolete
+}\DIFaddend by replacing the $L_1$ (LASSO) constraint with the elastic-net
+linear regression constraint. It has been shown that the elastic-net
+constraint results in highly correlated predictors being grouped as
+part of the optimization\DIFdelbegin \DIFdel{– in this case, using only
+conditions relevant for each bicluster – negating }\DIFdelend \DIFaddbegin \DIFadd{. This relieves }\DIFaddend the necessity of pre-grouping
+\DIFdelbegin \DIFdel{the predictors (Zou and Hastie, 2005)}\DIFdelend \DIFaddbegin \DIFadd{predictors \mbox{%DIFAUXCMD
+\cite{Zou05regularizationand}
+}%DIFAUXCMD
+}\DIFaddend . We note that in
+all \DIFdelbegin \DIFdel{Inferelator runs the elastic net parameter value was 0.8 }\DIFdelend \DIFaddbegin \nwinf\ \DIFadd{runs the elastic-net parameter value $\alpha$ was set to
+$\alpha=0.8$ }\DIFaddend (\ie, close to the original LASSO $L_1$ constraint
+(\DIFdelbegin \DIFdel{=1}\DIFdelend \DIFaddbegin \DIFadd{corresponding to $\alpha=1$}\DIFaddend ), but with a \DIFdelbegin \DIFdel{“small amount�}\DIFdelend \DIFaddbegin \DIFadd{``small amount'' }\DIFaddend of
+$L_2$). \DIFaddbegin \DIFadd{We used the elastic-net implementation provided by
+the }\tmsamp{R} \texttt{\DIFadd{glmnet}}
+\DIFadd{package \mbox{%DIFAUXCMD
+\cite{Friedman:Hastie:Tibshirani:2009:JSSOBK:v33i01}
+}%DIFAUXCMD
+}\DIFaddend 
+
+2. Elimination of \DIFaddbegin \DIFadd{the }\DIFaddend ``pre-filtering'' of regulators for each
+bicluster based upon high correlation. The procedure now allows the
+elastic-net to choose among all potential regulators (excluding TF
+members of the bicluster, which are automatically considered possible
+regulators, and are removed from the list of candidate predictors
+prior to applying the \DIFdelbegin \DIFdel{elastic net}\DIFdelend \DIFaddbegin \DIFadd{elastic-net}\DIFaddend ).
+
+3. Capability to up-weight measurements. This was utilized in the
+\DIFdelbegin \DIFdel{EGRIN 2.0 }\DIFdelend \DIFaddbegin \egrine\DIFadd{~}\DIFaddend model to up-weight measurements with lower variance (\ie,
+more tightly co-expressed) among the genes in a bicluster \DIFdelbegin \DIFdel{(}%DIFDELCMD < \ie%%%
+\DIFdel{,
+}\DIFdelend \DIFaddbegin \DIFadd{by
+}\DIFaddend standard weighted linear least-squares, $w_i=1/\sigma_i^2$\DIFdelbegin \DIFdel{)}\DIFdelend . 
+
+\DIFdelbegin \DIFdel{Additional features, such asthe ability to up-weight potential
+regulators to increase their likelihood of being selected and bootstrapping to more robustly select regulator weights are included
+in the implementation, but were not specifically utilized as part of
+the currently described EGRIN 2.0 models. The current implementationof
+Inferelator, which utilizes the elastic net by
+default is available as an }\DIFdelend \DIFaddbegin \DIFadd{The current implementation of
+}\nwinf\ \DIFadd{is available as
+an }\DIFaddend open-source \DIFdelbegin \DIFdel{R package. }\DIFdelend \DIFaddbegin \tmsamp{R} \DIFadd{package.
+}\DIFaddend 
+
+\subsubsection{Detailed algorithm description}
+\DIFaddbegin 
+
+\DIFadd{Given an input list of $p$ putative transcriptional influences
+$\mathbf{X}={x_1,x_2,\cdots,x_p}$ and the mean expression levels $y_{i}$
+of a bicluster $k$ (over the conditions $i$ included in the bicluster), we
+model the relationship between $y_{i}$ and the influences
+$\mathbf{X}$ by the kinetic equation:
+}
+
+\begin{equation}\DIFadd{
+\label{eq:nwinf:kinetic}
+\tau\frac{dy_{i}}{dt}=-y_{i}+\sum_{j=1}^{p}\beta_j x_{ij} .
+}\end{equation}
+
+\noindent \DIFadd{In the steady state scenario, $dy/dt=0$ and Eq.~\ref{eq:nwinf:kinetic} simplifies to
+}
+
+\begin{equation*}\DIFadd{
+y_{i}=\sum_{j=1}^{p}\beta_j x_{ij} ,
+}\end{equation*}
+
+\noindent \DIFadd{and for time series measurements, we approximate Eq.\ref{eq:nwinf:kinetic} as:
+}
+
+\begin{equation*}\DIFadd{
+\tau\frac{y_{i+1}-y_{i}}{t_{i+1}-t_i} + y_{i} = \sum_{j=1}^{p}\beta_j x_{ij} .
+}\end{equation*}
+
+\noindent \DIFadd{Clearly not all $p$ putative influences $\mathbf{X}$ influence a given
+bicluster, so we use the elastic-net \mbox{%DIFAUXCMD
+\cite{Zou05regularizationand}
+}%DIFAUXCMD
+for variable selection. This involves performing the minimization:
+}
+
+\begin{equation}\DIFadd{
+\label{eq:elnet}
+ \vec{\beta} = \arg \min \left\{ \sum^N_{i = 1} \left( y_i - \sum^p_{j = 1} \beta_j x_{ij} \right)^2 + \sum_{j = 1}^p
+   \tmmathbf{w}_i ( \lambda_1 | \beta_j | + \lambda_2 \beta^2_j) \right\}
+}\end{equation}
+
+\noindent \DIFadd{subject to a constraint which is a tuneable combination of the $L_1$
+(LASSO) and $L_2$ (Ridge) regression constraints:
+}
+
+\vspace{-0.4in}
+
+\begin{eqnarray*}\DIFadd{
+\label{eq:elnet:constraint}
+\sum_{j = 1}^p | \beta_j | \leq \lambda_1 | \beta_{\tmop{ols}} | }& & \DIFadd{\mathrm{(}L_1\ \mathrm{constraint)}, }\\
+\DIFadd{\sum_{j = 1}^p \beta^2_j \leq \lambda_2 \beta^2_{\tmop{ols}}     }& & \DIFadd{\mathrm{(}L_2\ \mathrm{constraint)}.
+}\end{eqnarray*}
+
+\noindent 
+\DIFadd{The $w_i$ in Eq.~\ref{eq:elnet} allow different variables ($\beta$'s,
+in this case) to be selectively constrained. For this work, we set all
+$w_i=1$, }\ie\DIFadd{, no differential constraints. Redefining the constraint, such that:
+}
+
+\begin{equation}\DIFadd{
+\label{eq:elnet2}
+ \vec{\beta} = \arg \min \left\{ \sum^N_{i = 1} \left( y_i - \sum^p_{j = 1} \beta_j x_{ij} \right)^2 + \sum_{j = 1}^p
+   \tmmathbf{w}_i \lambda \left( \alpha | \beta_j | + (1-\alpha) \beta^2_j /2\right) \right\}
+}\end{equation}
+
+\noindent \DIFadd{defines $0\leq \alpha \leq 1$ as a tuning parameter between the ridge
+($L_2$; $\alpha=0$) and LASSO ($L_1$; $\alpha=1)$ solutions, and
+$\lambda$ is the single complexity parameter, which is chosen to
+minimize the cross-validation error (we use 10-fold cross-validation),
+exactly as in \mbox{%DIFAUXCMD
+\cite{Bonneau2006}
+}%DIFAUXCMD
+. Substituting
+Eq.~\ref{eq:nwinf:kinetic} into Eq.~\ref{eq:elnet2}, we obtain the complete
+equation describing the minimization performed by }\nwinf\DIFadd{:
+}
+
+\begin{equation}\DIFadd{
+\label{eq:elnet3}
+ \vec{\beta} = \arg \min \left\{ \sum^N_{i = 1} 
+ \left( \tau\frac{y_{i+1}-y_{i}}{t_{i+1}-t_i} + y_{i}- \sum_{j=1}^{p} \beta_j x_{i,j} \right)^2 + \sum_{j = 1}^p
+   \tmmathbf{w}_i \lambda \left( \alpha | \beta_j | + (1-\alpha) \beta^2_j /2\right) \right\}.
+}\end{equation}
+
+\noindent \DIFadd{For the current implementation, we set
+$\tau=10$ minutes for all TFs, and $\alpha=0.8$ for all biclusters. In
+the future, we could choose $\tau$ and/or $\alpha$ by
+cross-validation as well. When $\alpha=0$, there is no constraint, and
+we get the ordinary least-squares (OLS) solution with all $\beta$s
+non-zero. With $\alpha=1$, we select the null model. The optimal
+solution is somewhere in-between, and this is usually the selected
+solution for each bicluster, usually $\sim 6$ TFs, on average;
+although the null model (no solution) is selected for a number of
+biclusters.
+ }\DIFaddend

@@ -1,0 +1,136 @@
+\subsubsection{Introduction and summary}
+
+The \nwinf\ algorithm is a method for deriving
+genome-wide transcriptional regulatory interactions from mRNA
+expression levels \cite{Bonneau2006}. \nwinf\ is a direct inference
+procedure \cite{Michoel2009}. It models transcriptional regulation
+as a kinetic process, incorporating time information, when available,
+and a user-defined time constant. \nwinf\ uses standard regression and
+variable selection to identify transcriptional influences on genes or
+biclusters based on their mean expression levels. These influences include expression
+levels of TFs, environmental factors, and interactions between the two. The procedure
+simultaneously models equilibrium and time course expression levels. Thus both kinetic and equilibrium expression levels may be
+predicted by the resulting models. Through  explicit inclusion of
+time and gene knockout information, the method is capable of learning
+causal relationships. The inferred network is a predictive model
+comprised of linear combinations of expression profiles of various
+transcriptional regulators, that can predict global expression under
+novel perturbations with predictive power similar to that seen over
+training data \cite{Bonneau2006}.
+
+\subsubsection{Updates since original publication}
+
+Several modifications have been made to improve the originally published \nwinf\ algorithm \cite{Bonneau2006}. 
+
+1. Elimination of pre-grouping highly correlated regulators
+into ``TF groups''. This step became obsolete
+by replacing the $L_1$ (LASSO) constraint with the elastic-net
+linear regression constraint. It has been shown that the elastic-net
+constraint results in highly correlated predictors being grouped as
+part of the optimization. This relieves the necessity of pre-grouping
+predictors \cite{Zou05regularizationand}. We note that in
+all \nwinf\ runs the elastic-net parameter value $\alpha$ was set to
+$\alpha=0.8$ (\ie, close to the original LASSO $L_1$ constraint
+(corresponding to $\alpha=1$), but with a ``small amount'' of
+$L_2$). We used the elastic-net implementation provided by
+the \tmsamp{R} \texttt{glmnet}
+package \cite{Friedman:Hastie:Tibshirani:2009:JSSOBK:v33i01}
+
+2. Elimination of the ``pre-filtering'' of regulators for each
+bicluster based upon high correlation. The procedure now allows the
+elastic-net to choose among all potential regulators (excluding TF
+members of the bicluster, which are automatically considered possible
+regulators, and are removed from the list of candidate predictors
+prior to applying the elastic-net).
+
+3. Capability to up-weight measurements. This was utilized in the
+\egrine~model to up-weight measurements with lower variance (\ie,
+more tightly co-expressed) among the genes in a bicluster by
+standard weighted linear least-squares, $w_i=1/\sigma_i^2$. 
+
+The current implementation of
+\nwinf\ is available as
+an open-source \tmsamp{R} package.
+
+\subsubsection{Detailed algorithm description}
+
+Given an input list of $p$ putative transcriptional influences
+$\mathbf{X}={x_1,x_2,\cdots,x_p}$ and the mean expression levels $y_{i}$
+of a bicluster $k$ (over the conditions $i$ included in the bicluster), we
+model the relationship between $y_{i}$ and the influences
+$\mathbf{X}$ by the kinetic equation:
+
+\begin{equation}
+\label{eq:nwinf:kinetic}
+\tau\frac{dy_{i}}{dt}=-y_{i}+\sum_{j=1}^{p}\beta_j x_{ij} .
+\end{equation}
+
+\noindent In the steady state scenario, $dy/dt=0$ and Eq.~\ref{eq:nwinf:kinetic} simplifies to
+
+\begin{equation*}
+y_{i}=\sum_{j=1}^{p}\beta_j x_{ij} ,
+\end{equation*}
+
+\noindent and for time series measurements, we approximate Eq.\ref{eq:nwinf:kinetic} as:
+
+\begin{equation*}
+\tau\frac{y_{i+1}-y_{i}}{t_{i+1}-t_i} + y_{i} = \sum_{j=1}^{p}\beta_j x_{ij} .
+\end{equation*}
+
+\noindent Clearly not all $p$ putative influences $\mathbf{X}$ influence a given
+bicluster, so we use the elastic-net \cite{Zou05regularizationand}
+for variable selection. This involves performing the minimization:
+
+\begin{equation}
+\label{eq:elnet}
+ \vec{\beta} = \arg \min \left\{ \sum^N_{i = 1} \left( y_i - \sum^p_{j = 1} \beta_j x_{ij} \right)^2 + \sum_{j = 1}^p
+   \tmmathbf{w}_i ( \lambda_1 | \beta_j | + \lambda_2 \beta^2_j) \right\}
+\end{equation}
+
+\noindent subject to a constraint which is a tuneable combination of the $L_1$
+(LASSO) and $L_2$ (Ridge) regression constraints:
+
+\vspace{-0.4in}
+
+\begin{eqnarray*}
+\label{eq:elnet:constraint}
+\sum_{j = 1}^p | \beta_j | \leq \lambda_1 | \beta_{\tmop{ols}} | & & \mathrm{(}L_1\ \mathrm{constraint)}, \\
+\sum_{j = 1}^p \beta^2_j \leq \lambda_2 \beta^2_{\tmop{ols}}     & & \mathrm{(}L_2\ \mathrm{constraint)}.
+\end{eqnarray*}
+
+\noindent 
+The $w_i$ in Eq.~\ref{eq:elnet} allow different variables ($\beta$'s,
+in this case) to be selectively constrained. For this work, we set all
+$w_i=1$, \ie, no differential constraints. Redefining the constraint, such that:
+
+\begin{equation}
+\label{eq:elnet2}
+ \vec{\beta} = \arg \min \left\{ \sum^N_{i = 1} \left( y_i - \sum^p_{j = 1} \beta_j x_{ij} \right)^2 + \sum_{j = 1}^p
+   \tmmathbf{w}_i \lambda \left( \alpha | \beta_j | + (1-\alpha) \beta^2_j /2\right) \right\}
+\end{equation}
+
+\noindent defines $0\leq \alpha \leq 1$ as a tuning parameter between the ridge
+($L_2$; $\alpha=0$) and LASSO ($L_1$; $\alpha=1)$ solutions, and
+$\lambda$ is the single complexity parameter, which is chosen to
+minimize the cross-validation error (we use 10-fold cross-validation),
+exactly as in \cite{Bonneau2006}. Substituting
+Eq.~\ref{eq:nwinf:kinetic} into Eq.~\ref{eq:elnet2}, we obtain the complete
+equation describing the minimization performed by \nwinf:
+
+\begin{equation}
+\label{eq:elnet3}
+ \vec{\beta} = \arg \min \left\{ \sum^N_{i = 1} 
+ \left( \tau\frac{y_{i+1}-y_{i}}{t_{i+1}-t_i} + y_{i}- \sum_{j=1}^{p} \beta_j x_{i,j} \right)^2 + \sum_{j = 1}^p
+   \tmmathbf{w}_i \lambda \left( \alpha | \beta_j | + (1-\alpha) \beta^2_j /2\right) \right\}.
+\end{equation}
+
+\noindent For the current implementation, we set
+$\tau=10$ minutes for all TFs, and $\alpha=0.8$ for all biclusters. In
+the future, we could choose $\tau$ and/or $\alpha$ by
+cross-validation as well. When $\alpha=0$, there is no constraint, and
+we get the ordinary least-squares (OLS) solution with all $\beta$s
+non-zero. With $\alpha=1$, we select the null model. The optimal
+solution is somewhere in-between, and this is usually the selected
+solution for each bicluster, usually $\sim 6$ TFs, on average;
+although the null model (no solution) is selected for a number of
+biclusters.

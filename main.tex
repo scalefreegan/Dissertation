@@ -1,0 +1,62 @@
+% LaTeX thesis control file
+ 
+    \documentclass[11pt,twoside]{uwthesis}
+	\usepackage{booktabs}
+	\usepackage[font=small,labelfont=bf]{caption}
+	\usepackage{hyperref}
+	\usepackage{color}
+	\usepackage{amsmath}
+	\usepackage{graphicx,subfigure}
+
+
+	% shortcuts
+	\newcommand{\tmsamp}[1]{\textsf{#1}}
+	\newcommand{\eg}{\emph{e.g.}}
+	\newcommand{\ie}{\emph{i.e.}}
+	\newcommand{\cm}{\tmsamp{cMonkey}}
+	\newcommand{\nwinf}{{\tmsamp{Inferelator}}}
+	\newcommand{\MEME}{{\tmsamp{MEME}}}
+	\newcommand{\halo}{{\emph{H. salinarum} sp. NRC-1 }}
+	\newcommand{\eco}{\emph{E. coli} K-12 MG1655 }
+	\newcommand{\tab}{{\hspace{5mm}}}
+	\newcommand{\rdb}{{\tmsamp{RegulonDB}}}
+	\newcommand{\simgt}{\,\hbox{\lower0.6ex\hbox{$\sim$}\llap{\raise0.6ex\hbox{$>$}}}\,}
+	\newcommand{\simlt}{\,\hbox{\lower0.6ex\hbox{$\sim$}\llap{\raise0.6ex\hbox{$<$}}}\,}
+	\newcommand{\egrine}{{\tmsamp{EGRIN 2.0}}}
+	\newcommand{\tmmathbf}[1]{\ensuremath{\boldsymbol{#1}}}
+	\newcommand{\tmop}[1]{\ensuremath{\operatorname{#1}}}
+
+	\raggedbottom 
+    \begin{document}
+ 
+    % preliminary pages
+    %
+    \prelimpages
+    \include{chapters/prelim}
+ 
+    % text pages
+    %
+    \textpages
+    \include{chapters/chap1}
+    \include{chapters/chap2}
+    \include{chapters/chap3}
+    \include{chapters/chap4}
+    \include{chapters/chap5}
+  
+ 
+    % bibliography
+    %
+    \bibliographystyle{plain}
+    \bibliography{refs}
+ 
+    % appendices
+    %
+    \appendix
+    \raggedbottom\sloppy
+    \include{appxa}
+    \label{appendix:appxa}
+   \include{appxb}
+    \label{appendix:appxb}
+ 
+    \include{vita} 
+    \end{document}

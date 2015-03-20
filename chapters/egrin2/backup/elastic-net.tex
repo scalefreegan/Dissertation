@@ -1,0 +1,48 @@
+\documentclass{article}
+\usepackage{amsmath,color}
+\usepackage[english]{babel}
+
+%%%%%%%%%% Start TeXmacs macros
+\newcommand{\tmmathbf}[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand{\tmop}[1]{\ensuremath{\operatorname{#1}}}
+\definecolor{grey}{rgb}{0.75,0.75,0.75}
+\definecolor{orange}{rgb}{1.0,0.5,0.5}
+\definecolor{brown}{rgb}{0.5,0.25,0.0}
+\definecolor{pink}{rgb}{1.0,0.5,0.5}
+%%%%%%%%%% End TeXmacs macros
+
+\begin{document}
+
+\ \
+\[ \tau \frac{d y_i}{d t_i} = - y_i + \sum^p_{j = 1} \beta_j x_{i, j} \]
+\[ \tau \frac{y_{i + 1} - y_i}{t_{i + 1} - t_i} + y_i = \sum^p_{j = 1} \beta_j
+   x_{i, j} \text{(\tmop{time} \tmop{series})} \]
+\[ {\color{grey} \not{\tau \frac{y_{i + 1} - y_i}{t_{i + 1} - t_i}} +} y_i =
+   \sum^p_{j = 1} \beta_j x_{i, j} \text{(\tmop{steady} \tmop{state})} \]
+
+
+
+\[ \vec{\beta} = \arg \min \left\{ \sum^N_{i = 1} \left( y_i - {\color{grey}
+   \not{\beta_0 -}} \sum^p_{j = 1} \beta_j x_{i, j} \right)^2 \right\} \]
+\[ \sum_{j = 1}^p | \beta_j | \leq \lambda_1 | \beta_{\tmop{ols}} | \text{L}_1
+   \text{\tmop{constraint}} \]
+\[ \vec{\beta} = \arg \min \left\{ \sum^N_{i = 1} \left( y_i - {\color{grey}
+   \not{\beta_0 -}} \sum^p_{j = 1} \beta_j x_{i, j} \right)^2 + \lambda_1
+   \sum_{j = 1}^p | \beta_j | \right\} \]
+\[ \sum_{j = 1}^p \beta^2_j \leq \lambda_2 \beta^2_{\tmop{ols}} \text{L}_2
+   \text{\tmop{constraint}} \]
+\[ \vec{\beta} = \arg \min \left\{ \sum^N_{i = 1} \left( y_i - {\color{grey}
+   \not{\beta_0 -}} \sum^p_{j = 1} \beta_j x_{i, j} \right)^2 + \lambda_2
+   \sum_{j = 1}^p \beta^2_j \right\} \]
+\[ \vec{\beta} = \arg \min \left\{ \sum^N_{i = 1} \left( y_i - {\color{grey}
+   \not{\beta_0 -}} \sum^p_{j = 1} \beta_j x_{i, j} \right)^2 + \lambda_1
+   \sum_{j = 1}^p | \beta_j | + \lambda_2 \sum_{j = 1}^p \beta^2_j \right\} \]
+\[ \vec{\beta} = \arg \min \left\{ \sum^N_{i = 1} \left( y_i - {\color{grey}
+   \not{\beta_0 -}} \sum^p_{j = 1} \beta_j x_{i, j} \right)^2 + \sum_{j = 1}^p
+   ( \lambda_1 | \beta_j | + \lambda_2 \beta^2_j) \right\} \]
+\[ \vec{\beta} = \arg \min \left\{ \sum^N_{i = 1} \left( y_i - {\color{grey}
+   \not{\beta_0 -}} \sum^p_{j = 1} \beta_j x_{i, j} \right)^2 + \sum_{j = 1}^p
+   \tmmathbf{w}_i ( \lambda_1 | \beta_j | + \lambda_2 \beta^2_j) \right\} \]
+
+
+\end{document}

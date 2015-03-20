@@ -1,0 +1,177 @@
+\contentsline {chapter}{\@textofLoF }{v}{chapter*.2}
+\contentsline {chapter}{\@textofLoT }{viii}{chapter*.3}
+\contentsline {chapter}{Glossary}{ix}{chapter*.4}
+\contentsline {chapter}{\numberline {\@textofChapter \ 1:}\uppercase {Introduction}}{1}{chapter.1}
+\contentsline {paragraph}{Chapter Highlights}{1}{section*.7}
+\contentsline {section}{\numberline {1.1}Summary}{2}{section.1.1}
+\contentsline {section}{\numberline {1.2}Gene regulation in prokaryotes: a historical perspective}{2}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Why do prokaryotes regulate their genomes?}{4}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}Model organisms to study gene regulatory systems}{4}{subsection.1.2.2}
+\contentsline {paragraph}{\textit {Halobacterium salinarum sp. NRC-1}}{5}{section*.10}
+\contentsline {paragraph}{\textit {Escherichia coli K12 MG1655}}{7}{section*.11}
+\contentsline {subsection}{\numberline {1.2.3}Prokaryotic gene regulatory mechanisms}{7}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.4}Discovery of regulatory interactions}{8}{subsection.1.2.4}
+\contentsline {subsubsection}{Position-specific scoring matrices (PSSMs) quantify the sequence preference of TFs}{9}{section*.12}
+\contentsline {subsection}{\numberline {1.2.5}Canonical genetic control modules}{10}{subsection.1.2.5}
+\contentsline {subsubsection}{Modularity in Biology}{11}{section*.14}
+\contentsline {subsubsection}{Operon}{12}{section*.15}
+\contentsline {subsubsection}{Regulon}{12}{section*.17}
+\contentsline {subsubsection}{Modulon}{13}{section*.19}
+\contentsline {subsubsection}{Stimulon}{14}{section*.20}
+\contentsline {subsubsection}{Corem}{14}{section*.21}
+\contentsline {section}{\numberline {1.3}Networks in biology}{14}{section.1.3}
+\contentsline {subsection}{\numberline {1.3.1}Gene regulatory networks (GRNs)}{16}{subsection.1.3.1}
+\contentsline {subsection}{\numberline {1.3.2}Discovery and Inference of GRNs}{18}{subsection.1.3.2}
+\contentsline {subsubsection}{Experimental Approaches}{18}{section*.24}
+\contentsline {subsubsection}{Computational Approaches}{19}{section*.25}
+\contentsline {section}{\numberline {1.4}Systems-level view of gene regulatory organization}{20}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Network Motifs}{21}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Regulatory Logic}{22}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Beyond the operon and regulon}{23}{subsection.1.4.3}
+\contentsline {section}{\numberline {1.5}Chapter Organization}{24}{section.1.5}
+\contentsline {chapter}{\numberline {\@textofChapter \ 2:}\uppercase {Computational approaches to reconstruct gene regulatory networks}}{25}{chapter.2}
+\contentsline {paragraph}{Chapter Highlights}{26}{section*.28}
+\contentsline {section}{\numberline {2.1}Summary}{26}{section.2.1}
+\contentsline {section}{\numberline {2.2}Existing computational approaches}{27}{section.2.2}
+\contentsline {paragraph}{CLR}{27}{section*.29}
+\contentsline {paragraph}{ARACNE}{28}{section*.30}
+\contentsline {paragraph}{WGCNA}{28}{section*.31}
+\contentsline {paragraph}{DISTILLER}{28}{section*.32}
+\contentsline {paragraph}{DREAM5}{28}{section*.33}
+\contentsline {paragraph}{EGRIN}{29}{section*.34}
+\contentsline {subsection}{\numberline {2.2.1}Integrated biclustering using \textsf {cMonkey}}{29}{subsection.2.2.1}
+\contentsline {subsubsection}{\textsf {cMonkey}\ introduction}{29}{section*.35}
+\contentsline {subsubsection}{Detailed \textsf {cMonkey}\ algorithm description}{30}{section*.37}
+\contentsline {subsubsection}{\textsf {cMonkey}\ software availability}{33}{section*.38}
+\contentsline {subsection}{\numberline {2.2.2}Assignment of putative regulators and influence using {\textsf {Inferelator}}}{33}{subsection.2.2.2}
+\contentsline {subsubsection}{{\textsf {Inferelator}}\ introduction}{33}{section*.39}
+\contentsline {subsubsection}{Detailed {\textsf {Inferelator}}\ algorithm description}{34}{section*.40}
+\contentsline {subsection}{\numberline {2.2.3}Ensemble methods to decrease model variance}{35}{subsection.2.2.3}
+\contentsline {section}{\numberline {2.3}{\textsf {EGRIN 2.0}}}{36}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Background and motivation}{36}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}Experimental Data}{39}{subsection.2.3.2}
+\contentsline {subsubsection}{{\emph {H. salinarum} sp. NRC-1 }\nobreakspace {}compendium}{39}{section*.43}
+\contentsline {subsubsection}{\emph {E. coli} K-12 MG1655 \nobreakspace {}expression compendia}{42}{section*.44}
+\contentsline {paragraph}{\textsf {DISTILLER} expression compendium for model training}{42}{section*.45}
+\contentsline {paragraph}{\textsf {DREAM5} expression compendium for model validation}{43}{section*.46}
+\contentsline {subsubsection}{Additional Data}{44}{section*.47}
+\contentsline {paragraph}{Genome sequence data and annotations for \textsf {cMonkey}\nobreakspace {}analysis}{44}{section*.48}
+\contentsline {paragraph}{Operon membership predictions used for \textsf {cMonkey}\nobreakspace {}analysis}{44}{section*.49}
+\contentsline {paragraph}{Predicted transcriptional regulators used for {\textsf {Inferelator}}\nobreakspace {}analysis}{45}{section*.50}
+\contentsline {paragraph}{{\emph {H. salinarum} sp. NRC-1 }}{45}{section*.51}
+\contentsline {paragraph}{\emph {E. coli} K-12 MG1655 }{45}{section*.52}
+\contentsline {paragraph}{Functional association networks integrated into \textsf {cMonkey}\nobreakspace {}analysis}{45}{section*.53}
+\contentsline {subsection}{\numberline {2.3.3}{\textsf {EGRIN 2.0}}: an ensemble of EGRINs, generation and statistical mining}{45}{subsection.2.3.3}
+\contentsline {subsection}{\numberline {2.3.4}Clustering of \textit {cis}-regulatory motifs to identify GREs}{47}{subsection.2.3.4}
+\contentsline {subsection}{\numberline {2.3.5}Genome-wide scanning of motifs to obtain GRE locations}{48}{subsection.2.3.5}
+\contentsline {subsection}{\numberline {2.3.6}Detection of co-regulated modules (corems) by community detection}{50}{subsection.2.3.6}
+\contentsline {subsubsection}{Construction of gene-gene co-occurrence network}{50}{section*.56}
+\contentsline {subsubsection}{Network backbone extraction}{51}{section*.57}
+\contentsline {subsubsection}{Network link-community detection}{51}{section*.58}
+\contentsline {section}{\numberline {2.4}Model Evaluation}{53}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Comparison with other module detection algorithms}{54}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Convergence and stability of inferred GRNs}{55}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Confirmation of corems in an independent data set}{56}{subsection.2.4.3}
+\contentsline {section}{\numberline {2.5}Model Validation}{58}{section.2.5}
+\contentsline {subsection}{\numberline {2.5.1}Data For Model Validation}{58}{subsection.2.5.1}
+\contentsline {subsubsection}{ {\emph {H. salinarum} sp. NRC-1 }}{58}{section*.64}
+\contentsline {paragraph}{Tiling array transcriptome measurements}{58}{section*.65}
+\contentsline {paragraph}{ChIP-chip transcription factor binding measurements for global regulators}{59}{section*.66}
+\contentsline {paragraph}{\textit {kdp} promoter serial truncation measurements}{59}{section*.67}
+\contentsline {subsubsection}{\emph {E. coli} K-12 MG1655 }{59}{section*.68}
+\contentsline {paragraph}{Tiling array transcriptome measurements}{59}{section*.69}
+\contentsline {paragraph}{PurR/$\Delta $PurR expression data and ChIP-chip transcription factor binding sites}{60}{section*.70}
+\contentsline {paragraph}{Fitness measurements}{60}{section*.71}
+\contentsline {paragraph}{Effector molecule measurements}{60}{section*.72}
+\contentsline {paragraph}{Experimentally mapped {\it E. coli} transcription factor binding sites}{60}{section*.73}
+\contentsline {paragraph}{Experimentally measured {\it E. coli} transcription factor regulatory targets}{61}{section*.74}
+\contentsline {subsection}{\numberline {2.5.2}Computational Methods for Model Validation}{61}{subsection.2.5.2}
+\contentsline {subsubsection}{Functional enrichment estimates for genes in corems}{61}{section*.75}
+\contentsline {subsubsection}{Conditional co-regulation of genes organized in corems}{61}{section*.76}
+\contentsline {subsubsection}{Conditionality of GRE influence}{62}{section*.77}
+\contentsline {subsubsection}{Detection of conditional operons}{63}{section*.79}
+\contentsline {subsubsection}{Environmental ontology construction and usage}{63}{section*.80}
+\contentsline {subsection}{\numberline {2.5.3}Global validation of GREs predicted by {\textsf {EGRIN 2.0}}}{65}{subsection.2.5.3}
+\contentsline {subsection}{\numberline {2.5.4}Global validation of regulatory interactions predicted by {\textsf {EGRIN 2.0}}}{66}{subsection.2.5.4}
+\contentsline {subsubsection}{Conversion of {\textsf {EGRIN 2.0}}\nobreakspace {}{\textsf {Inferelator}}\nobreakspace {}influence predictions into a GRN}{67}{section*.82}
+\contentsline {subsubsection}{Conversion of {\textsf {EGRIN 2.0}}\nobreakspace {}GRE detections into a predicted GRN}{68}{section*.83}
+\contentsline {subsubsection}{Integration of predicted {\textsf {EGRIN 2.0}}\nobreakspace {}{\textsf {Inferelator}}- and GRE-based GRNs}{69}{section*.84}
+\contentsline {subsubsection}{Network comparisons and global performance assessments}{69}{section*.85}
+\contentsline {subsection}{\numberline {2.5.5}Validation of condition-specific operon isoforms by tiling array transcriptome measurements}{72}{subsection.2.5.5}
+\contentsline {subsection}{\numberline {2.5.6}Gene-gene co-fitness correlations in corems}{73}{subsection.2.5.6}
+\contentsline {chapter}{\numberline {\@textofChapter \ 3:}\uppercase {A systems-level model of the microbial regulatory genome}}{78}{chapter.3}
+\contentsline {paragraph}{Chapter Highlights}{79}{section*.93}
+\contentsline {section}{\numberline {3.1}Summary}{79}{section.3.1}
+\contentsline {section}{\numberline {3.2}Introduction}{79}{section.3.2}
+\contentsline {section}{\numberline {3.3}Results}{82}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}Construction of {\textsf {EGRIN 2.0}}}{82}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}{\textsf {EGRIN 2.0}}\nobreakspace {}discovers experimentally characterized regulatory mechanisms}{82}{subsection.3.3.2}
+\contentsline {subsection}{\numberline {3.3.3}Corems model genes with similar effects on organismal fitness}{85}{subsection.3.3.3}
+\contentsline {subsection}{\numberline {3.3.4}{\textsf {EGRIN 2.0}}\nobreakspace {}predicts detailed organization and context-specific importance of GREs in gene promoters}{87}{subsection.3.3.4}
+\contentsline {subsection}{\numberline {3.3.5}Conditionally active GREs within each promoter reorganize gene memberships within corems}{89}{subsection.3.3.5}
+\contentsline {subsection}{\numberline {3.3.6}Conditionally active GREs within operons generate multiple, overlapping, and differentially regulated transcript isoforms}{90}{subsection.3.3.6}
+\contentsline {subsection}{\numberline {3.3.7}Some TFs act similarly across certain environments to co-regulate functionally-related subsets of genes across their respective regulons}{99}{subsection.3.3.7}
+\contentsline {section}{\numberline {3.4}Discussion}{104}{section.3.4}
+\contentsline {chapter}{\numberline {\@textofChapter \ 4:}\uppercase {Evolution of gene regulatory networks in prokaryotes}}{112}{chapter.4}
+\contentsline {paragraph}{Chapter Highlights}{112}{section*.121}
+\contentsline {section}{\numberline {4.1}Summary}{113}{section.4.1}
+\contentsline {section}{\numberline {4.2}Introduction}{113}{section.4.2}
+\contentsline {section}{\numberline {4.3}Types of adaptations and associated mechanisms}{116}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}What is adaptation?}{116}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}Adaptation to linked environmental changes: general stress response or anticipatory behavior?}{116}{subsection.4.3.2}
+\contentsline {section}{\numberline {4.4}Role of the environment in shaping GRN evolution: time matters}{118}{section.4.4}
+\contentsline {subsection}{\numberline {4.4.1}Long-term adaptation}{118}{subsection.4.4.1}
+\contentsline {subsection}{\numberline {4.4.2}Short-term adaptation}{120}{subsection.4.4.2}
+\contentsline {section}{\numberline {4.5}Adaptation through rewiring GRNs}{122}{section.4.5}
+\contentsline {section}{\numberline {4.6}Evolution of Gene Regulatory Networks (GRNs)}{123}{section.4.6}
+\contentsline {paragraph}{Mutation}{124}{section*.123}
+\contentsline {paragraph}{Gene Duplication}{125}{section*.124}
+\contentsline {paragraph}{Horizontal gene transfer (HGT)}{125}{section*.125}
+\contentsline {chapter}{\numberline {\@textofChapter \ 5:}\uppercase {Conclusions, Perspectives, and Future Directions}}{126}{chapter.5}
+\contentsline {paragraph}{Chapter Highlights}{127}{section*.126}
+\contentsline {section}{\numberline {5.1}Summary}{127}{section.5.1}
+\contentsline {section}{\numberline {5.2}Systems approaches to investigate GRN evolution}{127}{section.5.2}
+\contentsline {subsection}{\numberline {5.2.1}Current limitations}{129}{subsection.5.2.1}
+\contentsline {subsubsection}{Challenges of using comparative genomics alone}{129}{section*.128}
+\contentsline {subsection}{\numberline {5.2.2}Experimental challenges and opportunities}{130}{subsection.5.2.2}
+\contentsline {subsubsection}{Laboratory evolution (directed selection)}{130}{section*.129}
+\contentsline {subsubsection}{Model systems to study adaptation}{133}{section*.130}
+\contentsline {subsubsection}{New experimental approaches to study GRN adaptation}{134}{section*.131}
+\contentsline {subsubsection}{Evolution of microbial communities}{136}{section*.132}
+\contentsline {subsubsection}{Insights into mechanisms of adaption and future directions}{137}{section*.133}
+\contentsline {subsubsection}{Intelligence in Microorganisms}{138}{section*.134}
+\contentsline {section}{\numberline {5.3}Inference, visualization, and dissemination of GRNs}{140}{section.5.3}
+\contentsline {subsection}{\numberline {5.3.1}Challenges and opportunities: GRN inference}{140}{subsection.5.3.1}
+\contentsline {subsection}{\numberline {5.3.2}Challenges and opportunities: GRN visualization and dissemination}{142}{subsection.5.3.2}
+\contentsline {section}{\numberline {5.4}Towards a dynamical interpretation of genetic co-regulation: what do corems mean?}{143}{section.5.4}
+\contentsline {section}{\numberline {5.5}Beyond the GRN}{147}{section.5.5}
+\contentsline {chapter}{\@textofBIB }{148}{chapter*.139}
+\contentsline {chapter}{\numberline {\@textofAppendix \ A:}Macromolecular networks and intelligence in microorganisms}{187}{appendix.A}
+\contentsline {section}{\numberline {A.1}Abstract}{187}{section.A.1}
+\contentsline {section}{\numberline {A.2}Introduction}{188}{section.A.2}
+\contentsline {subsection}{\numberline {A.2.1}What is ``intelligence''?}{189}{subsection.A.2.1}
+\contentsline {subsection}{\numberline {A.2.2}How does intelligence emerge?}{189}{subsection.A.2.2}
+\contentsline {section}{\numberline {A.3}Systems biology of intelligence: reconstructing the emergence of intelligence from component properties of the system}{191}{section.A.3}
+\contentsline {section}{\numberline {A.4}Manifestations of intelligence in the microbial world}{198}{section.A.4}
+\contentsline {subsection}{\numberline {A.4.1}Decision-making}{198}{subsection.A.4.1}
+\contentsline {subsection}{\numberline {A.4.2}Robust adaptation}{202}{subsection.A.4.2}
+\contentsline {subsection}{\numberline {A.4.3}Association and anticipation}{204}{subsection.A.4.3}
+\contentsline {subsection}{\numberline {A.4.4}Associative learning in protozoa}{208}{subsection.A.4.4}
+\contentsline {subsection}{\numberline {A.4.5}Quorum sensing and self-awareness in microbial populations and communities}{210}{subsection.A.4.5}
+\contentsline {subsection}{\numberline {A.4.6}Problem solving}{214}{subsection.A.4.6}
+\contentsline {section}{\numberline {A.5}Learning from intelligence in the microbial world}{215}{section.A.5}
+\contentsline {subsection}{\numberline {A.5.1}A deeper understanding of the microbial world}{215}{subsection.A.5.1}
+\contentsline {subsection}{\numberline {A.5.2}Microbial vs. human intelligence}{216}{subsection.A.5.2}
+\contentsline {subsection}{\numberline {A.5.3}The way forward}{218}{subsection.A.5.3}
+\contentsline {chapter}{\numberline {\@textofAppendix \ B:}iGBweb: an interactive genome browser for the web}{220}{appendix.B}
+\contentsline {section}{\numberline {B.1}Abstract}{220}{section.B.1}
+\contentsline {section}{\numberline {B.2}Introduction}{221}{section.B.2}
+\contentsline {section}{\numberline {B.3}Implementation}{221}{section.B.3}
+\contentsline {section}{\numberline {B.4}Available Features}{222}{section.B.4}
+\contentsline {subsection}{\numberline {B.4.1}Features}{222}{subsection.B.4.1}
+\contentsline {subsection}{\numberline {B.4.2}Use cases}{223}{subsection.B.4.2}
+\contentsline {subsubsection}{Use case 1.}{223}{section*.140}
+\contentsline {subsubsection}{Use case 2.}{223}{section*.141}
+\contentsline {subsubsection}{Use case 3.}{224}{section*.142}
+\contentsline {subsection}{\numberline {B.4.3}Documentation}{225}{subsection.B.4.3}
+\contentsline {subsection}{\numberline {B.4.4}Future Directions}{225}{subsection.B.4.4}

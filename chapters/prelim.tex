@@ -1,0 +1,100 @@
+% ==========   Preliminary pages
+%
+% ( revised 2012 for electronic submission )
+%
+
+\prelimpages
+ 
+%
+% ----- copyright and title pages
+%
+\Title{Data-driven inference of dynamic transcriptional regulatory mechanisms in prokaryotes: a systems perspective}
+\Author{Aaron N. Brooks}
+\Year{2014}
+\Program{Molecular and Cellular Biology}
+
+\Chair{Caroline Harwood, PhD}{Gerald and Lyn Grinstein Endowed Professor}{Department of Microbiology}
+\Signature{Nitin S. Baliga, PhD}
+\Signature{Ilya Shmulevich, PhD}
+
+\copyrightpage
+
+\titlepage  
+
+
+\setcounter{footnote}{0}
+
+% --- end-of-sample-stuff ---
+ 
+%
+% ----- signature and quoteslip are gone
+%
+
+%
+% ----- abstract
+%
+
+
+\setcounter{page}{-1}
+\abstract{
+
+Microbes tailor their physiology to diverse environments despite having streamlined genomes and few regulators. Mechanisms by which microbes expand their genetic repertoire include modular reorganization of genetic expression through dynamic activity of complex gene regulatory networks (GRNs). Deciphering accurate GRNs is essential to understand how their topology contributes to cellular behavior. This dissertation develops computational methods to reverse engineer GRNs directly from genome sequence and transcriptome data. These data-driven models capture dynamic interplay of environment and genome-encoded regulatory programs for two phylogenetically distant prokaryotes: \textit{E. coli} (a bacterium) and \textit{H. salinarum} (an archaeon). The models reveal how distribution of \textit{cis}-acting gene regulatory elements (GREs) and condition-specific influence of transcription factors (TFs) at each element produces environment-specific transcriptional responses. These regulatory programs partition and re-organize transcriptional regulation of genes within regulons and operons into condition-specific co-regulated modules, or \textit{corems}. Corems capture fitness-relevant co-regulation by different transcriptional control mechanisms acting across the entire genome. Organization of genes in corems defines a system-level principle for prokaryotic gene regulatory networks that extends existing paradigms of gene regulation and helps explain how microbes negotiate environmental change. 
+}
+ 
+%
+% ----- contents & etc.
+%
+\tableofcontents
+\listoffigures
+\listoftables  
+ 
+%
+% ----- glossary 
+%
+\chapter*{Glossary}      % starred form omits the `chapter x'
+\addcontentsline{toc}{chapter}{Glossary}
+\thispagestyle{plain}
+%
+\begin{glossary}
+\item[cMonkey] Integrated biclustering algorithm \cite{reiss_integrated_2006} that identifies groups of genes with (1) similar patterns of differential expression, over subsets of conditions (biclusters) (2) similar de novo detected sequence motifs in their promoters and (3) related functions, inferred from functional association networks (e.g., EMBL STRING \cite{szklarczyk_string_2011}).
+\item[Corem] \underline{Co}-\underline{re}gulated \underline{m}odule, a set of conditionally co-regulated genes discovered by applying link community algorithm \cite{ahn_link_2010} to backbone extracted \cite{serrano_extracting_2009}  gene-gene association network (inferred by \cm)
+\item[EGRIN] \underline{E}nvironment and \underline{G}ene \underline{R}egulatory \underline{I}nfluence \underline{N}etwork derived by \cm\ and \nwinf\
+\item[GRE] \emph{gene regulatory element}. 8-30nt DNA sequence. Assumed to be a binding site for a TF. Discovered by \emph{de novo}  sequence motif detection in cMonkey. 
+\item[GRN] \emph{gene regulatory network}. All $transcription factor (TF) \rightarrow gene$ interactions. Interactions typically represent physical binding of a TF to a gene promoter, determined by experimental methods (\eg, ChIP-chip, ChIP-seq, Y1H, or Y2H). Can be represented as a $\emph{N} \times \emph{N}$ (weighted) adjacency matrix, where \emph{N} is the number of genes in the genome. Weights can reflect confidence in the interaction or other information (\eg, number of condition observed)
+\item[Inferelator] Regulatory influence inference procedure \cite{bonneau_inferelator:_2006} that uses the regularized linear regression to find combinations of changes in TF levels and EF concentrations that accurately model the expression changes of each \cm\-detected bicluster.
+\item[nt] nucleotide
+\item[Promoter] DNA sequence upstream of the TSS or coding start site (CSS) of a gene. Most regulatory sites fall within -50 to +250 nt of the TSS of a gene, where negative values indicate downstream (3') to the TSS and  positive values indicate upstream of the TSS (5').
+\item[PSSM] Position-specific scoring matrix. Representation of a GRE in terms of relative conservation of nucleotides at each position based on alignments of matching sequences
+\item[TF] \emph{transcription factor}. A protein that binds DNA and regulates transcription at gene promoters.
+
+\end{glossary}
+ 
+%
+% ----- acknowledgments
+%
+\acknowledgments{
+	I have been fortunate to enjoy the company of intelligent colleagues, a loving family, and wonderful friends throughout the duration of my graduate studies. Because of these outstanding people, the six years that went into this project were not only productive, but also a whole lot of fun!
+
+	Modern biology is a highly collaborative enterprise. Without the help and guidance of many individuals, there is no way the work described in this dissertation could have been completed. As a research unit we embodied the mantra of emergence: ``the whole is greater than the sum of its parts''. In addition to the handful of authors on papers I co-authored, I would like to highlight the roles David Reiss and Nitin Baliga. Dave played a fundamental role in my dissertation project. I learned a great deal about computational methods from him, especially programming in R. Nitin was my graduate advisor. His keen eye for communication helped me learn how to make my science more engaging.  Nitin encouraged me to ``think big.''; to be ambitious - sometimes even beyond my abilities. I took on several projects that I thought were too big or difficult for me to complete - but I finished them. As a result, I acquired new skills and felt constantly challenged. \\
+	\newline \noindent
+	There are so many people to thank:\\
+	\newline \noindent
+	My intelligent colleagues: Serdar Turkarslan, Adri\'{a}n L\'{o}pez Garc\'{i}a, James Eddy, Ben Heavner, Chris Plaisier, Justin Ashworth, Wei-ju Wu, Karlyn Beer, Christoper Bare, Chris Lausted, Antoine Allard, Diego Martinez Salvanha, and Cecilia Garmendia for many conversations and insights. \\
+	\newline \noindent
+	My previous mentor, David Bear, who taught me how to be a careful scientist. Stephen Jett and Tamara Howard for encouraging me to continue in science.\\
+	\newline \noindent
+	My family: Geri Myers Beel, Trent Brooks, Alan Brooks, and Lisa Brooks for constant love and support.\\
+	\newline \noindent
+	My friends: Peter Sudmant, Oriol Roda-Naccari Noguera, Sheila Teves, Andrew Rivers, Jairo Rodriguez Lumbiarres, Kameron Decker Harris for the adventures.\\
+	\newline \noindent
+	And - a wonderful woman - Teal Harbin. She was my life support at the end of graduate school. She has been so kind and generous.  She taught me how to be a fulfilled person - not just a scientist. 
+}
+
+%
+% ----- dedication
+%
+\dedication{\begin{center}to Uncle Don\end{center}
+\begin{center}who encouraged me to be a scientist before I even knew what that was\end{center}}
+
+%
+% end of the preliminary pages

@@ -1,0 +1,404 @@
+\subsubsection{\DIFdelbegin \DIFdel{Introduction }\DIFdelend \DIFaddbegin \DIFadd{Background }\DIFaddend and \DIFdelbegin \DIFdel{summary}\DIFdelend \DIFaddbegin \DIFadd{motivation}\DIFaddend }
+
+\DIFdelbegin \DIFdel{Procedures }\DIFdelend \DIFaddbegin \DIFadd{The procedure }\DIFaddend to infer a single \DIFaddbegin \DIFadd{global }\DIFaddend Environment and Gene Regulatory
+Influence Network (EGRIN) model from \DIFdelbegin \DIFdel{global data using cMonkey and Inferelator
+were described
+previously (Bonneau et al. 
+, 2007; Bonneau et al., 2006;
+Reiss et al., 2006) . }\DIFdelend \DIFaddbegin \DIFadd{genome-wide data was described
+previously \mbox{%DIFAUXCMD
+\cite{Bonneau2007,Bonneau2006,Reiss2006n}
+}%DIFAUXCMD
+. In short, the
+two-step procedure involves running }\cm\DIFadd{~once to obtain a single set of $\sim 300$
+biclusters of genes. Genes in these biclusters have tight co-expression 
+over a subset of the measured conditions (usually
+about half), are supported by common putative
+}\textit{\DIFadd{cis}}\DIFadd{-regulatory motif(s) in their promoters (gene regulatory elements, GREs), 
+and are often substantiated by high connectivity in functional association networks. 
+Next, given a set of ``predictors'' (mRNA expression levels of transcription factors
+and/or quantitative values for environmental factors; }\eg\DIFadd{,
+concentrations, growth media, etc.), and the mean expression levels of genes in each bicluster, }\nwinf\DIFadd{~is run to choose a
+parsimonious subset of those predictors that can accurately predict the
+expression levels of that bicluster (}\ie\DIFadd{., those with non-zero
+$\beta$ }[\DIFadd{Eq~\ref{eq:elnet3}}]\DIFadd{) . Predictors are selected
+independently for each bicluster. The combined set of
+TF$\rightarrow$bicluster interactions and their associated weights
+($\beta$s) give the degree of activation (or repression) predicted.
+}
+
+\DIFaddend The \DIFdelbegin \DIFdel{EGRIN 2.0 }\DIFdelend \DIFaddbegin \egrine\DIFadd{~}\DIFaddend modeling procedure updates this process by applying 
+\DIFdelbegin \DIFdel{modified cMonkey and Inferelator }\DIFdelend \DIFaddbegin \DIFadd{updated }\cm\ \DIFadd{and }\nwinf\ \DIFaddend algorithms (described above)
+repeatedly to subsets of the available expression data. The \DIFaddbegin \DIFadd{end result
+is an ensemble of EGRIN models, each model containing biclusters and
+their predicted regulators, tuned to a relatively small subset of the
+overall input expression compendium. The experimental }\DIFaddend subsets were
+selected semi-randomly, with available biological information
+constraining the selection procedure \DIFdelbegin \DIFdel{by
+}\DIFdelend \DIFaddbegin \DIFadd{(}\ie\DIFadd{., }\DIFaddend including whole groups of
+related experiments when one was randomly selected\DIFaddbegin \DIFadd{)}\DIFaddend . For {\it
+H. salinarum}, we used manually curated metadata about each experiment
+to group related experiments. \DIFdelbegin \DIFdel{For }%DIFDELCMD < {\it %%%
+\DIFdel{E. coli}%DIFDELCMD < } %%%
+\DIFdel{data set, }\DIFdelend \DIFaddbegin \DIFadd{Since }\DIFaddend we did not have \DIFdelbegin \DIFdel{readily available metadata 
+, so we instead }\DIFdelend \DIFaddbegin \DIFadd{sufficient metadata 
+from the public }\textit{\DIFadd{E. coli}} \DIFadd{data set,
+ we }\DIFaddend grouped the conditions based upon individual experiments \DIFaddbegin \DIFadd{instead }\DIFaddend (\eg,
+time series). 
+\DIFdelbegin \DIFdel{EGRIN 2.0 }\DIFdelend \DIFaddbegin 
+
+\DIFadd{The }\egrine\DIFadd{~}\DIFaddend inference methodology is an ensemble learning approach,
+more specifically a form of bootstrap
+aggregation \DIFdelbegin \DIFdel{(Breiman, 1996), }\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{Breiman96baggingpredictors}
+}%DIFAUXCMD
+, }\DIFaddend or sub-bagging.
+\DIFdelbegin %DIFDELCMD < 
+
+%DIFDELCMD < %%%
+\DIFdelend Advantages of sub-bagging include \DIFdelbegin \DIFdel{its simplicity (}\DIFdelend \DIFaddbegin \DIFadd{simplicity (}\ie\DIFadd{, }\DIFaddend basic model
+averaging), \DIFdelbegin \DIFdel{its capability to reduce variance of the overall model }\DIFdelend \DIFaddbegin \DIFadd{reduced model variance
+}\DIFaddend compared to individual runs \DIFdelbegin \DIFdel{(Bühlmann and Yu, 2002), and to avoid
+overfitting (Krogh and Sollich, 1997)}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{Buhlmann2002}
+}%DIFAUXCMD
+, and avoidance of
+overfitting \mbox{%DIFAUXCMD
+\cite{Krogh1997}
+}%DIFAUXCMD
+}\DIFaddend . The power of \DIFdelbegin \DIFdel{an ensemble learning
+approach results from its ability to “average out” errors in
+the }\DIFdelend \DIFaddbegin \DIFadd{ensemble learning
+approaches stems from their ability to average out errors in
+}\DIFaddend individual models. \DIFdelbegin \DIFdel{In the case of GRN inference}\DIFdelend \DIFaddbegin \DIFadd{For EGRIN models}\DIFaddend , this feature
+helps \DIFdelbegin \DIFdel{to }\DIFdelend overcome artifacts due to both experimental and algorithmic
+noise. \DIFdelbegin \DIFdel{An incorrect classification from }\DIFdelend \DIFaddbegin \DIFadd{Incorrect classification in }\DIFaddend a single model \DIFdelbegin \DIFdel{instance is
+identifiable because it re-occurs infrequently in subsequent runs
+(assuming it is }\DIFdelend \DIFaddbegin \DIFadd{that are }\DIFaddend not the result
+of \DIFdelbegin \DIFdel{a systematic error in the algorithm
+itself). }\DIFdelend \DIFaddbegin \DIFadd{systematic error will re-occur infrequently 
+in subsequent runs. Similarly, overfitting is mitigated by training
+each individual model on a small subset of the available data. Only consistently re-discovered
+relationships are considered significant.
+}\DIFaddend 
+
+Sub-bagging of experimental conditions \DIFaddbegin \DIFadd{further }\DIFaddend allows the model to
+\DIFaddbegin \DIFadd{effectively }\DIFaddend up-weight a restricted set of conditions for each
+individual EGRIN model in the ensemble. This forces each EGRIN to
+model regulatory behaviors present within a more narrow range of
+conditions. As a result, \DIFaddbegin \DIFadd{the }\DIFaddend individual EGRIN models have the
+opportunity to discover features \DIFdelbegin \DIFdel{(}%DIFDELCMD < \eg%%%
+\DIFdel{,
+conditions, genes, GREs) }\DIFdelend that
+may distinguish highly related responses or occur in a very limited
+number of conditions in the data set \DIFdelbegin \DIFdel{. To
+test }\DIFdelend \DIFaddbegin \DIFadd{(}\eg\DIFadd{, conditions, genes, GREs). 
+}
+
+\DIFadd{To quantify }\DIFaddend this assumption, we \DIFdelbegin \DIFdel{performed }\DIFdelend \DIFaddbegin \DIFadd{constructed }\DIFaddend a
+separate ensemble \DIFdelbegin \DIFdel{analysis }\DIFdelend of 30 EGRIN models \DIFdelbegin \DIFdel{that were generated using the
+entire }\DIFdelend \DIFaddbegin \DIFadd{trained on the
+complete }\DIFaddend {\it H. salinarum} data set \DIFdelbegin \DIFdel{of }\DIFdelend \DIFaddbegin \DIFadd{(}\ie\DIFadd{, }\DIFaddend 1,495 conditions\DIFdelbegin \DIFdel{. Across these 30 models, }\DIFdelend \DIFaddbegin \DIFadd{; no
+sub-setting performed). We asked how often we would discover a GRE
+corresponding to the well-characterized anoxic }\textit{\DIFadd{H. salinarum}} \DIFadd{TF, Bat. 
+Given frequent detection of the Bat GRE in our full
+ensemble, }\DIFaddend we expected to detect \DIFdelbegin \DIFdel{$~20$ }\DIFdelend \DIFaddbegin \DIFadd{$\sim 20$ }\DIFaddend instances of the Bat GRE \DIFdelbegin \DIFdel{based on its occurrence in EGRIN 2.0
+}\DIFdelend \DIFaddbegin \DIFadd{in the new ensemble
+}\DIFaddend (\ie, motifs similar to GRE \#22;
+Figure \DIFdelbegin \DIFdel{~E\ref{fig:motclust}; (Baliga et al.,
+2001))}\DIFdelend \DIFaddbegin \DIFadd{\ref{fig:gre_clustering} \mbox{%DIFAUXCMD
+\cite{Baliga2001}
+}%DIFAUXCMD
+)}\DIFaddend . Surprisingly, we did
+not detect a single GRE \DIFdelbegin \DIFdel{that matched the
+Bat GRE }\DIFdelend \DIFaddbegin \DIFadd{matching Bat when
+all conditions were used for training }\DIFaddend (data not shown)\DIFdelbegin \DIFdel{when all conditions were included in each run
+of the model}\DIFdelend . 
+This is likely because the anoxic conditions
+\DIFdelbegin \DIFdel{under which the TF that binds this GRE (Bat ) is active represent }\DIFdelend \DIFaddbegin \DIFadd{in which Bat is active represents }\DIFaddend only
+a small portion of the entire data set.
+
+Ensemble-based approaches are being used more frequently in biological
+data analyses, including random forests (\ie, bags of decision trees)
+\DIFdelbegin \DIFdel{for classifying genetic precursors to cancer (Breiman, 2001) }\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{breiman2001}
+}%DIFAUXCMD
+, }\DIFaddend and the recently-published DREAM5 community 
+ensemble of regulatory network predictions \DIFdelbegin \DIFdel{(Marbach et al., 2012), }\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{Marbach2012}
+}%DIFAUXCMD
+, }\DIFaddend which
+we used as a benchmark in this manuscript to evaluate \DIFdelbegin \DIFdel{EGRIN 2.0 predictions . In }\DIFdelend \DIFaddbegin \egrine
+\DIFadd{predictions for }\eco\DIFadd{. Moreover, in }\DIFaddend principle, our approach is similar
+to the stochastic \DIFdelbegin \DIFdel{LeMoNe algorithm (Joshi et al., 2009), }\DIFdelend \DIFaddbegin \tmsamp{LeMoNe} \DIFadd{algorithm \mbox{%DIFAUXCMD
+\cite{Joshi2009}
+}%DIFAUXCMD
+, }\DIFaddend which
+uses Gibbs sampling to learn ensembles of regulatory modules from gene
+expression data. \DIFdelbegin \DIFdel{EGRIN 2.0 }\DIFdelend \DIFaddbegin \egrine\DIFadd{~}\DIFaddend is distinguished from \DIFdelbegin \DIFdel{LeMoNe }\DIFdelend \DIFaddbegin \tmsamp{LeMoNe} \DIFaddend and
+similar algorithms by its ability to predict transcriptional control
+mechanisms (\ie, GREs) and the conditions in which they operate, both
+globally and within individual gene promoters.
+
+To construct and mine the \DIFdelbegin \DIFdel{EGRIN 2.0 }\DIFdelend \DIFaddbegin \egrine\DIFadd{~}\DIFaddend ensemble we utilized additional
+model aggregation and compilation procedures, including (1) motif
+clustering \DIFdelbegin \DIFdel{(van Dongen and Abreu-Goodger, 2012) and scanning (Bailey
+and Gribskov, 1998}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{vanDongen2012}
+}%DIFAUXCMD
+and scanning \mbox{%DIFAUXCMD
+\cite{Bailey1998}
+}%DIFAUXCMD
+(Section \ref{section:gres}}\DIFaddend ); (2) \DIFdelbegin \DIFdel{association }\DIFdelend \DIFaddbegin \DIFadd{gene co-regulation }\DIFaddend network
+construction and backbone extraction \DIFdelbegin \DIFdel{(Serrano et al., 2009}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{Serrano2009}
+}%DIFAUXCMD
+(Section \ref{section:gBg}}\DIFaddend ); and (3) network community
+detection \DIFdelbegin \DIFdel{(Ahn et al., 2010}\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{Ahn2010}
+}%DIFAUXCMD
+(Section \ref{section:linkcommunity}}\DIFaddend ). These
+methods were used to identify GREs and their genome-wide locations,
+gene-gene co-regulatory associations, and corems, respectively. Each
+of these procedures is described in \DIFaddbegin \DIFadd{more }\DIFaddend detail below. \DIFaddbegin \DIFadd{A comprehensive
+workflow is provided in Figure \ref{fig:workflow}.
+}\DIFaddend 
+
+\DIFdelbegin \subsubsection{\DIFdel{``Ensemble of EGRINs'': generation and storage}}
+%DIFAUXCMD
+\addtocounter{subsubsection}{-1}%DIFAUXCMD
+\DIFdelend \DIFaddbegin \begin{figure}[hp]
+\centering
+\includegraphics[width=\linewidth]{figures/workflow.pdf}
+%DIF > \epsfig{file=figures/e1.eps,width=0.95\linewidth}
+%DIF > \vspace{5in}
+\caption[Detailed workflow for \egrine~inference procedure]{\DIFaddFL{
+{}\bf \DIFaddFL{Detailed workflow for }\egrine\DIFaddFL{~inference procedure.}} \DIFaddFL{Data input,
+processing and analysis to construct }\egrine\DIFaddFL{~model for }{\it
+\DIFaddFL{H. salinarum}} \DIFaddFL{and }{\it \DIFaddFL{E. coli}}\DIFaddFL{, and predictions
+generated. Predictions highlighted in individual figures are noted.}}
+\label{fig:workflow}
+\end{figure}
+\DIFaddend 
+
+%DIF > \subsubsection{Statistical mining of the relationships in the ensemble}
+\DIFaddbegin \subsubsection{\DIFadd{``Ensemble of EGRINs'': generation and statistical mining}}
+
+\egrine\DIFadd{~model construction and analysis was performed using
+primarily the }\tmsamp{R} \DIFadd{statistical analysis environment, with add-on
+packages }\tmsamp{data.table} \DIFadd{and }\tmsamp{filehash} \DIFadd{for off-line
+storage (maintaining all information in memory was impossible for our
+large ensembles). Once the full set of }\cm\ \DIFadd{and }\nwinf\ \DIFadd{runs were
+completed and stored, a round of post-processing was performed to
+agglomerate all results into a single ad-hoc database for storage and
+query. The following relationships could be queried to identify
+significant associations between biological entities described in the
+model:
+}
+
+\begin{tabular}{|l|l|l|r|} 
+\hline
+\DIFadd{Entity$_1$        }& \DIFadd{Entity$_2$         }& \DIFadd{Relationship  }& \DIFadd{Associated info. }\\ \hline
+\DIFadd{Bicluster         }& \DIFadd{Gene               }& \DIFadd{Contains      }& \DIFadd{- }\\
+\DIFadd{Bicluster         }& \DIFadd{Condition          }& \DIFadd{Contains      }& \DIFadd{- }\\
+\DIFadd{Bicluster         }& \DIFadd{Motif              }& \DIFadd{Contains      }& \DIFadd{Associated genes }\\
+\DIFadd{Regulator         }& \DIFadd{Bicluster          }& \DIFadd{Regulates     }& \DIFadd{Weight }\\
+\DIFadd{Motif             }& \DIFadd{Motif              }& \DIFadd{Similar       }& \DIFadd{$FDR\ q$--value }\\
+\DIFadd{Motif             }& \DIFadd{Genomic coordinate }& \DIFadd{Overlaps      }& \DIFadd{$p$-value }\\
+\hline
+\end{tabular}
+\\
+
+\noindent \DIFadd{These relationships could then be extended to second-degree
+relationships, including (these relationships below are by no means
+all-inclusive; for brevity we denote $g$, $g_1$, and $g_2$ as separate
+genes, $b$ as a bicluster, $m$ as a motif, $r$ as a regulator, and $c$
+as an experimental condition):
+}
+
+\begin{enumerate}
+\item \DIFadd{$g_1$ is co-regulated with $g_2$ if they occur in the same $b$.
+}\item \DIFadd{$g_1$ is co-regulated with $g_2$ under condition $c$ if $g_1$, $g_2$, and $c$ occur in the same $b$.
+}\item \DIFadd{$m$ regulates $g$ if $m$ and $g$ are both observed in the same $b$.
+}\item \DIFadd{$m$ regulates $g$ under condition $c$ if $m$, $g$, and $c$ are all observed in the same $b$.
+}\item \DIFadd{$r$ putatively regulates gene $g$ via $m$ if $r$ is predicted to regulate $b$ which contains both $g$ and $m$.
+}\end{enumerate}
+
+%DIF > % \begin{tabular}{|l|l|l|r|} 
+%DIF > % \hline
+%DIF > % Entity$_1$        & Entity$_2$       & Relationship  & Required mapping \\ \hline
+%DIF > % Gene$_1$          & Gene$_2$         & Co-regulated  & Gene$_1$ and Gene$_2$ in same bicluster \\
+%DIF > % Gene$_1$          & Gene$_2$         & Co-regulated under condition $C$  & Gene$_1$ and Gene$_2$ in same bicluster \\
+%DIF > %                   &                  &               & which also contains $C$ \\
+%DIF > % Gene$_1$          & Motif            & Regulates     & Gene in same bicluster in which Motif was detected \\
+%DIF > % \hline
+%DIF > % \end{tabular}
+
+\noindent \DIFadd{The frequency with which any of these relationships occurs throughout the
+ entire ensemble of EGRIN models could subsequently be counted by
+ querying the database, and a $p$-value describing the significance of
+ the frequency computed via the cumulative hypergeometric
+ distribution. $p$-values were then converted to false discovery rate
+ $q$-values using the Benjamini–Hochberg procedure.  We use this
+basic procedure to identify conditions associated with GRE influence,
+and GREs associated with gene co-regulation, as we describe below.
+}
+
+%DIF > % Statistical associations between any entity in the \egrine~ensemble
+%DIF > % (\ie, genes, GREs, conditions, TFs; see Figure~1) can be evaluated
+%DIF > % using the hypergeometric test for statistical enrichment.
+
+\DIFaddend \subsubsection{Clustering of cis-regulatory motifs to identify GREs}
+\DIFaddbegin \label{section:gres}
+\DIFaddend 
+
+Each \DIFdelbegin \DIFdel{cMonkey }\DIFdelend \DIFaddbegin \cm\DIFadd{~ }\DIFaddend bicluster contains at least one \DIFdelbegin \DIFdel{MEME-detected (Bailey
+and Gribskov, 1998) de novocis-regulatory }\DIFdelend \DIFaddbegin {\it \DIFadd{de novo}} \MEME \DIFadd{-
+detected \mbox{%DIFAUXCMD
+\cite{Bailey1998}
+}%DIFAUXCMD
+}{\it \DIFadd{cis}}\DIFadd{-regulatory }\DIFaddend motif. These motifs
+are used by \DIFdelbegin \DIFdel{cMonkey }\DIFdelend \DIFaddbegin \cm\DIFadd{~ }\DIFaddend to guide bicluster optimization (in addition to other
+scoring metrics). There were 86,167 and 269,770 motifs detected across
+the entire ensemble for {\it E. coli} and {\it H. salinarum},
+respectively. Each motif was represented in the model as a
+position-specific scoring matrix (PSSM). To determine which of these
+motifs represented \DIFdelbegin \DIFdel{bona
+fide }\DIFdelend \DIFaddbegin \textit{\DIFadd{bona fide}} \DIFaddend GREs (as opposed to false positives), we
+computed pairwise similarities between all motifs using \DIFdelbegin \DIFdel{Tomtom (Gupta et al., 2007)
+(}\DIFdelend \DIFaddbegin \tmsamp{Tomtom} 
+\DIFadd{\mbox{%DIFAUXCMD
+\cite{Gupta2007}
+}%DIFAUXCMD
+(}\DIFaddend Euclidean distance metric; \DIFdelbegin \DIFdel{$q$-value threshold of 0.01 and }\DIFdelend \DIFaddbegin \DIFadd{minimum }\DIFaddend overlap of 6 nt) 
+and clustered the most highly similar PSSM pairs
+using \DIFdelbegin \DIFdel{mcl (Van
+Dongen, 2008). 
+The Tomtom }\DIFdelend \DIFaddbegin \tmsamp{mcl} \DIFadd{\mbox{%DIFAUXCMD
+\cite{vanDongen2012}
+}%DIFAUXCMD
+. 
+}
+
+\DIFadd{The }\tmsamp{Tomtom} \DIFaddend motif
+similarity $p$-value threshold and the \DIFdelbegin \DIFdel{mcl }\DIFdelend \DIFaddbegin \tmsamp{mcl} \DIFaddend inflation
+parameter ($I$) were selected to (1) maximize the density \DIFaddbegin \DIFadd{(unweighted)
+}\DIFaddend of edges between PSSMs inside clusters relative to the edges between
+clusters, and (2) ensure that the \DIFdelbegin \DIFdel{mcl “jury pruning
+synopsis�}\DIFdelend \DIFaddbegin \tmsamp{mcl} \DIFadd{``jury pruning
+synopsis'' }\DIFaddend was at least 80 (out of 100). Criterion (1) aims to
+find a clustering that is as inclusive as possible, while minimizing
+over-clustering, while (2) is a built-in mcl metric that evaluates the
+quality of the clusters resulting from the user-selected pruning
+strategy (\DIFdelbegin \DIFdel{I). The final
+parameters were }\DIFdelend \DIFaddbegin \DIFadd{$I$). More specifically for criterion (1), we chose the
+clustering parameters (}\tmsamp{mcl} \DIFadd{inflation parameter
+$I$, }\tmsamp{Tomtom} \DIFaddend $p$-value cutoff \DIFdelbegin \DIFdel{= $10^{-6}$ and mcl }\DIFdelend \DIFaddbegin \DIFadd{$p_c$) which maximize:
+}
+
+\begin{equation}\DIFadd{
+\label{eq:motif:clust}
+\left( I, p_c\right) = \arg \max \left\{ \sum_{I=1}^N \sum_{i=1}^{n_I} \frac{ \sum_{j=1}^{n_I} \delta_{ij} }
+                            }{ \DIFadd{\sum_{J=1}^N \sum_{k=1}^{n_J} \delta_{ik} }} \DIFadd{\right\},
+}\end{equation}
+
+\noindent \DIFadd{where $N$ is the total number of motif clusters for a given set of
+parameters, $\delta_{ij}$ indicates a significant similarity (subject
+to the given $p$-value threshold) the between PSSMs $i$ and $j$ within
+motif cluster $I$ (which contains a total of $n_I$ PSSMs), and
+$\delta_{ij}$ indicates a significant similarity between PSSM $i$ in
+motif cluster $I$ and PSSM $j$ in motif cluster $J$. The final
+parameters that maximized expression~\ref{eq:motif:clust} and
+resulted in an }\tmsamp{mcl} \DIFadd{``jury pruning synopsis'' of at least 80
+were different for the two }\egrine\DIFadd{~models: $p_c = 10^{-6}$
+and }\tmsamp{mcl} \DIFaddend $I = 4.5$ for \DIFaddbegin \DIFadd{the }\DIFaddend {\it H. salinarum} ensemble and
+\DIFdelbegin \DIFdel{$p$-value cutoff = $10^{-5}$ and mcl }\DIFdelend \DIFaddbegin \DIFadd{$p_c = 10^{-5}$ and }\tmsamp{mcl} \DIFaddend $I = 1.5$ for the {\it E. coli}
+ensemble.
+\DIFaddbegin 
+
+\DIFaddend We did not filter the motifs by $E$-value or other intrinsic motif
+quality metrics; rather\DIFaddbegin \DIFadd{, }\DIFaddend we enforced a cluster size threshold to ensure
+that GREs were \DIFdelbegin \DIFdel{detected }\DIFdelend \DIFaddbegin \DIFadd{re-detected }\DIFaddend consistently. Clusters containing at least
+10 PSSMs were considered GREs\DIFdelbegin \DIFdel{(representing individual bicluster
+detection instances). This }\DIFdelend \DIFaddbegin \DIFadd{. This criterion }\DIFaddend resulted in 
+135 GREs for {\it H. salinarum}
+(representing 27,991 \DIFdelbegin \DIFdel{motif instances}\DIFdelend \DIFaddbegin \DIFadd{PSSMs}\DIFaddend , Table E2) and 337 for {\it E. coli}
+(representing 12,773 \DIFdelbegin \DIFdel{motif instances}\DIFdelend \DIFaddbegin \DIFadd{PSSMs}\DIFaddend , Table E3). Finally, we computed a
+``combined PSSM'' for each \DIFdelbegin \DIFdel{cluster }\DIFdelend \DIFaddbegin \DIFadd{GRE }\DIFaddend as the unweighted mean of aligned PSSMs
+within each cluster\DIFdelbegin \DIFdel{(Figure ~2E; Figure~E\ref{fig:motclust})}\DIFdelend \DIFaddbegin \DIFadd{. This
+combined PSSM could be visualized as a motif logo identically to
+standard motif PSSMs.
+}
+
+\DIFadd{The motif clustering procedure is summarized in Figure \ref{fig:gre_clustering}}\DIFaddend . 
+
+\DIFaddbegin \begin{figure}[hp]
+\centering
+\includegraphics[width=0.8\linewidth]{figures/gre_clustering.pdf}
+%DIF > \epsfig{file=figures/e2.eps,width=0.8\linewidth}
+%DIF > \vspace{5in}
+\caption[Motif clustering and GRE identification]{\textbf{\DIFaddFL{Motif clustering and GRE identification.}} \DIFaddFL{(Left) A schematic of the approach used to align and cluster individually detected motifs to define GREs. In this example, similar motifs were aligned and clustered into three GREs using Tomtom and mcl (Details in Methods and Supplementary Methods). (Center) The }{\it \DIFaddFL{H. salinarum}} \DIFaddFL{network of aligned and clustered motifs. (Right) Two }{\it \DIFaddFL{H. salinarum}} \DIFaddFL{GREs discovered by this method. The motif logo of each GRE was generated by summing PSSMs of the individual aligned motifs in the cluster, as illustrated by three examples of individual motifs (prior to alignment) for each of the two GREs. Note that relative to the individual motifs, the averaged GRE motif is more palindromic - a hallmark of binding sites for dimeric TFs.}}
+\label{fig:gre_clustering}
+%DIF > \vspace{-.1in}
+\end{figure}
+
+\DIFaddend \subsubsection{Genome-wide scanning of motifs to obtain GRE locations}
+\DIFaddbegin \label{section:scanning}
+\DIFaddend 
+
+We used \DIFaddbegin \DIFadd{motif }\DIFaddend scanning to discover GRE locations that were missed by
+the rigid definition of a promoter in cMonkey (\DIFaddbegin \DIFadd{typically }\DIFaddend -250 to +50
+nucleotides surrounding the translation start site). This procedure
+was critical for discovering GREs in non-canonical locations, such as
+internal to operons. \DIFdelbegin \DIFdel{. To discover likely GRE locations throughout the genome, we
+}\DIFdelend \DIFaddbegin \DIFadd{We }\DIFaddend computed how well each \DIFdelbegin \DIFdel{GRE }\DIFdelend \DIFaddbegin \DIFadd{PSSM (described above)
+}\DIFaddend matched every position in the genome
+using \DIFdelbegin \DIFdel{MAST (Bailey and Gribskov, 1998). Specifically, we }\DIFdelend \DIFaddbegin \tmsamp{MAST} \DIFadd{\mbox{%DIFAUXCMD
+\cite{Bailey1998}
+}%DIFAUXCMD
+, and }\DIFaddend recorded significant
+matches \DIFdelbegin \DIFdel{for every PSSM in each GRE }\DIFdelend at each genomic location subject to a position $p$-value
+threshold of $10^{-5}$. This $p$-value cutoff corresponds to an
+expectation of discovering \DIFdelbegin \DIFdel{$~20$ }\DIFdelend \DIFaddbegin \DIFadd{$\sim 20$ }\DIFaddend sites at random across the
+genome. For each GRE, we summed the number of significant matches to
+each of the GRE’s PSSMs at each genomic position. These counts were
+used to represent GRE composition in promoters (Figures~2-3\DIFdelbegin \DIFdel{, Figures~S3-S5}\DIFdelend ). In
+addition, we used these scanned locations to identify GREs \DIFdelbegin \DIFdel{predominately located
+}\DIFdelend \DIFaddbegin \DIFadd{located
+predominantly }\DIFaddend inside coding regions. Since these GREs may be spurious
+(\eg, protein sequence motifs \DIFaddbegin \DIFadd{or trinucleotide patterns}\DIFaddend ) they were
+flagged, although they were not removed from our global analysis.
+
+\DIFdelbegin \subsubsection{\DIFdel{Statistical mining of the relationships in the ensemble}}
+%DIFAUXCMD
+\addtocounter{subsubsection}{-1}%DIFAUXCMD
+\DIFdelend \DIFaddbegin \DIFadd{We compared the genome-wide distribution of GRE locations to annotated
+start sites in }\textit{\DIFadd{H. salinarum}}\DIFadd{.  We discovered that most GREs
+occur in consistent locations with respect to gene start sites.  The
+global position of all GREs and select GREs relative to experimentally
+determined gene start sites is depicted in
+Figure \ref{fig:gre_global_locs_hal}.
+}\DIFaddend 
+
+\DIFdelbegin \DIFdel{Statistical associations between any entity in the EGRIN 2.0 ensemble
+(}%DIFDELCMD < \ie%%%
+\DIFdel{, genes, GREs, conditions, TFs; see Figure~1) can be evaluated
+using the hypergeometric test for statistical enrichment.  We use this
+basic procedure to identify conditions associated with GRE influence,
+and GREs associated with gene co-regulation, as we describe below.
+}\DIFdelend \DIFaddbegin \begin{figure}[hp]
+\centering
+\includegraphics[width=0.95\linewidth]{figures/gre_global_locs_hal.pdf}
+\caption[Genome-wide distribution of GREs relative to experimentally mapped transcriptional start sites in \textit{H. salinarum}]{\textbf{\DIFaddFL{Genome-wide distribution of GREs relative to experimentally mapped transcriptional start sites in }\textit{\DIFaddFL{H. salinarum}}\DIFaddFL{.}} \DIFaddFL{(Left) Predicted positions for all GREs in gene promoters upstream of experimentally mapped transcription start sites (TSSs; \mbox{%DIFAUXCMD
+\cite{Koide2009}
+}%DIFAUXCMD
+) in and (Right) four example elements. Distribution peaks for most GREs occur at characteristic locations. For instance, the location of TATA box-like elements
+(GRE }\#\DIFaddFL{25) between -21 to -40 nt upstream to TSSs in }{\it
+\DIFaddFL{H. salinarum}} \DIFaddFL{is consistent with the characterized location of basal
+elements in archaeal promoters (-25 to 30 nt upstream to TSS). GRE
+location enables prediction of putative roles for the cognate TF (}\eg
+\DIFaddFL{repressor, activator or a basal factor).}}
+\label{fig:gre_global_locs_hal}
+\end{figure}
+
+ \DIFaddend

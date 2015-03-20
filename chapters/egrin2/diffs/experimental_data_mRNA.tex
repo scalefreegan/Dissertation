@@ -1,0 +1,197 @@
+
+\subsubsection{\halo\DIFaddbegin \DIFadd{~ compendium}\DIFaddend }\label{halodata}
+
+A compendium of 1495 transcriptome profiles were collated from a wide
+array of experiments conducted by our lab \DIFaddbegin \DIFadd{over the past decade }\DIFaddend that
+cover dynamic transcriptional responses to varied growth \DIFaddbegin \DIFadd{(1159 arrays), nutritional (161 arrays)}\DIFaddend ,
+\DIFdelbegin \DIFdel{nutritional, }\DIFdelend and stress conditions \DIFaddbegin \DIFadd{(1102 arrays), including variation in temperature (256 arrays), 
+oxygen (285 arrays), light (786 arrays), salinity (20 arrays), 
+metal ions (274 arrays)}\DIFaddend , \DIFdelbegin \DIFdel{temperatures, 
+salinities, metal ions, }\DIFdelend and genetic perturbations (\DIFdelbegin \DIFdel{full set of annotations available online)}\DIFdelend \DIFaddbegin \DIFadd{643 arrays). 
+We categorized the experiments using extensive metadata collected at
+the time of the experiment. We used this metadata to construct a GO-like 
+ontology of the relationships between all experiments (discussed in detail below).
+The annotation counts above are derived from this resource (note that a single array can 
+receive more than one annotation).
+A full list of the metadata, annotations, and ontology is available on the web service}\DIFaddend .
+1159 of \DIFdelbegin \DIFdel{these }\DIFdelend \DIFaddbegin \DIFadd{the arrays }\DIFaddend are published (\DIFdelbegin \DIFdel{Baliga et al. , 2004; Baliga et al., 2002; Bonneau
+et al., 2007; Facciotti et al., 2010; Facciotti et al., 2007; Kaur et
+al., 2006; Kaur et al., 2010; Schmid et al., 2011; Schmid et al.,
+2007; Schmid et al., 2009; Whitehead et al., 2006; Whitehead et al.,
+2009). }\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{Baliga2004a,Baliga2002,Bonneau2007,Facciotti2010,Facciotti2007a,Kaur2006,Kaur2010,Schmid2011,Schmid2007,Schmid2009,Whitehead2006,Whitehead2009}
+}%DIFAUXCMD
+. }\DIFaddend 336 \DIFaddbegin \DIFadd{of the arrays }\DIFaddend are new for this study. Experimental protocols are
+identical to \DIFdelbegin \DIFdel{(Bonneau et al. , 2007). }\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{Bonneau2007}
+}%DIFAUXCMD
+. }\DIFaddend These data, including expression
+levels (log$_2$ ratios vs. reference samples) and experimental
+metadata, are available \DIFaddbegin \DIFadd{online }\DIFaddend as a tab-delimited spreadsheet.
+
+\DIFdelbegin \paragraph{\DIFdel{Data normalization}} %DIFAUXCMD
+\addtocounter{paragraph}{-1}%DIFAUXCMD
+%DIF < % note this probably doesnt need to be a separate section
+\DIFdelend %DIF > \paragraph{Data normalization} %% note this probably doesnt need to be a separate section
+
+\DIFdelbegin \subsubsection{%DIFDELCMD < \eco%%%
+}%DIFAUXCMD
+\addtocounter{subsubsection}{-1}%DIFAUXCMD
+\DIFdelend \DIFaddbegin \DIFadd{Each array in the }{\it \DIFadd{H. salinarum}} \DIFadd{compendium was collected using
+the same platform, using the same reference, and processed and
+normalized using the same protocol. More specifically, each RNA sample
+was hybridized along with a }{\it \DIFadd{H. salinarum NRC-1}} \DIFadd{reference RNA
+prepared under standard conditions (mid-logarithmic phase batch
+cultures grown at 37$^{\circ}$C in CM, OD = 0.5). Samples were hybridized to a
+70-mer oligonucleotide array containing the 2400 nonredundant open
+reading frames (ORFs) of the }{\it \DIFadd{H. salinarum NRC-1}} \DIFadd{genome as
+described in \mbox{%DIFAUXCMD
+\cite{Baliga2004a}
+}%DIFAUXCMD
+. Each ORF was spotted on each array
+in quadruplicate and dye flipping was conducted (to rule out bias in
+dye incorporation) for all samples, yielding eight technical
+replicates per gene per sample. At least two independent biological
+replicates exist for all experimental conditions for a total of 16
+replicates per gene per condition. Direct RNA labeling, slide
+hybridization, and washing protocols were performed as described by
+\mbox{%DIFAUXCMD
+\cite{Facciotti2007,Schmid2007}
+}%DIFAUXCMD
+. Raw intensity signals
+from each slide were processed by the SBEAMS-microarray pipeline
+\mbox{%DIFAUXCMD
+\cite{Marzolf2006a}
+}%DIFAUXCMD
+(www.SBEAMS.org/microarray), in which the
+data were median normalized and subjected to significant analysis of
+microarrays (SAM) and variability and error estimates analysis
+(VERA). Each data point was assigned a significance statistic,
+$\lambda$, using maximum likelihood \mbox{%DIFAUXCMD
+\cite{Ideker2000}
+}%DIFAUXCMD
+.
+}
+
+\subsubsection{\eco\DIFadd{~ expression compendia}}\DIFaddend \label{ecodata}
+
+\DIFdelbegin \DIFdel{The }\DIFdelend \DIFaddbegin \paragraph{\DIFadd{Use of the }\tmsamp{DISTILLER} \DIFadd{data compendium for model training}}
+
+\DIFadd{A total of 868 }\DIFaddend \eco\DIFdelbegin \DIFdel{data set was obtained from the DISTILLER website (Lemmens
+et al., 2009) . }\DIFdelend \DIFaddbegin \ \DIFadd{transcriptome profiles were compiled by
+\mbox{%DIFAUXCMD
+\cite{Lemmens2009a}
+}%DIFAUXCMD
+for use with their }\tmsamp{DISTILLER} \DIFadd{algorithm. 
+}\DIFaddend These data were collated from publicly available microarray \DIFdelbegin \DIFdel{data consisting of 3 major microarray databases:
+}\DIFdelend \DIFaddbegin \DIFadd{databases:
+44 arrays from }\DIFaddend Stanford Microarray Database \DIFdelbegin \DIFdel{(Demeter et al.,
+2007), }\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{Demeter2007d}
+}%DIFAUXCMD
+,
+617 from }\DIFaddend Gene Expression Omnibus \DIFdelbegin \DIFdel{(Barrett et al., 2007) and ArrayExpress (Parkinson et al., 2007), }\DIFdelend \DIFaddbegin \DIFadd{\mbox{%DIFAUXCMD
+\cite{Barrett2007}
+}%DIFAUXCMD
+and 36 from
+ArrayExpress \mbox{%DIFAUXCMD
+\cite{Parkinson2007}
+}%DIFAUXCMD
+, as well as 181 arrays from
+supplementary data in literature (for four different experiments). }\DIFaddend The
+experiments cover a range of conditions, including varying carbon
+sources \DIFdelbegin \DIFdel{, pH, oxygen, metals and temperature.
+}\DIFdelend \DIFaddbegin \DIFadd{(136 arrays), pH (46 arrays), oxygen (284 arrays), metals (27
+arrays) and temperature (23 arrays). Overall, the compendium consists
+of measurements from single channel (407 arrays; including 298 Affymetrix, 
+and 109 P33) and dual channel (460 arrays; including 337 DNA/cDNA
+and 126 oligonucleotide) platforms.
+}\DIFaddend 
+
+%DIF > \paragraph{Data normalization}
+\DIFaddbegin 
+
+\DIFadd{These microarray measurements were normalized by the
+authors \mbox{%DIFAUXCMD
+\cite{Lemmens2009a}
+}%DIFAUXCMD
+, as follows: ``If possible, raw
+intensities were preferred as data source over normalized data
+provided by the public repository. Dual-channel data were loess fitted
+to remove nonlinear, dye-related discrepancies. No background
+correction procedures were performed to avoid an increase in
+expression logratio variance for lower, less reliable intensity
+levels. Whenever raw data were available, single-channel data were
+first normalized per experiment with RMA. Logratios were then
+created for the single-channel data in order to combine them with the
+dual channel measurements. For each single-channel array, expression
+logratios were computed by comparing the normalized values against an
+artificial reference array.  This artificial reference array was
+constructed on a per experiment basis by taking the median expression
+of each gene across all arrays in the corresponding experiment. When
+deemed necessary (e.g. experiments normalized by MAS5.0 for which the
+raw data was not available), a loess fit was performed on these
+logratios. To ensure that the artificial reference was not altered by
+this intensity dependent non-linear rescaling, the artificial
+reference expression levels were chosen for the average log intensity
+(instead of the mean expression levels of the respective array and the
+artificial reference). To ensure comparability between arrays with a
+different reference, gene expression profiles were median centered
+across arrays that share the same reference. An additional variance
+rescaling of the gene expression profiles was performed to render
+genes with differing magnitudes of expression changes more
+comparable.''
+}
+
+\DIFadd{The authors further note that,
+``the array composition of the modules generated by }\tmsamp{DISTILLER}
+\DIFadd{is not biased towards arrays from any specific platform, indicating a
+correct preprocessing of the microarray compendium.'' \mbox{%DIFAUXCMD
+\cite{Lemmens2009a}
+}%DIFAUXCMD
+It is for this
+reason that we chose this normalized }{\it
+\DIFadd{E. coli}} \DIFadd{microarray compendium for }\egrine\DIFadd{~analysis.
+}
+
+\DIFaddend \paragraph{\DIFdelbegin \DIFdel{Data normalization}\DIFdelend \DIFaddbegin \DIFadd{Use of the }\tmsamp{DREAM5} \DIFadd{data compendium for model validation}\DIFaddend }
+\DIFaddbegin \label{section:dream5_data_compendium}
+
+\DIFadd{To ascertain the generalizability of }\egrine\DIFadd{~models across data sets, we inferred a second }\textit{\DIFadd{E. coli}} \egrine\DIFadd{~model on an independent }\textit{\DIFadd{E. coli}} \DIFadd{gene expression compendium. By comparing this model to the original model we inferred using the }\tmsamp{DISTILLER} \DIFadd{data set, we were able (1) to  understand what, if any, systematic biases exist due to normalization procedures, and (2) to cross-validate }\egrine\DIFadd{~predictions across two data set. Detailed discussion of the results from this analysis are provided in Section~\ref{sec:validation}.
+}
+
+\DIFadd{We obtained the de-anonymized }{\it \DIFadd{E. coli}} \DIFadd{microarray compendium from the }\tmsamp{DREAM5} \DIFadd{competition website \mbox{%DIFAUXCMD
+\cite{Marbach2012}
+}%DIFAUXCMD
+. According to the authors, these data were ``compiled for }{\it \DIFadd{E. coli}}\DIFadd{, where all chips are the same
+Affymetrix platform, the }\textit{\DIFadd{E. coli}} \DIFadd{Antisense Genome Array. Chips were
+downloaded from GEO (Platform ID: GPL199). In total, 805 chips with
+available raw data Affymetrix files (.CEL files) were compiled.''
+Additionally, ``Microarray normalization was done using Robust
+Multichip Averaging (RMA) 9 through the software RMAExpress. All 160
+chips were uploaded into RMAExpress and normalization was done as one
+batch. All arrays were background adjusted, quantile normalized, and
+probesets were summarized using median polish. Normalized data was
+exported as log-transformed expression values. Mapping of Affymetrix
+probeset ids to gene ids was done using the library files made
+available from Affymetrix. Control probesets and probesets that did
+not map unambiguously to one gene were removed, specifically probeset
+ids ending in }\_x\DIFadd{, }\_s\DIFadd{, }\_i \DIFadd{were removed. Lastly, if multiple
+probesets mapped to a single gene, then expression values were
+averaged within each chip.''
+}
+
+\DIFadd{Compared to the }\tmsamp{DISTILLER} \DIFadd{\mbox{%DIFAUXCMD
+\cite{Lemmens2009a}
+}%DIFAUXCMD
+data set, the }\tmsamp{DREAM5} \DIFadd{\mbox{%DIFAUXCMD
+\cite{Marbach2012}
+}%DIFAUXCMD
+compendium contained a different subset of the available }\textit{\DIFadd{E. coli}} \DIFadd{transcriptome measurements from a different combination of platforms. While one might expect a number of arrays to be common between the two compendia, we discovered that the two data sets differed substantially in their statistical properties. The maximum Pearson correlation between arrays across the two data sets, for example, was $\sim 0.63$.  Interestingly, the correlation among expression profiles of
+genes within predicted operons \mbox{%DIFAUXCMD
+\cite{Price2005a}
+}%DIFAUXCMD
+was higher in the
+}\tmsamp{DREAM5} \DIFadd{compendium (mean $\sim 0.83$) than the }\tmsamp{DISTILLER} \DIFadd{compendium
+(mean $\sim 0.32$). This is likely due to a combination of differences in the experiments/platforms included and normalization procedures. 
+ }\DIFaddend

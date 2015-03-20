@@ -1,0 +1,68 @@
+\addvspace {5\p@ }
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Microbes live in changing environments}}{5}{figure.caption.8}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Cells relay information to regulate the genome}}{6}{figure.caption.9}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces Position specific scoring matrix (PSSM) and motif logo}}{10}{figure.caption.13}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Operons: multiple genes transcribed as a single polycistronic transcript}}{12}{figure.caption.16}
+\contentsline {figure}{\numberline {1.5}{\ignorespaces Regulon: multiple gene regulated by a common transcription factor}}{13}{figure.caption.18}
+\contentsline {figure}{\numberline {1.6}{\ignorespaces Corem: subsets of operons and regulons regulated by multiple transcription factors}}{15}{figure.caption.22}
+\contentsline {figure}{\numberline {1.7}{\ignorespaces Generation and properties of networks}}{17}{figure.caption.23}
+\contentsline {figure}{\numberline {1.8}{\ignorespaces Network motifs: the coherent feed-forward loop}}{22}{figure.caption.26}
+\contentsline {figure}{\numberline {1.9}{\ignorespaces Varieties of regulatory logic, from simple to complex}}{23}{figure.caption.27}
+\addvspace {5\p@ }
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Bicluster: a conditionally co-regulated module}}{31}{figure.caption.36}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Detailed workflow for {\textsf {EGRIN 2.0}}\nobreakspace {}inference procedure}}{39}{figure.caption.41}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Motif clustering and GRE identification}}{49}{figure.caption.54}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Genome-wide distribution of GREs relative to experimentally mapped transcriptional start sites in \textit {H. salinarum}}}{50}{figure.caption.55}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Corem density as a function of clustering cutoff threshold}}{53}{figure.caption.59}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces Corem statistics}}{54}{figure.caption.60}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Number of TFs in {\textsf {RegulonDB}}\nobreakspace {} re-discovered by various regulatory module detection methods.}}{55}{figure.caption.61}
+\contentsline {figure}{\numberline {2.8}{\ignorespaces Convergence of {\textsf {EGRIN 2.0}}\ gene co-occurrence networks.}}{57}{figure.caption.62}
+\contentsline {figure}{\numberline {2.9}{\ignorespaces Reproducibility of corems across data sets}}{58}{figure.caption.63}
+\contentsline {figure}{\numberline {2.10}{\ignorespaces Deciphering GREs responsible for regulating corems}}{64}{figure.caption.78}
+\contentsline {figure}{\numberline {2.11}{\ignorespaces Environmental ontology hierarchically organizes relationships between experimental conditions from metadata collected across 1495 experiments in \textit {H. salinarum}}}{65}{figure.caption.81}
+\contentsline {figure}{\numberline {2.12}{\ignorespaces Precision-recall performance for {\it E. coli} networks.}}{70}{figure.caption.86}
+\contentsline {figure}{\numberline {2.13}{\ignorespaces Ensemble performance of individual GRN predictions}}{71}{figure.caption.87}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {}}}{71}{figure.caption.87}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {}}}{71}{figure.caption.87}
+\contentsline {figure}{\numberline {2.14}{\ignorespaces Integration of GRE discovery and {\textsf {Inferelator}}\ predictions yields comprehensive and detailed gene regulatory networks}}{72}{figure.caption.88}
+\contentsline {figure}{\numberline {2.15}{\ignorespaces GREs regulate multiple transcript isoforms from operons in {\it E. coli}, \textit {dppABCDF}}}{73}{figure.caption.89}
+\contentsline {figure}{\numberline {2.16}{\ignorespaces GREs regulate multiple transcript isoforms from operons in {\it E. coli}, \textit {galETKM}}}{74}{figure.caption.90}
+\contentsline {figure}{\numberline {2.17}{\ignorespaces GREs regulate multiple transcript isoforms from operons in {\it E. coli}, \textit {ptsH-ptsI-crr}}}{75}{figure.caption.91}
+\contentsline {figure}{\numberline {2.18}{\ignorespaces {\textsf {EGRIN 2.0}}\nobreakspace {}models highly correlated co-fitness relationships that cannot be explained by operons or regulons}}{77}{figure.caption.92}
+\addvspace {5\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces {\textsf {EGRIN 2.0}}\nobreakspace {}Model Construction.}}{83}{figure.caption.94}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces {\textsf {EGRIN 2.0}}\nobreakspace {}Model Validation: Performance on RegulonDB}}{84}{figure.caption.95}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces {\textsf {EGRIN 2.0}}\nobreakspace {}Model Validation: Fitness contributions}}{86}{figure.caption.96}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces {\textsf {EGRIN 2.0}}\nobreakspace {}Model Validation: Regulatory elements of \textit {kdp} operon, {\emph {H. salinarum} sp. NRC-1 }}}{88}{figure.caption.97}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces {\textsf {EGRIN 2.0}}\nobreakspace {}Model Validation: Regulatory elements of \textit {carA}, \emph {E. coli} K-12 MG1655 }}{90}{figure.caption.98}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces {\textsf {EGRIN 2.0}}\nobreakspace {}Model Validation: Regulatory elements of \textit {pyrL}, \emph {E. coli} K-12 MG1655 }}{91}{figure.caption.99}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces Transcriptional evidence for multiple transcript isoforms from the same operon: \textit {nirH-VNG1775C-hemA}, {\emph {H. salinarum} sp. NRC-1 }}}{92}{figure.caption.100}
+\contentsline {figure}{\numberline {3.8}{\ignorespaces Transcriptional evidence for multiple transcript isoforms from the same operon: \textit {sdhCDBA}, {\emph {H. salinarum} sp. NRC-1 }}}{93}{figure.caption.101}
+\contentsline {figure}{\numberline {3.9}{\ignorespaces Transcriptional evidence for multiple transcript isoforms from the same operon: \textit {VNG2211H-endA-trpS1}, {\emph {H. salinarum} sp. NRC-1 }}}{94}{figure.caption.102}
+\contentsline {figure}{\numberline {3.10}{\ignorespaces Transcriptional evidence for multiple transcript isoforms from the same operon, {\emph {H. salinarum} sp. NRC-1 }}}{95}{figure.caption.103}
+\contentsline {figure}{\numberline {3.11}{\ignorespaces Functional consequences of multiple transcript isoforms from the same operon, {\emph {H. salinarum} sp. NRC-1 }}}{96}{figure.caption.104}
+\contentsline {figure}{\numberline {3.12}{\ignorespaces Alternate regulatory modes for \textit {dpp} operon predicted by corems, {\emph {H. salinarum} sp. NRC-1 }}}{97}{figure.caption.105}
+\contentsline {figure}{\numberline {3.13}{\ignorespaces Network representation of transcriptional isoforms for the \textit {dpp} operon predicted by corems, {\emph {H. salinarum} sp. NRC-1 }}}{98}{figure.caption.106}
+\contentsline {figure}{\numberline {3.14}{\ignorespaces Evidence for condition-specific transcript isoforms of the \textit {dpp} operon in \textit {E. coli}}}{99}{figure.caption.107}
+\contentsline {figure}{\numberline {3.15}{\ignorespaces Corems model the mechanistic basis for conditional subdivision of the PurR regulon, \textit {E. coli.}}}{101}{figure.caption.108}
+\contentsline {figure}{\numberline {3.16}{\ignorespaces Corems integrate diverse regulatory mechanisms, \textit {E. coli}}}{102}{figure.caption.109}
+\contentsline {figure}{\numberline {3.17}{\ignorespaces Condition-specific subdivision and coordination of the nucleotide biosynthesis pathway, \emph {E. coli} K-12 MG1655 : functional segregation across corems}}{103}{figure.caption.110}
+\contentsline {figure}{\numberline {3.18}{\ignorespaces Corems segment the nucleotide biosynthesis pathway, \emph {E. coli} K-12 MG1655 }}{104}{figure.caption.111}
+\contentsline {figure}{\numberline {3.19}{\ignorespaces Differential co-expression across the nucleotide biosynthesis pathway, \emph {E. coli} K-12 MG1655 }}{105}{figure.caption.112}
+\contentsline {figure}{\numberline {3.20}{\ignorespaces Condition-specific fitness contributions across nucleotide biosynthesis pathway predicted by corems, \emph {E. coli} K-12 MG1655 }}{106}{figure.caption.113}
+\contentsline {figure}{\numberline {3.21}{\ignorespaces Genes from corems related to nucleotide biosynthesis have highly similar fitness effects when they are deleted}}{107}{figure.caption.114}
+\contentsline {figure}{\numberline {3.22}{\ignorespaces Corems model fitness effects that occur in specific environments}}{107}{figure.caption.115}
+\contentsline {figure}{\numberline {3.23}{\ignorespaces Metabolite correlations may explain co-regulation within metabolically-linked corems}}{108}{figure.caption.116}
+\contentsline {figure}{\numberline {3.24}{\ignorespaces Transcriptional evidence for subdivision of regulons by corems}}{109}{figure.caption.118}
+\contentsline {figure}{\numberline {3.25}{\ignorespaces Corems with predicted influence from PurR (GRE \#4) are disrupted in $\Delta $purR mutant}}{110}{figure.caption.119}
+\contentsline {figure}{\numberline {3.26}{\ignorespaces GRE \#4 influence predicts which corems are disrupted in $\Delta $purR mutant}}{111}{figure.caption.120}
+\addvspace {5\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Evolution of gene regulatory networks}}{124}{figure.caption.122}
+\addvspace {5\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Systems approaches to study GRN evolution}}{128}{figure.caption.127}
+\contentsline {figure}{\numberline {5.2}{\ignorespaces Combinatorial regulation at gene promoters shapes gene expression}}{144}{figure.caption.135}
+\contentsline {figure}{\numberline {5.3}{\ignorespaces Co-regulation beyond common TF interaction}}{145}{figure.caption.136}
+\contentsline {figure}{\numberline {5.4}{\ignorespaces Indirect co-regulation by isomorphy}}{146}{figure.caption.137}
+\contentsline {figure}{\numberline {5.5}{\ignorespaces Indirect co-regulation by equifinality}}{146}{figure.caption.138}
+\addvspace {5\p@ }
+\addvspace {5\p@ }

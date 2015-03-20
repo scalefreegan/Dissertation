@@ -1,0 +1,167 @@
+\documentclass[11pt]{article}
+
+\title{Expanded View}
+\author{
+        Aaron N Brooks\, \\
+            \and
+        David J Reiss
+}
+\date{\today}
+
+\usepackage{times}
+\usepackage{hyperref}
+\usepackage{enumerate}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{amsmath}
+%\usepackage{pdfpages}
+\usepackage{graphicx,subfigure}
+%\graphicspath{{figures/}}
+\usepackage[font={small,it}]{caption}
+\usepackage{color}
+\usepackage[section]{placeins}
+
+%%%%%%%%%% This allows ``paragraph'' to be  like a subsubsubsection
+%%%%%%%%%% from here https://tex.stackexchange.com/questions/60209/how-to-add-an-extra-level-of-sections-with-headings-below-subsubsection
+\makeatletter
+\renewcommand\paragraph{\@startsection{paragraph}{4}{\z@}%
+            {-2.5ex\@plus -1ex \@minus -.25ex}%
+            {1.25ex \@plus .25ex}%
+            {\normalfont\small\bfseries}}
+\makeatother
+\setcounter{secnumdepth}{4} % how many sectioning levels to assign numbers to
+\setcounter{tocdepth}{4}    % how many sectioning levels to show in ToC
+
+%%%%%%%%%% This adds 'E' to figure name for expanded view
+\makeatletter 
+\renewcommand{\thefigure}{E\@arabic\c@figure}
+\makeatother
+
+%%%%%%%%%% Start TeXmacs macros
+\newcommand{\email}[1]{{\textit{Email:} \texttt{#1}}}
+\newcommand{\tmem}[1]{{\em #1\/}}
+\newcommand{\tmhlink}[2]{{\color{blue} #1}}
+\newcommand{\tmmathbf}[1]{\ensuremath{\boldsymbol{#1}}}
+\newcommand{\tmname}[1]{\textsc{#1}}
+\newcommand{\tmop}[1]{\ensuremath{\operatorname{#1}}}
+\newcommand{\tmsamp}[1]{\textsf{#1}}
+\newcommand{\tmtextit}[1]{{\itshape{#1}}}
+\newenvironment{enumeratenumeric}{\begin{enumerate}[1.] }{\end{enumerate}}
+\newcommand{\tmfloatcontents}{}
+\newlength{\tmfloatwidth}
+\newcommand{\tmfloat}[5]{
+  \renewcommand{\tmfloatcontents}{#4}
+  \setlength{\tmfloatwidth}{\widthof{\tmfloatcontents}+1in}
+  \ifthenelse{\equal{#2}{small}}
+    {\ifthenelse{\lengthtest{\tmfloatwidth > \linewidth}}
+      {\setlength{\tmfloatwidth}{\linewidth}}{}}
+    {\setlength{\tmfloatwidth}{\linewidth}}
+  \begin{minipage}[#1]{\tmfloatwidth}
+    \begin{center}
+      \tmfloatcontents
+      \captionof{#3}{#5}
+    \end{center}
+  \end{minipage}}
+%%%%%%%%%% End TeXmacs macros
+
+\newcommand{\eg}{\tmtextit{e.g.}}
+\newcommand{\ie}{\tmtextit{i.e.}}
+\newcommand{\cm}{{\tmsamp{cMonkey}}}
+\newcommand{\nwinf}{{\tmsamp{Inferelator}}}
+\newcommand{\MEME}{{\tmsamp{MEME}}}
+\newcommand{\halo}{{\tmem{H. salinarium NRC-1}}}
+\newcommand{\eco}{{\tmem{E. coli K-12 MG1655}}}
+\newcommand{\tab}{{\hspace{5mm}}}
+\newcommand{\rdb}{{\tmsamp{RegulonDB}}}
+\newcommand{\egrine}{{\tmsamp{EGRIN 2.0}}}
+\newcommand{\simgt}{\,\hbox{\lower0.6ex\hbox{$\sim$}\llap{\raise0.6ex\hbox{$>$}}}\,}
+\newcommand{\simlt}{\,\hbox{\lower0.6ex\hbox{$\sim$}\llap{\raise0.6ex\hbox{$<$}}}\,}
+\newcommand{\citep}[1]{({\cite{#1}})}
+\newcounter{suppfigure}
+
+\begin{document}
+\maketitle
+ 
+\tableofcontents
+\newpage
+\listoffigures
+\newpage
+\listoftables 
+\newpage
+
+\begin{abstract}
+Microbes can tailor transcriptional responses to diverse environmental
+challenges despite having streamlined genomes and a limited number of
+regulators. Here, we present data-driven models that capture the
+dynamic interplay of the environment and genome-encoded regulatory
+programs of two types of prokaryotes: E. coli (a bacterium) and
+H. salinarum (an archaeon). The models reveal how the genome-wide
+distributions of cis-acting gene regulatory elements and the
+conditional influences of transcription factors at each of those
+elements encode programs for eliciting a wide array of
+environment-specific responses. We demonstrate how these programs
+partition transcriptional regulation of genes within regulons and
+operons to re-organize gene-gene functional associations in each
+environment. The models capture fitness-relevant co-regulation by
+different transcriptional control mechanisms acting across the entire
+genome, to define a generalized, system-level organizing principle for
+prokaryotic gene regulatory networks that goes well beyond existing
+paradigms of gene regulation.
+\end{abstract}
+
+\section{Online materials}
+Additional figures, tables, supporting data, and comprehensive model
+predictions are available at: \newline
+\url{http://egrin2.systemsbiology.net}.
+
+\section{Experimental data used for model construction}\label{data}
+
+\subsection{mRNA expression data}
+
+\input{experimental_data_mRNA}
+
+\subsection{Additional data integrated for model construction}
+
+\input{experimental_data_other}
+
+\section{Independent data used for model validation}
+
+\input{experimental_data_validation}
+
+\section{Computational methods}
+
+\input{cmonkey}
+
+\subsection{\nwinf: inference of transcriptional regulatory influences}
+
+\input{inferelator}
+
+\subsection{\egrine~model construction}
+
+\input{egrin2_methods}
+
+\subsubsection{Identifying corems}
+
+\input{corem_detection}
+
+\input{other_computation}
+
+\section{Model validation}\label{sec:validation}
+
+\input{validation}
+
+\section{Model evaluation}\label{sec:evaluation}
+
+\input{evaluation}
+
+\section{Supplementary Figures}
+
+\label{suppfigs}
+
+%\input{supp_figures}  %% slows it down and makes it big! Let's include it later.
+
+\clearpage % force figures before bibliography
+\bibliographystyle{abbrv}
+\bibliography{egrin2_paper}{}
+
+\end{document}
+This is never printed

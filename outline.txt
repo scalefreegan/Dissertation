@@ -1,0 +1,34 @@
+Outline:
+
+1. Introduction 
+	1.1 Gene regulation in prokaryotes: a historical perspective
+	1.2 Networks in biology
+	1.3 Systems-level view of gene regulation
+	1.4 Organization 
+2. Computational approaches to reconstruct gene regulatory networks
+	2.1 Summary of existing approaches
+	2.2 cMonkey
+	2.3 Inferelator
+	2.3 Ensemble methods
+	2.4 Detection of regulatory modules
+3. A systems-level model of the microbial regulatory genome
+	3.1 Summary
+	3.2 Introduction
+	3.3 Results
+	3.4 Discussion
+4. Evolution of gene regulatory networks in prokaryotes
+	
+5. Conclusions and Perspectives
+	5.1 
+	5.2 Intelligence in microorganism
+6. Future Directions
+	6.3 Web-based visualization methods
+	6.4 New data, new approaches, and integration
+
+Appendix 1.
+
+Supporting material for Chapter 2
+
+References
+	
+

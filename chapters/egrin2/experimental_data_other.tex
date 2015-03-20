@@ -1,0 +1,63 @@
+\subsubsection{Genome sequence data and annotatations for \cm~analysis}
+
+We used genome sequences and gene annotations (coding regions)
+collated in \tmsamp{RSA-tools} \cite{vanHelden2000} for both
+organisms in this study (\halo~and \eco). These data were themselves
+collated to annotate regulatory sequences of all sequenced genomes in
+\tmsamp{RefSeq}. Rather than using the \tmsamp{RSA-tools}-annotated
+promoter regions, we computed them ourselves as regions (-250 nt to
++50 nt) surrounding the annotated translation start site of each
+gene/operon (see below for operon annotations). 
+
+In all cases where probe identifiers in the mRNA expression compendia
+used for this analysis could not be directly matched to gene
+annotations (or operon predictions or functional associations; see
+below), we used the \tmsamp{RSA-tools} ``\tmsamp{feature\_names.tab}''
+table of identifier synonyms to perform the match. In cases where the
+match was still not possible, we excluded the probe/ annotation/
+association from analysis.
+
+\subsubsection{Operon membership predictions used for \cm~analysis}
+
+We used operon predictions for both \halo~and \eco~predicted by
+\cite{Price2005a} from the \tmsamp{Microbes Online}
+database \cite{Alm2005}. These predictions are updated regularly. The predictions are based upon
+genomic proximity and co-expression in publicly-available microarray
+data compendia. We used the versions downloaded
+from the website as of March, 2009. These included
+predicted operon memberships for 826 genes in \halo~ and for 2,639
+genes in \eco.
+
+\subsubsection{Predicted transcriptional regulators used for \nwinf~analysis}
+
+\paragraph{\halo}
+
+For \halo, we used the same set of putative transcription factors
+(TFs) as \cite{Bonneau2006,Bonneau2007}. This list of 124
+regulators was selected from among the 2,400 \halo\ genes which are
+annotated as known or putative TFs based upon sequence or predicted
+structural homology \cite{Bonneau2004}.
+
+\paragraph{\eco}
+\label{section:eco_tfs}
+
+To enable direct comparison of our results to DREAM5, we used the list
+of 296 putative \eco~ transcriptional regulators collated
+by \cite{Marbach2012}. Their list was obtained by combining the list
+of TFs defined by RegulonDB \cite{Gama-Castro2011} with TFs identified
+using Gene Ontology (GO) terms: \textit{biological process} terms
+related to transcription (\texttt{GO:0009299;mRNA transcription}
+or \texttt{GO:0006351;transcription, DNA dependent}) and
+GO \textit{molecular function}
+\texttt{GO:0003677;DNA binding} or any child terms.
+
+\subsubsection{Functional association networks integrated into \cm~analysis}
+
+We used EMBL STRING \cite{Szklarczyk2011} v9.0 database
+of predicted functional associations between genes for both organisms
+(\halo~and \eco) to constrain module construction in \cm, as described
+below. The confidence scores estimated by \cite{Szklarczyk2011} were
+incorporated into the \cm~constraints. These
+networks included 151,826 associations among 2,559 genes in \halo, and
+878,972 associations among 4,136 genes in \eco.
+
